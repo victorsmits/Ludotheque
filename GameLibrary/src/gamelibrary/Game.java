@@ -16,10 +16,10 @@ public class Game {
     protected String manufacturer;
     protected boolean statut;
     
-    public Game(long id, String name, boolean statut, String manufacturer) {
-      this.id = id;
+    public Game(String name, String manufacturer) {
+      this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
       this.name = name;
-      this.statut = statut;
+      this.statut = true;
       this.manufacturer = manufacturer;
     }
           
@@ -31,7 +31,7 @@ public class Game {
         return name;
     }
 
-    public void setNom(String newName) {
+    public void setName(String newName) {
         this.name = name;
     }
 

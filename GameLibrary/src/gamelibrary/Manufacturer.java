@@ -24,5 +24,4 @@ public class Manufacturer {
         this.name = name;
     }
     
-    
 }
