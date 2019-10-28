@@ -12,8 +12,8 @@ package gamelibrary;
 public class BoardGame extends Game{
     private int playerNumber;
 
-    public BoardGame(int playerNumber, long id, String name, boolean statut, String manufacturer) {
-        super(id, name, statut, manufacturer);
+    public BoardGame(int playerNumber, String name, String manufacturer) {
+        super(name, manufacturer);
         this.playerNumber = playerNumber;
     }
 

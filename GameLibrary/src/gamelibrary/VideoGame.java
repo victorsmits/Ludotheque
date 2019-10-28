@@ -12,8 +12,8 @@ package gamelibrary;
 public class VideoGame extends Game {
     private String platform;
 
-    public VideoGame(String platform, long id, String name, boolean statut, String manufacturer) {
-        super(id, name, statut, manufacturer);
+    public VideoGame(String platform, String name, String manufacturer) {
+        super(name, manufacturer);
         this.platform = platform;
     }
 

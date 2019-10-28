@@ -12,8 +12,8 @@ package gamelibrary;
 public class Toy extends Game{
     private String material;
 
-    public Toy(String material, long id, String name, boolean statut, String manufacturer) {
-        super(id, name, statut, manufacturer);
+    public Toy(String material, String name, String manufacturer) {
+        super(name, manufacturer);
         this.material = material;
     }
 
