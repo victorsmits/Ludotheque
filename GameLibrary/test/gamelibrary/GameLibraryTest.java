@@ -183,5 +183,4 @@ public class GameLibraryTest {
         
         assertEquals(expNameResult, nameResult);
     }
-    
 }
