@@ -17,9 +17,8 @@ public class Adherent extends Person {
     private LocalDate subscriptionBegin;
     private LocalDate subscriptionEnd;
     
-    public Adherent(long id, String name, String firstname, String subscription){
-        super(id, name, firstname);
-        this.subscriptionType = subscription;
+    public Adherent(String name, String firstname){
+        super(name, firstname);
     }
     
     public LocalDate getSubscriptionBegin() {

@@ -15,8 +15,8 @@ public class Person {
    protected String name;
    protected String firstname;
     
-   public Person(long id, String name, String firstname) {
-        this.id = id;
+   public Person(String name, String firstname) {
+        this.id = this.id = (long) ((Math.random()*((9999-1000)+1))+1000);;
         this.name = name;
         this.firstname = firstname;
     }

@@ -4,9 +4,18 @@
  * and open the template in the editor.
  */
 package gamelibrary;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.ArrayList;
 import java.util.HashMap; // import the HashMap class
-import java.util.Scanner; // import the Scanner class 
+import java.util.Scanner; // import the Scanner class
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.Map;
 
 /**
  *
@@ -14,47 +23,63 @@ import java.util.Scanner; // import the Scanner class
  */
 public class GameLibrary {
     
-    private Person manager;
-    public ArrayList<Game> gameList;
-    private Person adherent;
-    public HashMap<String, ArrayList<Game>> gameJson = new HashMap<String, ArrayList<Game>>();
+    //public ObjectMapper mapper = new ObjectMapper();
+    private String name;
+    private Manager manager = new Manager(null, null);
+    private static ArrayList<VideoGame> videoGameList = new ArrayList<VideoGame>();
+    private static ArrayList<Toy> toyList = new ArrayList<Toy>();
+    private static ArrayList<BoardGame> boardGameList = new ArrayList<BoardGame>();
+    private static ArrayList<Adherent> adherentList = new ArrayList<Adherent>();
+    //private ArrayList<Map<String, ArrayList<Game>>> gamesJson;
 
-    public GameLibrary() {
-        this.gameList  = new ArrayList<Game>();
+    public GameLibrary(String name) {
+        this.name = name;
     }
         
-    public Person getManager() {
+    public String getName() {
+        return name;
+    }
+
+    public static ArrayList<VideoGame> getVideoGameList() {
+        return videoGameList;
+    }
+
+    public static ArrayList<Toy> getToyList() {
+        return toyList;
+    }
+
+    public static ArrayList<BoardGame> getBoardGameList() {
+        return boardGameList;
+    }
+
+    public static ArrayList<Adherent> getAdherentList() {
+        return adherentList;
+    }
+        
+    public Manager getManager() {
         return manager;
     }
 
-    public Person getAdherent() {
-        return adherent;
-    }
-
-    public void setManager(Person manager) {
+    public void setManager(Manager manager) {
         this.manager = manager;
     }
-
-    public void setAdherent(Person adherent) {
-        this.adherent = adherent;
-    }
-  
-    public void addGame(Game game){
-   
-        // Add game
-        gameList.add(game);
-    }
     
-    public void getAllGames(){
-        for (int i = 0; i < gameList.size(); i++) {
-            System.out.printf("Name : %s ; Manufacturer: %s ; Id: %s ; Statut : %s%n", gameList.get(i).getName(), 
-                    gameList.get(i).getManufacturer(), 
-                    gameList.get(i).getId(), 
-                    gameList.get(i).getStatut());
+    /*public void init() throws JsonProcessingException{
+        try (FileReader reader = new FileReader("D:\\Ablo_Doss\\Ecole\\4eme_5eme\\Q1\\Architecture_logicielle\\Test driven développement\\Ludotheque\\GameLibrary\\src\\gamelibrary\\Games.json"))
+        {
+            //Read JSON file
+            gamesJson = mapper.readValue(reader, ArrayList.class);
+            //System.out.println(gamesJson.get(0).get("videoGame"));
+            this.videoGameList = gamesJson.get(0).get("videoGame");
+            this.boardGameList = gamesJson.get(1).get("videoGame");
+            this.toyList = gamesJson.get(2).get("videoGame");
+            
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
         }
-        
-    }
-    
+    }*/
    
     
    

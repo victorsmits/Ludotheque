@@ -5,6 +5,9 @@
  */
 package gamelibrary;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,30 +21,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        GameLibrary gameLibrary = new GameLibrary();
-        
-        
-        
-        //set name
-        Scanner name = new Scanner(System.in);
-        String userName;
-        
-        System.out.println("Enter username"); // Enter username and press Enter
-        userName = name.nextLine();
-
-        
-        // set manufacturer
-        Scanner manufacturer = new Scanner(System.in);
-        String userManufacturer;
-
-        System.out.println("Enter the manufacturer");  // Enter username and press Enter
-        userManufacturer = manufacturer.nextLine();
-        
-        // create game
-        Game game = new Game(userName, userManufacturer);
-
-        
-        gameLibrary.addGame(game);
-        gameLibrary.getAllGames();
+        GameLibrary gameLibrary = new GameLibrary("Ludothèque Alma");
+             
     }
 }
