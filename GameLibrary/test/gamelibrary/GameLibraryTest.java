@@ -21,7 +21,6 @@ import static org.junit.Assert.*;
 public class GameLibraryTest {
     
     private static GameLibrary gameLibrary;
-    private static String LibraryName;
     public static ManagerMock man;
     
     public GameLibraryTest() {
@@ -30,9 +29,8 @@ public class GameLibraryTest {
     @BeforeClass
     public static void setUpClass() {
         // init
-        gameLibrary = new GameLibrary("Ludothèque Alma");
+        gameLibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
         man = new ManagerMock("Chris", "Jean");//manager simulation
-        LibraryName = "Ludothèque Alma";
     }
     
     @AfterClass
@@ -57,7 +55,7 @@ public class GameLibraryTest {
      */
     @Test
     public void testGetName() {
-        assertEquals("Ludothèque Alma", gameLibrary.getName());
+        assertEquals("ECAM Game Library", gameLibrary.getName());
     }
 
     /**
@@ -159,12 +157,10 @@ public class GameLibraryTest {
      */
     @Test
     public void testGetManager() {        
-        gameLibrary = new GameLibrary(LibraryName);
-        gameLibrary.setManager(new Manager("Chris", "Jean"));
         
         String expNameResult = "Chris";
         String expFirstnameResult = "Jean";
-        String nameResult = gameLibrary.getManager().getName();
+        String nameResult = man.getName();
         
         assertEquals(expNameResult, nameResult);
     }
@@ -174,13 +170,12 @@ public class GameLibraryTest {
      */
     @Test
     public void testSetManager() {
-        gameLibrary = new GameLibrary(LibraryName);
-        gameLibrary.setManager(new Manager("Chris", "Jean"));
+        gameLibrary.setManager("Chris", "Jean");
         
         String expNameResult = "Chris";
         String expFirstnameResult = "Jean";
         String nameResult = gameLibrary.getManager().getName();
         
-        assertEquals(expNameResult, nameResult);
+        assertEquals("Chris", nameResult);
     }
 }
