@@ -19,7 +19,7 @@ public final class Manager extends Person {
     private static Manager instance ; // Unique instance
     
     // private constructor for Singleton
-    private Manager(String name, String firstname) {
+    Manager(String name, String firstname) {
         super(name, firstname);
 
     }
