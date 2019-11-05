@@ -10,28 +10,52 @@ import java.time.LocalDate;
  * @author ablo1
  */
 public class Borrow {
-    private LocalDate dateOfborrow;
-    private LocalDate dateOfReturn;
+    public Adherent getAdherent() {
+        return adherent;
+    }
 
-    public Borrow(LocalDate dateOfborrow, LocalDate dateOfReturn) {
-        this.dateOfborrow = dateOfborrow;
-        this.dateOfReturn = dateOfReturn;
+    public void setAdherent(Adherent adherent) {
+        this.adherent = adherent;
+    }
+
+    public VideoGame getVideoGame() {
+        return videoGame;
+    }
+
+    public void setVideoGame(VideoGame videoGame) {
+        this.videoGame = videoGame;
     }
 
     public LocalDate getDateOfborrow() {
         return dateOfborrow;
     }
 
-    public LocalDate getDateOfReturn() {
-        return dateOfReturn;
-    }
-
     public void setDateOfborrow(LocalDate dateOfborrow) {
         this.dateOfborrow = dateOfborrow;
+    }
+
+    public LocalDate getDateOfReturn() {
+        return dateOfReturn;
     }
 
     public void setDateOfReturn(LocalDate dateOfReturn) {
         this.dateOfReturn = dateOfReturn;
     }
-    
+
+    private Adherent adherent;
+    private VideoGame videoGame;
+    private Toy toy;
+    private BoardGame boardGame;
+    private LocalDate dateOfborrow;
+    private LocalDate dateOfReturn;
+
+    public Borrow(LocalDate dateOfborrow, LocalDate dateOfReturn,Adherent adherent, VideoGame videoGame, Toy toy,BoardGame boardGame) {
+        this.dateOfborrow = dateOfborrow;
+        this.dateOfReturn = dateOfReturn;
+        this.adherent = adherent;
+        this.videoGame = videoGame;
+        this.toy = toy;
+        this.boardGame = boardGame;
+    }
+
 }

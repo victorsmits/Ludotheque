@@ -44,6 +44,10 @@ public class Adherent extends Person {
     public void setsubscriptionEnd(LocalDate newSubscriptionEnd) {
         this.subscriptionEnd = newSubscriptionEnd;
     }
-    
+
+    public void borrowToy(){
+    Toy toy = new Toy("materialToy", "nameToy", "manufacturerToy");
+
+    }
     
 }
