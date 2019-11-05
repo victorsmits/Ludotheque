@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package gamelibrary;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,6 +20,9 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         GameLibrary gameLibrary = new GameLibrary("Ludothèque Alma");
+        Manager man = new Manager("Jean", "Gui");
+        man.addVideoGame();
+        man.searchVideoGame("fifa 20");
              
     }
 }

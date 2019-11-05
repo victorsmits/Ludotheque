@@ -4,12 +4,9 @@
  * and open the template in the editor.
  */
 package gamelibrary;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.ArrayList;
 import java.util.HashMap; // import the HashMap class
 import java.util.Scanner; // import the Scanner class
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -21,8 +18,26 @@ import java.util.Map;
  *
  * @author ablo1
  */
-public class GameLibrary {
-    
+public final class GameLibrary {
+
+    //create an object of SingleObject
+    private static GameLibrary instanceSingleObjectGameLibrary;
+
+    //make the constructor private so that this class cannot be instantiated twice
+    private GameLibrary(String name) {
+        this.name = name;
+    }
+
+
+    //Get the only object available
+    public synchronized static GameLibrary getInstanceSingleObjectGameLibrary(){
+       if(instanceSingleObjectGameLibrary== null) {
+
+          instanceSingleObjectGameLibrary = new GameLibrary("ECAM Game Library");
+       }
+        return instanceSingleObjectGameLibrary;
+    }
+
     //public ObjectMapper mapper = new ObjectMapper();
     private String name;
     private Manager manager = new Manager(null, null);
@@ -32,9 +47,6 @@ public class GameLibrary {
     private static ArrayList<Adherent> adherentList = new ArrayList<Adherent>();
     //private ArrayList<Map<String, ArrayList<Game>>> gamesJson;
 
-    public GameLibrary(String name) {
-        this.name = name;
-    }
         
     public String getName() {
         return name;
