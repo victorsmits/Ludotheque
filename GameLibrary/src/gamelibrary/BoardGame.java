@@ -24,7 +24,9 @@ public class BoardGame extends Game{
     public void setPlayerNumber(int playerNumber) {
         this.playerNumber = playerNumber;
     }
-    
-    
+
+    public void displayPlayerNumber(BoardGame boardGame){
+        System.out.println( boardGame.getPlayerNumber());
+    }
     
 }

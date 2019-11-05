@@ -56,4 +56,32 @@ public class Person {
             }
         }
     }
+
+    public void searchBoardGame(String name){
+        for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
+            if(GameLibrary.getBoardGameList().get(i).getName().equals(name) ){
+                System.out.printf("Name : %s ; Manufacturer: %s ; Id: %s ; Statut : %s ; PlayerNumber: %s%n", GameLibrary.getBoardGameList().get(i).getName(),
+                        GameLibrary.getBoardGameList().get(i).getManufacturer(),
+                        GameLibrary.getBoardGameList().get(i).getId(),
+                        GameLibrary.getBoardGameList().get(i).getStatut(),
+                        GameLibrary.getBoardGameList().get(i).getPlayerNumber());
+            }
+        }
+    }
+
+
+    public void searchToy(String name){
+        for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
+            if(GameLibrary.getToyList().get(i).getName().equals(name) ){
+                System.out.printf("Name : %s ; Manufacturer: %s ; Id: %s ; Statut : %s ; Material: %s%n", GameLibrary.getToyList().get(i).getName(),
+                        GameLibrary.getToyList().get(i).getManufacturer(),
+                        GameLibrary.getToyList().get(i).getId(),
+                        GameLibrary.getToyList().get(i).getStatut(),
+                        GameLibrary.getToyList().get(i).getMaterial());
+            }
+        }
+    }
+
+
+
 }

@@ -24,6 +24,9 @@ public class Toy extends Game{
     public void setMaterial(String material) {
         this.material = material;
     }
-    
+
+    public void displayMaterial(Toy toy){
+        System.out.println(toy.getMaterial());
+    }
     
 }

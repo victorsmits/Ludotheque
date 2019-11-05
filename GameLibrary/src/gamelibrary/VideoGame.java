@@ -25,5 +25,7 @@ public class VideoGame extends Game {
         this.platform = platform;
     }
     
-    
+    public void displayPlateform(VideoGame videoGame){
+        System.out.println(videoGame.getPlatform());
+    }
 }
