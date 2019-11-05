@@ -12,13 +12,32 @@ import java.util.Scanner;
  *
  * @author ablo1
  */
-public class Manager extends Person {
+public final class Manager extends Person {
     
     //private String login;
     //private String password;
-    public Manager(String name, String firstname) {
+    private static Manager instance ; // Unique instance
+    
+    // private constructor for Singleton
+    private Manager(String name, String firstname) {
         super(name, firstname);
 
+    }
+    
+    // Only one instanciated ==> Singleton
+    public synchronized static Manager getInstance ()
+    {
+        if ( instance == null )
+        {
+            instance = new Manager("Bill", "Jean");
+        }
+        return instance ;
+    }
+    
+    public synchronized static void setInstance (String newName, String newFirstname)
+    {
+        instance.setName(newName);
+        instance.setFirstname(newFirstname);
     }
 
     public void addVideoGame(){
@@ -28,11 +47,11 @@ public class Manager extends Person {
         
         
         //set name
-        Scanner name = new Scanner(System.in);
+        Scanner nameGame = new Scanner(System.in);
         String gameName;
         
         System.out.println("Enter game's name"); // Enter username and press Enter
-        gameName = name.nextLine();
+        gameName = nameGame.nextLine();
         //newVideoGame.setName(userName);
 
         
@@ -60,15 +79,64 @@ public class Manager extends Person {
         // Add game
         //System.out.print(newVideoGame.getName());
         GameLibrary.getVideoGameList().add(newVideoGame);
-        System.out.print(GameLibrary.getVideoGameList().size());
+        //System.out.print(GameLibrary.getVideoGameList().size());
     }
-    public void addBoardGame(BoardGame newboardGame){
+    public void addBoardGame(){
+        
+        //set name
+        Scanner nameGame = new Scanner(System.in);
+        String gameName;
+        
+        System.out.println("Enter game's name"); // Enter username and press Enter
+        gameName = nameGame.nextLine();
+        //newVideoGame.setName(userName);
+
+        
+        // set manufacturer
+        Scanner manufacturer = new Scanner(System.in);
+        String gameManufacturer;
+
+        System.out.println("Enter the manufacturer");  // Enter username and press Enter
+        gameManufacturer = manufacturer.nextLine();
+        //newVideoGame.setManufacturer(userManufacturer);
+        
+        // set player number
+        Scanner platform = new Scanner(System.in);
+        int playerNumber;
+
+        System.out.println("Enter the player number");  // Enter username and press Enter
+        playerNumber = Integer.parseInt(platform.nextLine());
+        
+        BoardGame newBoardGame = new BoardGame(playerNumber, gameName, gameManufacturer);
    
         // Add game
-        GameLibrary.getBoardGameList().add(newboardGame);
+        GameLibrary.getBoardGameList().add(newBoardGame);
     }
-    public void addToy(Toy newToy){
-   
+    public void addToy(){
+        
+        //set name
+        Scanner nameGame = new Scanner(System.in);
+        String gameName;
+        
+        System.out.println("Enter game's name"); // Enter username and press Enter
+        gameName = nameGame.nextLine();
+
+        // set manufacturer
+        Scanner manufacturer = new Scanner(System.in);
+        String gameManufacturer;
+
+        System.out.println("Enter the manufacturer");  // Enter username and press Enter
+        gameManufacturer = manufacturer.nextLine();
+        
+        // set matrial
+        Scanner platform = new Scanner(System.in);
+        String material;
+
+        System.out.println("Enter the player number");  // Enter username and press Enter
+        material = platform.nextLine();
+        
+        Toy newToy = new Toy(material, gameName, gameManufacturer);
+        
         // Add game
         GameLibrary.getToyList().add(newToy);
     }

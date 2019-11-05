@@ -21,11 +21,20 @@ import java.util.Map;
 public final class GameLibrary {
 
     //create an object of SingleObject
+    //public ObjectMapper mapper = new ObjectMapper();
+    private String name;
+    private static Manager manager;
+    private static ArrayList<VideoGame> videoGameList = new ArrayList<VideoGame>();
+    private static ArrayList<Toy> toyList = new ArrayList<Toy>();
+    private static ArrayList<BoardGame> boardGameList = new ArrayList<BoardGame>();
+    private static ArrayList<Adherent> adherentList = new ArrayList<Adherent>();
+    //private ArrayList<Map<String, ArrayList<Game>>> gamesJson;
     private static GameLibrary instanceSingleObjectGameLibrary;
 
     //make the constructor private so that this class cannot be instantiated twice
     private GameLibrary(String name) {
         this.name = name;
+        manager = Manager.getInstance();
     }
 
 
@@ -37,17 +46,7 @@ public final class GameLibrary {
        }
         return instanceSingleObjectGameLibrary;
     }
-
-    //public ObjectMapper mapper = new ObjectMapper();
-    private String name;
-    private Manager manager = new Manager(null, null);
-    private static ArrayList<VideoGame> videoGameList = new ArrayList<VideoGame>();
-    private static ArrayList<Toy> toyList = new ArrayList<Toy>();
-    private static ArrayList<BoardGame> boardGameList = new ArrayList<BoardGame>();
-    private static ArrayList<Adherent> adherentList = new ArrayList<Adherent>();
-    //private ArrayList<Map<String, ArrayList<Game>>> gamesJson;
-
-        
+    
     public String getName() {
         return name;
     }
@@ -68,12 +67,12 @@ public final class GameLibrary {
         return adherentList;
     }
         
-    public Manager getManager() {
+    public static Manager getManager() {
         return manager;
     }
 
-    public void setManager(Manager manager) {
-        this.manager = manager;
+    public static void setManager(String r, String f) {
+        Manager.setInstance(r, f);
     }
     
     /*public void init() throws JsonProcessingException{

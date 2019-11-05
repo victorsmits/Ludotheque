@@ -16,7 +16,7 @@ public class Person {
    protected String firstname;
     
    public Person(String name, String firstname) {
-        this.id = this.id = (long) ((Math.random()*((9999-1000)+1))+1000);;
+        this.id = this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
         this.name = name;
         this.firstname = firstname;
     }
@@ -41,7 +41,19 @@ public class Person {
         return firstname;
     }
 
-    public void setPrenom(String newFirstname) {
+    public void setFirstname(String newFirstname) {
         this.firstname = newFirstname;
+    }
+    
+    public void searchVideoGame(String name){
+        for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
+            if(GameLibrary.getVideoGameList().get(i).getName().equals(name) ){
+                System.out.printf("Name : %s ; Manufacturer: %s ; Id: %s ; Statut : %s ; Platform : %s%n", GameLibrary.getVideoGameList().get(i).getName(), 
+                    GameLibrary.getVideoGameList().get(i).getManufacturer(), 
+                    GameLibrary.getVideoGameList().get(i).getId(), 
+                    GameLibrary.getVideoGameList().get(i).getStatut(),
+                    GameLibrary.getVideoGameList().get(i).getPlatform());
+            }
+        }
     }
 }

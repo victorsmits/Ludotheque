@@ -18,11 +18,15 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        GameLibrary gameLibrary = new GameLibrary("Ludothèque Alma");
-        Manager man = new Manager("Jean", "Gui");
-        man.addVideoGame();
+        // Create the only one Game library
+        GameLibrary.getInstanceSingleObjectGameLibrary();
+        
+        //manager fonction
+        Manager man = GameLibrary.getManager();
+        System.out.println(man.getName());
+        man.setName("Oscar");
+        System.out.println(man.getName());
+        //man.addVideoGame();
         man.searchVideoGame("fifa 20");
-             
     }
 }
