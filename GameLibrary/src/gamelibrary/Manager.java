@@ -50,7 +50,7 @@ public final class Manager extends Person {
         Scanner nameGame = new Scanner(System.in);
         String gameName;
         
-        System.out.println("Enter game's name"); // Enter username and press Enter
+        System.out.println("Enter the video game's name"); // Enter username and press Enter
         gameName = nameGame.nextLine();
         //newVideoGame.setName(userName);
 
@@ -87,7 +87,7 @@ public final class Manager extends Person {
         Scanner nameGame = new Scanner(System.in);
         String gameName;
         
-        System.out.println("Enter game's name"); // Enter username and press Enter
+        System.out.println("Enter the board game's name"); // Enter username and press Enter
         gameName = nameGame.nextLine();
         //newVideoGame.setName(userName);
 
@@ -118,7 +118,7 @@ public final class Manager extends Person {
         Scanner nameGame = new Scanner(System.in);
         String gameName;
         
-        System.out.println("Enter game's name"); // Enter username and press Enter
+        System.out.println("Enter the toy's name"); // Enter username and press Enter
         gameName = nameGame.nextLine();
 
         // set manufacturer
@@ -128,17 +128,40 @@ public final class Manager extends Person {
         System.out.println("Enter the manufacturer");  // Enter username and press Enter
         gameManufacturer = manufacturer.nextLine();
         
-        // set matrial
+        // set material
         Scanner platform = new Scanner(System.in);
         String material;
 
-        System.out.println("Enter the player number");  // Enter username and press Enter
+        System.out.println("Enter the material");  // Enter username and press Enter
         material = platform.nextLine();
         
         Toy newToy = new Toy(material, gameName, gameManufacturer);
         
         // Add game
         GameLibrary.getToyList().add(newToy);
+    }
+    
+    public void addAdherent(){
+        
+        //set name
+        Scanner name = new Scanner(System.in);
+        String getName;
+        
+        System.out.println("Enter adherent's name"); // Enter username and press Enter
+        getName = name.nextLine();
+
+        // set firstname
+        Scanner firstname = new Scanner(System.in);
+        String getFirstname;
+
+        System.out.println("Enter the manufacturer");  // Enter username and press Enter
+        getFirstname = firstname.nextLine();
+
+        
+        Adherent adherent = new Adherent(getName, getFirstname);
+        
+        // Add adherent
+        GameLibrary.getAdherentList().add(adherent);
     }
     
 }

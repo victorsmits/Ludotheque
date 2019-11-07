@@ -9,12 +9,12 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public class Game {
+abstract class Game {
     
-    protected String name;
-    protected long id;
-    protected String manufacturer;
-    protected boolean statut;
+    private String name;
+    private long id;
+    private String manufacturer;
+    private boolean statut;
     
     public Game(String name, String manufacturer) {
       this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
@@ -49,6 +49,16 @@ public class Game {
 
     public void setManufacturer(String newManufacturer) {
         this.manufacturer = newManufacturer;
-    }    
+    }
+    
+    void displayName(){
+        System.out.println(getName());
+    }
+    
+    void displayStatus(){
+        System.out.println(getStatut());
+    }
+    
+    abstract void displayInfos();
     
 }

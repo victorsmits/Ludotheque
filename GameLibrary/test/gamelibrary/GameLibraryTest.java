@@ -65,7 +65,7 @@ public class GameLibraryTest {
     public void testGetVideoGameList() {
         man.addVideoGame();
         
-        ArrayList<VideoGame> expResult = new ArrayList<VideoGame>(); //expected list result
+        ArrayList<VideoGame> expResult = new ArrayList<>(); //expected list result
         expResult.add(new VideoGame("PS4", "PES 19", "Sony"));
         expResult.add(new VideoGame("XboxOne", "FIFA 20", "Microsoft"));
         
@@ -89,7 +89,7 @@ public class GameLibraryTest {
     public void testGetToyList() {
         man.addToy();
         
-        ArrayList<Toy> expResult = new ArrayList<Toy>(); //expected list result
+        ArrayList<Toy> expResult = new ArrayList<>(); //expected list result
         expResult.add(new Toy("Bois", "Voiture", "Chine"));
         expResult.add(new Toy("Caoutchouc", "Lego", "Lego"));
         
@@ -113,7 +113,7 @@ public class GameLibraryTest {
     public void testGetBoardGameList() {
         man.addBoardGame();
         
-        ArrayList<BoardGame> expResult = new ArrayList<BoardGame>(); //expected list result
+        ArrayList<BoardGame> expResult = new ArrayList<>(); //expected list result
         expResult.add(new BoardGame(2, "échec", "Sony"));
         expResult.add(new BoardGame(2, "Monopoly", "Microsoft"));
         
@@ -137,7 +137,7 @@ public class GameLibraryTest {
     public void testGetAdherent() {
         man.addAdherent();
         
-        ArrayList<Adherent> expResult = new ArrayList<Adherent>(); //expected list result
+        ArrayList<Adherent> expResult = new ArrayList<>(); //expected list result
         expResult.add(new Adherent("Nadim", "Julien"));
         expResult.add(new Adherent("Gui", "Serges"));
         
@@ -174,7 +174,7 @@ public class GameLibraryTest {
         
         String expNameResult = "Chris";
         String expFirstnameResult = "Jean";
-        String nameResult = gameLibrary.getManager().getName();
+        String nameResult = GameLibrary.getManager().getName();
         
         assertEquals("Chris", nameResult);
     }
