@@ -11,15 +11,34 @@ import gamelibrary.GameLibraryTest;
 import gamelibrary.Person;
 import gamelibrary.VideoGame;
 import gamelibrary.GameLibrary;
+import gamelibrary.Manager;
 import gamelibrary.Toy;
 /**
  *
  * @author ablo1
  */
 public class ManagerMock extends Person{
+    
+    private static ManagerMock instance ; // Unique instance
 
     public ManagerMock(String name, String firstname) {
         super(name, firstname);
+    }
+    
+    // Only one instanciated ==> Singleton
+    public synchronized static ManagerMock getInstance ()
+    {
+        if ( instance == null )
+        {
+            instance = new ManagerMock("Bill", "Jean");
+        }
+        return instance ;
+    }
+    
+    public synchronized static void setInstance (String newName, String newFirstname)
+    {
+        instance.setName(newName);
+        instance.setFirstname(newFirstname);
     }
     
     public void addVideoGame(){
@@ -34,7 +53,7 @@ public class ManagerMock extends Person{
     
     public void addToy(){
         GameLibrary.getToyList().add(new Toy("Bois", "Voiture", "Chine"));
-        GameLibrary.getToyList().add(new Toy("Caoutchouc", "Lego", "Lego"));
+        GameLibrary.getToyList().add(new Toy("Caoutchouc", "Lego", "USA"));
     }
     
     public void addAdherent(){

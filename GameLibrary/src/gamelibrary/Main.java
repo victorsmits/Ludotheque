@@ -26,14 +26,9 @@ public class Main {
         System.out.println(man.getName());
         man.setName("Oscar");
         System.out.println(man.getName());
-        man.addVideoGame();
-        man.addVideoGame();
+        //man.addVideoGame();
+        //man.addVideoGame();
         System.out.println(man.searchVideoGame("fifa 20"));
     }
-
-
-
-
-
 
 }

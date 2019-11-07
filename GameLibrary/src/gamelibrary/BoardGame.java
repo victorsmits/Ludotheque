@@ -31,4 +31,13 @@ public class BoardGame extends Game{
 
     }
     
+    @Override
+    void displayInfos(){
+        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Player Number : %s%n", getName(), 
+                        getManufacturer(), 
+                        getId(), 
+                        getStatut(),
+                        getPlayerNumber());
+    }
+    
 }

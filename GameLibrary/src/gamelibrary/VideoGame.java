@@ -28,4 +28,13 @@ public class VideoGame extends Game {
     public void displayPlateform(VideoGame videoGame){
         System.out.println(videoGame.getPlatform());
     }
+    
+    @Override
+    void displayInfos(){
+        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Platform : %s%n",getName(), 
+                        getManufacturer(), 
+                        getId(), 
+                        getStatut(),
+                        getPlatform());
+    }
 }
