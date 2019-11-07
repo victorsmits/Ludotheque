@@ -32,15 +32,15 @@ public class Game {
     }
 
     public void setName(String newName) {
-        this.name = name;
+        this.name = newName;
     }
 
     public boolean getStatut() {
         return statut;
     }
 
-    public void setStatut(boolean statut) {
-        this.statut = statut;
+    public void setStatut(boolean newstatut) {
+        this.statut = newstatut;
     }
 
     public String getManufacturer() {
@@ -48,7 +48,7 @@ public class Game {
     }
 
     public void setManufacturer(String newManufacturer) {
-        this.manufacturer = manufacturer;
+        this.manufacturer = newManufacturer;
     }    
     
 }

@@ -141,15 +141,4 @@ public final class Manager extends Person {
         GameLibrary.getToyList().add(newToy);
     }
     
-    public void searchVideoGame(String name){
-        for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
-            if(GameLibrary.getVideoGameList().get(i).getName().equals(name) ){
-                System.out.printf("Name : %s ; Manufacturer: %s ; Id: %s ; Statut : %s ; Platform : %s%n", GameLibrary.getVideoGameList().get(i).getName(), 
-                    GameLibrary.getVideoGameList().get(i).getManufacturer(), 
-                    GameLibrary.getVideoGameList().get(i).getId(), 
-                    GameLibrary.getVideoGameList().get(i).getStatut(),
-                    GameLibrary.getVideoGameList().get(i).getPlatform());
-            }
-        }
-    }
 }
