@@ -71,7 +71,7 @@ public final class GameLibrary {
         return manager;
     }
 
-    public static void setManager(String r, String f) {
+    public  void setManager(String r, String f) {
         Manager.setInstance(r, f);
     }
     

@@ -30,7 +30,8 @@ public class GameLibraryTest {
     @BeforeClass
     public static void setUpClass() {
         // init
-        gameLibrary = new GameLibrary("Ludothèque Alma");
+        GameLibrary object = GameLibrary.getInstanceSingleObjectGameLibrary();
+        //gameLibrary = new GameLibrary("Ludothèque Alma");
         man = new ManagerMock("Chris", "Jean");//manager simulation
         LibraryName = "Ludothèque Alma";
     }
@@ -159,8 +160,9 @@ public class GameLibraryTest {
      */
     @Test
     public void testGetManager() {        
-        gameLibrary = new GameLibrary(LibraryName);
-        gameLibrary.setManager(new Manager("Chris", "Jean"));
+        //gameLibrary = new GameLibrary(LibraryName);
+        GameLibrary object = GameLibrary.getInstanceSingleObjectGameLibrary();
+        //object.setManager(new Manager("Chris", "Jean"));
         
         String expNameResult = "Chris";
         String expFirstnameResult = "Jean";
@@ -174,8 +176,9 @@ public class GameLibraryTest {
      */
     @Test
     public void testSetManager() {
-        gameLibrary = new GameLibrary(LibraryName);
-        gameLibrary.setManager(new Manager("Chris", "Jean"));
+     //   gameLibrary = new GameLibrary(LibraryName);
+        GameLibrary object = GameLibrary.getInstanceSingleObjectGameLibrary();
+        object.setManager("Chris", "Jean");
         
         String expNameResult = "Chris";
         String expFirstnameResult = "Jean";

@@ -47,7 +47,6 @@ public class Adherent extends Person {
 
     public void borrowToy(){
     Toy toy = new Toy("materialToy", "nameToy", "manufacturerToy");
-
     }
     
 }
