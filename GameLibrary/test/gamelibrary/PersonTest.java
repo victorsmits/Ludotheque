@@ -21,14 +21,16 @@ public class PersonTest {
     
     private static Person person;
     public static ManagerMock man;
+    public static GameLibrary gamelibrary;
     
     public PersonTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        person = new Person("Itunime", "Rudy");
-        man = new ManagerMock("Chris", "Jean");//manager simulation
+        person = new Person("Itunime", "Rudy", "rudy36", "654321");
+        man = ManagerMock.getInstance();//manager simulation
+        gamelibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
     }
     
     @AfterClass
