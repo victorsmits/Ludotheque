@@ -53,6 +53,25 @@ public class Main {
 
         //now send message to subject
         subjectAdherent.postMessage("I am new Adherent");
+
+
+
+        // Factory
+    CreateGameFactory cf = new CreateGameFactory();
+
+    FactoryGame fg1 = cf.getCreateGame("TOY");
+
+    fg1.CreateGame();
+
+    FactoryGame fg2 = cf.getCreateGame("BoardGame");
+
+    fg2.CreateGame();
+
+    FactoryGame fg3 = cf.getCreateGame("VideoGame");
+
+    fg3.CreateGame();
+
+
     }
 
 }

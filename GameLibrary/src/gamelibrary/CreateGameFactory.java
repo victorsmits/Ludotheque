@@ -3,7 +3,7 @@ package gamelibrary;
 public class CreateGameFactory {
 
     //use getShape method to get object of type game
-    public FactoryGame getShape(String gameType){
+    public FactoryGame getCreateGame(String gameType){
         if(gameType == null){
             return null;
         }
