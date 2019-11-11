@@ -9,7 +9,7 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public class Toy extends Game{
+public class Toy extends Game implements FactoryGame{
     private String material;
 
     public Toy(String material, String name, String manufacturer) {
@@ -17,6 +17,10 @@ public class Toy extends Game{
         this.material = material;
     }
 
+
+    public Toy() {
+        super();
+    }
     public String getMaterial() {
         return material;
     }
@@ -36,6 +40,11 @@ public class Toy extends Game{
                         getId(), 
                         getStatut(),
                         getMaterial());
+    }
+
+
+    public void CreateGame() {
+        System.out.println("Inside Toy::CreateGame method.");
     }
     
 }

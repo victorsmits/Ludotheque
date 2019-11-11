@@ -22,7 +22,11 @@ abstract class Game {
       this.statut = true;
       this.manufacturer = manufacturer;
     }
-          
+
+    public Game() {
+
+    }
+
     public long getId() {
         return id;
     }

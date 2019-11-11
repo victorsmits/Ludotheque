@@ -12,8 +12,10 @@ import java.util.Scanner;
  *
  * @author ablo1
  */
-public final class Manager extends Person {
-    
+public final class Manager extends Person implements ObserverManager{
+
+
+
     //private String login;
     //private String password;
     private static Manager instance ; // Unique instance
@@ -39,6 +41,12 @@ public final class Manager extends Person {
         instance.setName(newName);
         instance.setFirstname(newFirstname);
     }
+
+
+
+
+
+
 
     public void addVideoGame(){
         
@@ -163,5 +171,35 @@ public final class Manager extends Person {
         // Add adherent
         GameLibrary.getAdherentList().add(adherent);
     }
-    
+
+
+
+
+    private String name;
+    private Adherent adherent;
+
+   // public Manager(String nm){
+    //    this.name=nm;
+   // }
+
+    Manager manager = GameLibrary.getManager();
+
+    public void update() {
+        String msg = (String) adherent.getUpdate(this);
+        if(msg == null){
+            System.out.println(name+":: No new message");
+        }else
+            System.out.println(name+":: Consuming message::"+msg);
+    }
+
+
+    public void setSubject(SubjectAdherent sub) {
+        this.adherent=(Adherent) sub;
+    }
+
+
+
+
+
+
 }

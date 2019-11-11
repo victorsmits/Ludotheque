@@ -29,6 +29,30 @@ public class Main {
         //man.addVideoGame();
         //man.addVideoGame();
         System.out.println(man.searchVideoGame("fifa 20"));
+
+
+
+
+
+        //observer
+
+        //create subject
+        Adherent subjectAdherent=new Adherent();
+
+        /* Manager observer */
+        Manager obj1 = GameLibrary.getManager();
+
+        //register observers to the subject
+        subjectAdherent.register(obj1);
+
+        //attach observer to subject
+        obj1.setSubject(subjectAdherent);
+
+        //check if any update is available
+        obj1.update();
+
+        //now send message to subject
+        subjectAdherent.postMessage("I am new Adherent");
     }
 
 }

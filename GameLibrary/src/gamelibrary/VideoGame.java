@@ -9,8 +9,12 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public class VideoGame extends Game {
+public class VideoGame extends Game implements FactoryGame{
     private String platform;
+
+    public VideoGame() {
+        super();
+    }
 
     public VideoGame(String platform, String name, String manufacturer) {
         super(name, manufacturer);
@@ -36,5 +40,10 @@ public class VideoGame extends Game {
                         getId(), 
                         getStatut(),
                         getPlatform());
+    }
+
+
+    public void CreateGame() {
+        System.out.println("Inside VideoGame::CreateGame method.");
     }
 }

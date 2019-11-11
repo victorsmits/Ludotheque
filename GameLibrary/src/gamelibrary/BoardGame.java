@@ -9,12 +9,16 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public class BoardGame extends Game{
+public class BoardGame extends Game implements FactoryGame{
     private int playerNumber;
 
     public BoardGame(int playerNumber, String name, String manufacturer) {
         super(name, manufacturer);
         this.playerNumber = playerNumber;
+    }
+
+    public BoardGame() {
+        super();
     }
 
     public int getPlayerNumber() {
@@ -39,5 +43,10 @@ public class BoardGame extends Game{
                         getStatut(),
                         getPlayerNumber());
     }
+
+    public void CreateGame() {
+        System.out.println("Inside BoardGame::CreateGame method.");
+    }
+
     
 }
