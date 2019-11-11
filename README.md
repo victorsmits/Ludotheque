@@ -17,7 +17,9 @@ dans la Repository URL.
 ### Exécution
 1. Lancer l'éditeur
 2. Ouvrir le project
-3.  Run le projet via le point d'entrée Main.java  
+3. Run le projet via le point d'entrée Main.java  
+  
+Un apercu ci-dessous    
 ![Run du projet Logithèque](https://raw.githubusercontent.com/TestDrivenDeveloppement/Ludotheque/master/Ressource/Run_Project.JPG)
 
 ### Diagramme de classe  
