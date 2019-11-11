@@ -13,6 +13,7 @@ import gamelibrary.VideoGame;
 import gamelibrary.GameLibrary;
 import gamelibrary.Manager;
 import gamelibrary.Toy;
+import java.util.Scanner;
 /**
  *
  * @author ablo1
@@ -21,8 +22,8 @@ public class ManagerMock extends Person{
     
     private static ManagerMock instance ; // Unique instance
 
-    public ManagerMock(String name, String firstname) {
-        super(name, firstname);
+    public ManagerMock(String name, String firstname, String username, String password) {
+        super(name, firstname, username, password);
     }
     
     // Only one instanciated ==> Singleton
@@ -30,7 +31,7 @@ public class ManagerMock extends Person{
     {
         if ( instance == null )
         {
-            instance = new ManagerMock("Bill", "Jean");
+            instance = new ManagerMock("Bill", "Jean", "moi", "1234");
         }
         return instance ;
     }
@@ -57,7 +58,8 @@ public class ManagerMock extends Person{
     }
     
     public void addAdherent(){
-        GameLibrary.getAdherentList().add(new Adherent("Nadim", "Julien"));
-        GameLibrary.getAdherentList().add(new Adherent("Gui", "Serges"));
+        GameLibrary.getAdherentList().add(new Adherent("Nadim", "Julien", "nadim14", "4569"));
+        GameLibrary.getAdherentList().add(new Adherent("Gui", "Serges", "charo", "65987"));
     }
+
 }

@@ -5,6 +5,7 @@
  */
 package gamelibrary;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 
 /**
@@ -13,40 +14,76 @@ import java.time.LocalDate;
  */
 public class Adherent extends Person {
     
-    private String subscriptionType;
+    private ArrayList<Borrow> borrowList;
     private LocalDate subscriptionBegin;
-    private LocalDate subscriptionEnd;
     
-    public Adherent(String name, String firstname){
-        super(name, firstname);
+    /**
+     *
+     * @param name
+     * @param firstname
+     * @param username
+     * @param password
+     */
+    public Adherent(String name, String firstname, String username, String password){
+        super(name, firstname, username, password);
+        borrowList = new ArrayList();
+        subscriptionBegin = LocalDate.now();
     }
     
     public LocalDate getSubscriptionBegin() {
         return subscriptionBegin;
     }
 
-    public void setSubscriptionBegin(LocalDate newSubscription) {
-        this.subscriptionBegin = newSubscription;
-    }
+    public String borrowVideoGame(long id){
+        VideoGame videogame;
+        Borrow borrow;
+        
+        int count = 0;
+        
+        if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
+            return "No video game in database";
+        }
+        
+        for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
+            if(GameLibrary.getVideoGameList().get(i).getId() == id ){ // if found
+                
+                if(GameLibrary.getVideoGameList().get(i).getStatut() == true){
+                    videogame = GameLibrary.getVideoGameList().get(i);
+                    videogame.setStatut(false);
 
-    public String getsubscriptionType() {
-        return subscriptionType;
-    }
+                    borrow = new Borrow(this, videogame);
 
-    public void setsubscriptionType(String newSubscriptionType) {
-        this.subscriptionType = newSubscriptionType;
-    }
+                    GameLibrary.getAllBorrowList().add(borrow);
+                    borrowList.add(borrow);
 
-    public LocalDate getsubscriptionEnd() {
-        return subscriptionEnd;
+                    count++;
+                }else{
+                    count = count + 2;
+                }
+                
+            }
+        }
+        
+        switch (count) {
+            case 1:
+                return "Borrow with successfull";
+            case 2:
+                return "this game is not available";
+            default:
+                // if no found
+                return "No found";
+        }
+        
     }
-
-    public void setsubscriptionEnd(LocalDate newSubscriptionEnd) {
-        this.subscriptionEnd = newSubscriptionEnd;
+    
+    @Override
+    void displayInfos(){
+        System.out.printf("Name : %s ; Firstname: %s ; Id : %s ; date of Subscription : %s%n",getName(), 
+                        getfirstname(), 
+                        getId(),
+                        getSubscriptionBegin()
+        );
     }
-
-    public void borrowToy(){
-    Toy toy = new Toy("materialToy", "nameToy", "manufacturerToy");
-    }
+    
     
 }

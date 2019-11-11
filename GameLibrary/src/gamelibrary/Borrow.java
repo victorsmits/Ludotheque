@@ -10,52 +10,58 @@ import java.time.LocalDate;
  * @author ablo1
  */
 public class Borrow {
+    
+    private Adherent adherent;
+    private Game game;
+    private long id;
+    private LocalDate dateOfborrow;
+    private LocalDate dateOfReturn;
+
+    public Borrow(Adherent adherent, Game game) {
+        this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
+        dateOfborrow = LocalDate.now();
+        dateOfReturn = dateOfborrow.plusMonths(1);;
+        this.adherent = adherent;
+        this.game = game;
+    }
+
+    /*---------------- GETTER ----------------*/
     public Adherent getAdherent() {
         return adherent;
-    }
-
-    public void setAdherent(Adherent adherent) {
-        this.adherent = adherent;
-    }
-
-    public VideoGame getVideoGame() {
-        return videoGame;
-    }
-
-    public void setVideoGame(VideoGame videoGame) {
-        this.videoGame = videoGame;
-    }
-
-    public LocalDate getDateOfborrow() {
-        return dateOfborrow;
-    }
-
-    public void setDateOfborrow(LocalDate dateOfborrow) {
-        this.dateOfborrow = dateOfborrow;
     }
 
     public LocalDate getDateOfReturn() {
         return dateOfReturn;
     }
 
+    public LocalDate getDateOfborrow() {
+        return dateOfborrow;
+    }
+    
+    public long getId() {
+        return id;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public Game getGame() {
+        return game;
+    }
+
+    /*---------------- SETTER ----------------*/
+    public void setAdherent(Adherent adherent) {
+        this.adherent = adherent;
+    }
+
     public void setDateOfReturn(LocalDate dateOfReturn) {
         this.dateOfReturn = dateOfReturn;
     }
-
-    private Adherent adherent;
-    private VideoGame videoGame;
-    private Toy toy;
-    private BoardGame boardGame;
-    private LocalDate dateOfborrow;
-    private LocalDate dateOfReturn;
-
-    public Borrow(LocalDate dateOfborrow, LocalDate dateOfReturn,Adherent adherent, VideoGame videoGame, Toy toy,BoardGame boardGame) {
-        this.dateOfborrow = dateOfborrow;
-        this.dateOfReturn = dateOfReturn;
-        this.adherent = adherent;
-        this.videoGame = videoGame;
-        this.toy = toy;
-        this.boardGame = boardGame;
+    
+    void displayInfos(){
+        System.out.println();
     }
 
+    
 }

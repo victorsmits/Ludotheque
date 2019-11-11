@@ -14,11 +14,13 @@ public class Person {
    private long id;
    private String name;
    private String firstname;
+   private Authentification auth;
     
-   public Person(String name, String firstname) {
+   public Person(String name, String firstname, String username, String password) {
         this.id = this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
         this.name = name;
         this.firstname = firstname;
+        this.auth = new Authentification(username, password);
     }
    
    public long getId() {
@@ -109,6 +111,13 @@ public class Person {
         }else{ // if no found
             return "No found";
         }
+    }
+    
+    void displayInfos(){
+        System.out.printf("Name : %s ; Firstname: %s ; Id : %s%n",getName(), 
+                        getfirstname(), 
+                        getId()
+        );
     }
 
 }

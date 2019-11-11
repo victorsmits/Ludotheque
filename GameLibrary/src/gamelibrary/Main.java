@@ -19,16 +19,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // Create the only one Game library
-        GameLibrary.getInstanceSingleObjectGameLibrary();
+        GameLibrary gamelibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
         
-        //manager fonction
-        Manager man = GameLibrary.getManager();
-        System.out.println(man.getName());
-        man.setName("Oscar");
-        System.out.println(man.getName());
-        //man.addVideoGame();
-        //man.addVideoGame();
-        System.out.println(man.searchVideoGame("fifa 20"));
+        System.out.println("Bienvenue ");
     }
 
 }

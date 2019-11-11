@@ -19,8 +19,8 @@ public final class Manager extends Person {
     private static Manager instance ; // Unique instance
     
     // private constructor for Singleton
-    Manager(String name, String firstname) {
-        super(name, firstname);
+    private Manager(String name, String firstname, String username, String password) {
+        super(name, firstname, username, password);
 
     }
     
@@ -29,7 +29,7 @@ public final class Manager extends Person {
     {
         if ( instance == null )
         {
-            instance = new Manager("Bill", "Jean");
+            instance = new Manager("Bill", "Jean", "moi", "1234");
         }
         return instance ;
     }
@@ -77,9 +77,7 @@ public final class Manager extends Person {
         VideoGame newVideoGame = new VideoGame(gamePlatform, gameName, gameManufacturer);
         
         // Add game
-        //System.out.print(newVideoGame.getName());
         GameLibrary.getVideoGameList().add(newVideoGame);
-        //System.out.print(GameLibrary.getVideoGameList().size());
     }
     public void addBoardGame(){
         
@@ -141,27 +139,25 @@ public final class Manager extends Person {
         GameLibrary.getToyList().add(newToy);
     }
     
-    public void addAdherent(){
-        
-        //set name
-        Scanner name = new Scanner(System.in);
-        String getName;
-        
-        System.out.println("Enter adherent's name"); // Enter username and press Enter
-        getName = name.nextLine();
+    
+    public String getBorrowList(){
+        String result = "";
+        if(!GameLibrary.getAllBorrowList().isEmpty()){ // if database empty
+            
+            for (int i = 0; i < GameLibrary.getAllBorrowList().size(); i++) {
 
-        // set firstname
-        Scanner firstname = new Scanner(System.in);
-        String getFirstname;
+                Borrow borrow = GameLibrary.getAllBorrowList().get(i);
 
-        System.out.println("Enter the manufacturer");  // Enter username and press Enter
-        getFirstname = firstname.nextLine();
-
-        
-        Adherent adherent = new Adherent(getName, getFirstname);
-        
-        // Add adherent
-        GameLibrary.getAdherentList().add(adherent);
+                System.out.println("-----------------------------------------------------------------------------");
+                borrow.getGame().displayInfos();
+                borrow.getAdherent().displayInfos();
+                System.out.println("-----------------------------------------------------------------------------");
+                result = "Found with successfull";
+            }
+        }else{
+            result = "No loan in the database";
+        }
+        return result;
     }
     
 }
