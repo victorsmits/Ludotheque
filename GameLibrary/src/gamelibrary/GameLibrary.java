@@ -5,14 +5,7 @@
  */
 package gamelibrary;
 import java.util.ArrayList;
-import java.util.HashMap; // import the HashMap class
 import java.util.Scanner; // import the Scanner class
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.Map;
 
 /**
  *
@@ -86,11 +79,11 @@ public final class GameLibrary {
     public void createAdherentAccount(){
         
         //set name
-        Scanner name = new Scanner(System.in);
+        Scanner yourname = new Scanner(System.in);
         String getName;
         
         System.out.println("Enter your name"); // Enter username and press Enter
-        getName = name.nextLine();
+        getName = yourname.nextLine();
 
         // set firstname
         Scanner firstname = new Scanner(System.in);

@@ -5,7 +5,6 @@
  */
 package gamelibrary;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -155,6 +154,7 @@ public final class Manager extends Person {
                 result = "Found with successfull";
             }
         }else{
+            System.out.println("No loan in the database");
             result = "No loan in the database";
         }
         return result;

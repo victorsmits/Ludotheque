@@ -14,13 +14,31 @@ public class Person {
    private long id;
    private String name;
    private String firstname;
-   private Authentification auth;
+   private String username;
+   private String password;
     
    public Person(String name, String firstname, String username, String password) {
         this.id = this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
         this.name = name;
         this.firstname = firstname;
-        this.auth = new Authentification(username, password);
+        this.username = username;
+        this.password = password;
+    }
+   
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
    
    public long getId() {
@@ -41,6 +59,11 @@ public class Person {
 
     public void setFirstname(String newFirstname) {
         this.firstname = newFirstname;
+    }
+    
+   @Override
+    public String toString(){
+        return getName() + " " + getfirstname();
     }
     
     /*--------------- Searching ---------------*/
