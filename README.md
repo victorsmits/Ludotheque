@@ -20,7 +20,7 @@ dans la Repository URL.
 3. Run le projet via le point d'entrée Main.java  
   
 Un apercu ci-dessous    
-![Run du projet Logithèque](https://raw.githubusercontent.com/TestDrivenDeveloppement/Ludotheque/master/Ressource/Run_Project.JPG)
+![Run du projet Logithèque](https://raw.githubusercontent.com/TestDrivenDeveloppement/Ludotheque/master/Ressource/Run_Project.jpg)
 
 ### Diagramme de classe  
 ![Diagramme de Classe](https://raw.githubusercontent.com/TestDrivenDeveloppement/Ludotheque/master/Ressource/Class_Diagram.jpg)
