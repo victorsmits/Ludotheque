@@ -6,100 +6,213 @@
 package gamelibrary;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  *
  * @author ablo1
  */
-public class Adherent extends Person implements SubjectAdherent {
+public class Adherent extends Person {
     
-    private String subscriptionType;
+    private ArrayList<Borrow> borrowList;
     private LocalDate subscriptionBegin;
-    private LocalDate subscriptionEnd;
     
-    public Adherent(String name, String firstname){
-        super(name, firstname);
+    /**
+     *
+     * @param name
+     * @param firstname
+     * @param username
+     * @param password
+     */
+    public Adherent(String name, String firstname, String username, String password){
+        super(name, firstname, username, password);
+        borrowList = new ArrayList();
+        subscriptionBegin = LocalDate.now();
     }
     
+    /**
+     *
+     * @return
+     */
     public LocalDate getSubscriptionBegin() {
         return subscriptionBegin;
     }
 
-    public void setSubscriptionBegin(LocalDate newSubscription) {
-        this.subscriptionBegin = newSubscription;
-    }
-
-    public String getsubscriptionType() {
-        return subscriptionType;
-    }
-
-    public void setsubscriptionType(String newSubscriptionType) {
-        this.subscriptionType = newSubscriptionType;
-    }
-
-    public LocalDate getsubscriptionEnd() {
-        return subscriptionEnd;
-    }
-
-    public void setsubscriptionEnd(LocalDate newSubscriptionEnd) {
-        this.subscriptionEnd = newSubscriptionEnd;
-    }
-
-    public void borrowToy(){
-    Toy toy = new Toy("materialToy", "nameToy", "manufacturerToy");
-    }
-
-
-    private List<ObserverManager> observers;
-    private String message;
-    private boolean changed;
-    private final Object MUTEX= new Object();
-
-
-    public Adherent() { this.observers=new ArrayList<ObserverManager>(); }
-
-
-    public void register(ObserverManager obj) {
-        if(obj == null) throw new NullPointerException("Null Observer");
-        synchronized (MUTEX) {
-            if(!observers.contains(obj)) observers.add(obj);
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public String borrowVideoGame(long id){
+        VideoGame videogame;
+        Borrow borrow;
+        
+        int count = 0;
+        
+        if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
+            return "No video game in database";
         }
-    }
+        
+        for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
+            if(GameLibrary.getVideoGameList().get(i).getId() == id ){ // if found
+                
+                if(GameLibrary.getVideoGameList().get(i).getStatut() == true){
+                    videogame = GameLibrary.getVideoGameList().get(i);
+                    videogame.setStatut(false);
 
+                    borrow = new Borrow(this, videogame);
 
-    public void unregister(ObserverManager obj) {
-        synchronized (MUTEX) {
-            observers.remove(obj);
+                    GameLibrary.getAllBorrowList().add(borrow);
+                    borrowList.add(borrow);
+
+                    count = 1;
+                }else{
+                    count = 2;
+                }
+                
+            }
         }
-    }
-
-
-    public void notifyObservers() {
-        List<ObserverManager> observersLocal = null;
-        //synchronization is used to make sure any observer registered after message is received is not notified
-        synchronized (MUTEX) {
-            if (!changed)
-                return;
-            observersLocal = new ArrayList<ObserverManager>(this.observers);
-            this.changed=false;
+        
+        switch (count) {
+            case 1:
+                System.out.println("Please, go pick your borrow");
+                return "Borrow with successfull";
+            case 2:
+                return "this game is not available";
+            default:
+                // if no found
+                return "No found";
         }
-        for (ObserverManager obj : observersLocal) {
-            obj.update();
+        
+    }
+    
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public String borrowBoardGame(long id){
+        BoardGame boardgame;
+        Borrow borrow;
+        
+        int count = 0;
+        
+        if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
+            return "No board game in database";
         }
+        
+        for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
+            if(GameLibrary.getBoardGameList().get(i).getId() == id ){ // if found
+                
+                if(GameLibrary.getBoardGameList().get(i).getStatut() == true){
+                    boardgame = GameLibrary.getBoardGameList().get(i);
+                    boardgame.setStatut(false);
 
-    }
+                    borrow = new Borrow(this, boardgame);
 
-    public Object getUpdate(ObserverManager obj) {
-        return this.message;
-    }
+                    GameLibrary.getAllBorrowList().add(borrow);
+                    borrowList.add(borrow);
 
-    //method to post message to the topic
-    public void postMessage(String msg){
-        System.out.println("Message Posted to Topic:"+msg);
-        this.message=msg;
-        this.changed=true;
-        notifyObservers();
+                    count = 1;
+                }else{
+                    count = 2;
+                }
+                
+            }
+        }
+        
+        switch (count) {
+            case 1:
+                System.out.println("Please, go pick your borrow");
+                return "Borrow with successfull";
+            case 2:
+                return "this game is not available";
+            default:
+                // if no found
+                return "No found";
+        }
+        
     }
+    
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public String borrowToy(long id){
+        Toy toy;
+        Borrow borrow;
+        
+        int count = 0;
+        
+        if(GameLibrary.getToyList().isEmpty()){ // if database empty
+            return "No toy in database";
+        }
+        
+        for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
+            if(GameLibrary.getToyList().get(i).getId() == id ){ // if found
+                
+                if(GameLibrary.getToyList().get(i).getStatut() == true){
+                    toy = GameLibrary.getToyList().get(i);
+                    toy.setStatut(false);
+
+                    borrow = new Borrow(this, toy);
+
+                    GameLibrary.getAllBorrowList().add(borrow);
+                    borrowList.add(borrow);
+
+                    count = 1;
+                }else{
+                    count = 2;
+                }
+                
+            }
+        }
+        
+        switch (count) {
+            case 1:
+                System.out.println("Please, go pick your borrow");
+                return "Borrow with successfull";
+            case 2:
+                return "this toy is not available";
+            default:
+                // if no found
+                return "No found";
+        }
+        
+    }
+    
+    @Override
+    void displayInfos(){
+        System.out.printf("Name : %s ; Firstname: %s ; Id : %s ; date of Subscription : %s%n",getName(), 
+                        getfirstname(), 
+                        getId(),
+                        getSubscriptionBegin()
+        );
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public String getYourBorrowList(){
+        String result = "";
+        if(!borrowList.isEmpty()){ // if database empty
+            
+            for (int i = 0; i < borrowList.size(); i++) {
+
+                Borrow borrow = borrowList.get(i);
+
+                System.out.println("-----------------------------------------------------------------------------");
+                borrow.getGame().displayInfos();
+                System.out.println("-----------------------------------------------------------------------------");
+                result = "Found with successfull";
+            }
+        }else{
+            result = "You no loan a game";
+        }
+        return result;
+    }
+    
+    
 }

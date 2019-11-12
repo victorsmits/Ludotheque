@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package gamelibrary;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,60 +16,51 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Create the only one Game library
-        GameLibrary.getInstanceSingleObjectGameLibrary();
+        Boolean main = true;
         
-        //manager fonction
-        Manager man = GameLibrary.getManager();
-        System.out.println(man.getName());
-        man.setName("Oscar");
-        System.out.println(man.getName());
-        //man.addVideoGame();
-        //man.addVideoGame();
-        System.out.println(man.searchVideoGame("fifa 20"));
+        while(main){
+            // Create the only one Game library
+            GameLibrary gamelibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
 
+            System.out.println("Welcome to " + gamelibrary.getName() + "\n" );
+            System.out.println("\t1. Manager \n"
+                    + "\t2. Adherent \n"
+                    + "\t3. Create an account \n"
+                    + "\t4. EXIT \n");
 
+            //get choose
+            Scanner ch = new Scanner(System.in);
+            String getCh;
 
+            System.out.println("Enter your choose number"); // Enter username and press Enter
+            getCh = ch.nextLine();
+            
+            //Manager menu
+            if(getCh.equals("1")){
+                userFacadeImpl manMenu= new userFacadeImpl();
+                manMenu.userFacadeImpl();
+                manMenu.managerMenu();
+                
+            }
+            
+            //Adherent menu
+            else if(getCh.equals("2")){
 
-
-        //observer
-
-        //create subject
-        Adherent subjectAdherent=new Adherent();
-
-        /* Manager observer */
-        Manager obj1 = GameLibrary.getManager();
-
-        //register observers to the subject
-        subjectAdherent.register(obj1);
-
-        //attach observer to subject
-        obj1.setSubject(subjectAdherent);
-
-        //check if any update is available
-        obj1.update();
-
-        //now send message to subject
-        subjectAdherent.postMessage("I am new Adherent");
-
-
-
-        // Factory
-    CreateGameFactory cf = new CreateGameFactory();
-
-    FactoryGame fg1 = cf.getCreateGame("TOY");
-
-    fg1.CreateGame();
-
-    FactoryGame fg2 = cf.getCreateGame("BoardGame");
-
-    fg2.CreateGame();
-
-    FactoryGame fg3 = cf.getCreateGame("VideoGame");
-
-    fg3.CreateGame();
-
-
+                userFacadeImpl adhMenu= new userFacadeImpl();
+                adhMenu.userFacadeImpl();
+                adhMenu.adherentMenu();
+                
+            }
+            
+            //New account menu
+            else if(getCh.equals("3")){
+                gamelibrary.createAdherentAccount();
+            }
+            
+            //exit
+            else if(getCh.equals("4")){
+                main = false;
+            }
+        }
     }
-
 }

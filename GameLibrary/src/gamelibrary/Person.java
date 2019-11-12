@@ -11,126 +11,196 @@ package gamelibrary;
  */
 public class Person {
     
-   protected long id;
-   protected String name;
-   protected String firstname;
-
-   public Person(String name, String firstname) {
+   private long id;
+   private String name;
+   private String firstname;
+   private String username;
+   private String password;
+    
+    /**
+     *
+     * @param name
+     * @param firstname
+     * @param username
+     * @param password
+     */
+    public Person(String name, String firstname, String username, String password) {
         this.id = this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
         this.name = name;
         this.firstname = firstname;
+        this.username = username;
+        this.password = password;
+    }
+   
+    /**
+     *
+     * @return
+     */
+    public String getUsername() {
+        return username;
     }
 
-    public Person() {
+    /**
+     *
+     * @param username
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     *
+     * @param password
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+   
+    /**
+     *
+     * @return
+     */
     public long getId() {
         return id;
     }
 
-    public void setId(long newId) {
-        this.id = newId;
-    }
-
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param newName
+     */
     public void setName(String newName) {
         this.name = newName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getfirstname() {
         return firstname;
     }
 
+    /**
+     *
+     * @param newFirstname
+     */
     public void setFirstname(String newFirstname) {
         this.firstname = newFirstname;
     }
-
+    
+   @Override
+    public String toString(){
+        return getName() + " " + getfirstname();
+    }
+    
     /*--------------- Searching ---------------*/
+
+    /**
+     *
+     * @param name
+     * @return
+     */
+
     public String searchVideoGame(String name){
         int count = 0;
-        String result = null;
-        if(!GameLibrary.getVideoGameList().isEmpty()){ // if database no empty
-            for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
-                if(GameLibrary.getVideoGameList().get(i).getName().equals(name) ){ // if found
-                    System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Platform : %s%n", GameLibrary.getVideoGameList().get(i).getName(),
-                        GameLibrary.getVideoGameList().get(i).getManufacturer(),
-                        GameLibrary.getVideoGameList().get(i).getId(),
-                        GameLibrary.getVideoGameList().get(i).getStatut(),
-                        GameLibrary.getVideoGameList().get(i).getPlatform());
-
-                    count++;
-                    result = Integer.toString(count) + " result(s) found";
-                }
-                else{ // if no found
-                    result = "No found";
-                }
+        
+        if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
+            return "No video game in database";
+        }
+        
+        for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
+            if(GameLibrary.getVideoGameList().get(i).getName().equals(name) ){ // if found
+                
+                GameLibrary.getVideoGameList().get(i).displayInfos();
+                count++;
+                
             }
-
         }
-
-        else{ // if database empty
-            result = "No video game in database";
+        
+        if(count > 0){
+            return Integer.toString(count) + " result(s) found";
+        }else{ // if no found
+            return "No found";
         }
-        return result;
     }
-
+    
+    /**
+     *
+     * @param name
+     * @return
+     */
     public String searchBoardGame(String name){
         int count = 0;
-        String result = null;
-        if(!GameLibrary.getBoardGameList().isEmpty()){ // if database no empty
-            for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
-                if(GameLibrary.getBoardGameList().get(i).getName().equals(name) ){ // if found
-                    System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Player Number : %s%n", GameLibrary.getBoardGameList().get(i).getName(),
-                        GameLibrary.getBoardGameList().get(i).getManufacturer(),
-                        GameLibrary.getBoardGameList().get(i).getId(),
-                        GameLibrary.getBoardGameList().get(i).getStatut(),
-                        GameLibrary.getBoardGameList().get(i).getPlayerNumber());
-
-                    count++;
-                    result = Integer.toString(count) + " result(s) found";
-                }
-                else{ // if no found
-                    result = "No found";
-                }
+        
+        if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
+            return "No video game in database";
+        }
+        
+        for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
+            if(GameLibrary.getBoardGameList().get(i).getName().equals(name) ){ // if found
+                
+                GameLibrary.getBoardGameList().get(i).displayInfos();
+                count++;
+                
             }
-
         }
-
-        else{ // if database empty
-            result = "No video game in database";
+        
+        if(count > 0){
+            return Integer.toString(count) + " result(s) found";
+        }else{ // if no found
+            return "No found";
         }
-        return result;
     }
-
+    
+    /**
+     *
+     * @param name
+     * @return
+     */
     public String searchToy(String name){
         int count = 0;
-        String result = null;
-        if(!GameLibrary.getToyList().isEmpty()){ // if database no empty
-            for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
-                if(GameLibrary.getToyList().get(i).getName().equals(name) ){ // if found
-                    System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Material : %s%n", GameLibrary.getToyList().get(i).getName(),
-                        GameLibrary.getToyList().get(i).getManufacturer(),
-                        GameLibrary.getToyList().get(i).getId(),
-                        GameLibrary.getToyList().get(i).getStatut(),
-                        GameLibrary.getToyList().get(i).getMaterial());
+        
+        if(GameLibrary.getToyList().isEmpty()){ // if database empty
+            return "No video game in database";
+        }
+        
+        for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
+            if(GameLibrary.getToyList().get(i).getName().equals(name) ){ // if found
 
-                    count++;
-                    result = Integer.toString(count) + " result(s) found";
-                }
-                else{ // if no found
-                    result = "No found";
-                }
+                GameLibrary.getToyList().get(i).displayInfos();
+                count++;
+
             }
-
         }
 
-        else{ // if database empty
-            result = "No video game in database";
+        if(count > 0){
+            return Integer.toString(count) + " result(s) found";
+        }else{ // if no found
+            return "No found";
         }
-        return result;
+    }
+    
+    void displayInfos(){
+        System.out.printf("Name : %s ; Firstname: %s ; Id : %s%n",getName(), 
+                        getfirstname(), 
+                        getId()
+        );
     }
 
 }

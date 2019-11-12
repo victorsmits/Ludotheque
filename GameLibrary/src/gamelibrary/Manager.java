@@ -5,49 +5,53 @@
  */
 package gamelibrary;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
  *
  * @author ablo1
  */
-public final class Manager extends Person implements ObserverManager{
-
-
-
+public final class Manager extends Person {
+    
     //private String login;
     //private String password;
     private static Manager instance ; // Unique instance
     
     // private constructor for Singleton
-    Manager(String name, String firstname) {
-        super(name, firstname);
+    private Manager(String name, String firstname, String username, String password) {
+        super(name, firstname, username, password);
 
     }
     
     // Only one instanciated ==> Singleton
+
+    /**
+     *
+     * @return
+     */
     public synchronized static Manager getInstance ()
     {
         if ( instance == null )
         {
-            instance = new Manager("Bill", "Jean");
+            instance = new Manager("Bill", "Jean", "moi", "1234");
         }
         return instance ;
     }
     
+    /**
+     *
+     * @param newName
+     * @param newFirstname
+     */
     public synchronized static void setInstance (String newName, String newFirstname)
     {
         instance.setName(newName);
         instance.setFirstname(newFirstname);
     }
 
-
-
-
-
-
-
+    /**
+     *
+     */
     public void addVideoGame(){
         
         //Object to JSON in file
@@ -77,17 +81,12 @@ public final class Manager extends Person implements ObserverManager{
 
         System.out.println("Enter the platform");  // Enter username and press Enter
         gamePlatform = platform.nextLine();
-        //newVideoGame.setManufacturer(userPlatform);
-        
-        // create game
-        //game = new Game(userName, userManufacturer);
         
         VideoGame newVideoGame = new VideoGame(gamePlatform, gameName, gameManufacturer);
         
         // Add game
-        //System.out.print(newVideoGame.getName());
         GameLibrary.getVideoGameList().add(newVideoGame);
-        //System.out.print(GameLibrary.getVideoGameList().size());
+        System.out.println("Add with success");
     }
     public void addBoardGame(){
         
@@ -119,7 +118,12 @@ public final class Manager extends Person implements ObserverManager{
    
         // Add game
         GameLibrary.getBoardGameList().add(newBoardGame);
+        System.out.println("Add with success");
     }
+
+    /**
+     *
+     */
     public void addToy(){
         
         //set name
@@ -147,59 +151,31 @@ public final class Manager extends Person implements ObserverManager{
         
         // Add game
         GameLibrary.getToyList().add(newToy);
+        System.out.println("Add with success");
     }
     
-    public void addAdherent(){
-        
-        //set name
-        Scanner name = new Scanner(System.in);
-        String getName;
-        
-        System.out.println("Enter adherent's name"); // Enter username and press Enter
-        getName = name.nextLine();
+    /**
+     *
+     * @return
+     */
+    public String getBorrowList(){
+        String result = "";
+        if(!GameLibrary.getAllBorrowList().isEmpty()){ // if database empty
+            
+            for (int i = 0; i < GameLibrary.getAllBorrowList().size(); i++) {
 
-        // set firstname
-        Scanner firstname = new Scanner(System.in);
-        String getFirstname;
+                Borrow borrow = GameLibrary.getAllBorrowList().get(i);
 
-        System.out.println("Enter the manufacturer");  // Enter username and press Enter
-        getFirstname = firstname.nextLine();
-
-        
-        Adherent adherent = new Adherent(getName, getFirstname);
-        
-        // Add adherent
-        GameLibrary.getAdherentList().add(adherent);
+                System.out.println("-----------------------------------------------------------------------------");
+                borrow.getGame().displayInfos();
+                borrow.getAdherent().displayInfos();
+                System.out.println("-----------------------------------------------------------------------------");
+                result = "Found with successfull";
+            }
+        }else{
+            result = "No loan in the database";
+        }
+        return result;
     }
-
-
-
-
-    private String name;
-    private Adherent adherent;
-
-   // public Manager(String nm){
-    //    this.name=nm;
-   // }
-
-    Manager manager = GameLibrary.getManager();
-
-    public void update() {
-        String msg = (String) adherent.getUpdate(this);
-        if(msg == null){
-            System.out.println(name+":: No new message");
-        }else
-            System.out.println(name+":: Consuming message::"+msg);
-    }
-
-
-    public void setSubject(SubjectAdherent sub) {
-        this.adherent=(Adherent) sub;
-    }
-
-
-
-
-
-
+    
 }

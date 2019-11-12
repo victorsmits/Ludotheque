@@ -9,26 +9,40 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public class BoardGame extends Game implements FactoryGame{
+public class BoardGame extends Game{
     private int playerNumber;
 
+    /**
+     *
+     * @param playerNumber
+     * @param name
+     * @param manufacturer
+     */
     public BoardGame(int playerNumber, String name, String manufacturer) {
         super(name, manufacturer);
         this.playerNumber = playerNumber;
     }
 
-    public BoardGame() {
-        super();
-    }
-
+    /**
+     *
+     * @return
+     */
     public int getPlayerNumber() {
         return playerNumber;
     }
 
+    /**
+     *
+     * @param playerNumber
+     */
     public void setPlayerNumber(int playerNumber) {
         this.playerNumber = playerNumber;
     }
 
+    /**
+     *
+     * @param boardGame
+     */
     public void displayPlayerNumber(BoardGame boardGame){
 
         System.out.println( boardGame.getPlayerNumber());
@@ -43,10 +57,5 @@ public class BoardGame extends Game implements FactoryGame{
                         getStatut(),
                         getPlayerNumber());
     }
-
-    public void CreateGame() {
-        System.out.println("Inside BoardGame::CreateGame method.");
-    }
-
     
 }

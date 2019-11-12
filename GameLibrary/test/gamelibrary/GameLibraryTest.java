@@ -30,7 +30,7 @@ public class GameLibraryTest {
     public static void setUpClass() {
         // init
         gameLibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
-        man = new ManagerMock("Chris", "Jean");//manager simulation
+        man = ManagerMock.getInstance();//manager simulation
     }
     
     @AfterClass
@@ -91,7 +91,7 @@ public class GameLibraryTest {
         
         ArrayList<Toy> expResult = new ArrayList<>(); //expected list result
         expResult.add(new Toy("Bois", "Voiture", "Chine"));
-        expResult.add(new Toy("Caoutchouc", "Lego", "Lego"));
+        expResult.add(new Toy("Caoutchouc", "Lego", "USA"));
         
         ArrayList<Toy> result = GameLibrary.getToyList();
         
@@ -138,8 +138,8 @@ public class GameLibraryTest {
         man.addAdherent();
         
         ArrayList<Adherent> expResult = new ArrayList<>(); //expected list result
-        expResult.add(new Adherent("Nadim", "Julien"));
-        expResult.add(new Adherent("Gui", "Serges"));
+        expResult.add(new Adherent("Nadim", "Julien", "nadim14", "4569"));
+        expResult.add(new Adherent("Gui", "Serges", "charo", "65987"));
         
         ArrayList<Adherent> result = GameLibrary.getAdherentList();
         
@@ -160,7 +160,9 @@ public class GameLibraryTest {
         
         String expNameResult = "Chris";
         String expFirstnameResult = "Jean";
-        String nameResult = man.getName();
+        
+        String nameResult = GameLibrary.getManager().getName();
+        String firstnameResult = GameLibrary.getManager().getfirstname();
         
         assertEquals(expNameResult, nameResult);
     }
@@ -170,10 +172,12 @@ public class GameLibraryTest {
      */
     @Test
     public void testSetManager() {
-        gameLibrary.setManager("Chris", "Jean");
         
         String expNameResult = "Chris";
         String expFirstnameResult = "Jean";
+        
+        gameLibrary.setManager(expNameResult, expFirstnameResult);
+        
         String nameResult = GameLibrary.getManager().getName();
         
         assertEquals("Chris", nameResult);
