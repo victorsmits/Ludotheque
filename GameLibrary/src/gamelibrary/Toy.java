@@ -12,19 +12,37 @@ package gamelibrary;
 public class Toy extends Game{
     private String material;
 
+    /**
+     *
+     * @param material
+     * @param name
+     * @param manufacturer
+     */
     public Toy(String material, String name, String manufacturer) {
         super(name, manufacturer);
         this.material = material;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMaterial() {
         return material;
     }
 
+    /**
+     *
+     * @param material
+     */
     public void setMaterial(String material) {
         this.material = material;
     }
 
+    /**
+     *
+     * @param toy
+     */
     public void displayMaterial(Toy toy){
         System.out.println(toy.getMaterial());
     }

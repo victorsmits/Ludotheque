@@ -30,10 +30,19 @@ public class Adherent extends Person {
         subscriptionBegin = LocalDate.now();
     }
     
+    /**
+     *
+     * @return
+     */
     public LocalDate getSubscriptionBegin() {
         return subscriptionBegin;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public String borrowVideoGame(long id){
         VideoGame videogame;
         Borrow borrow;
@@ -66,6 +75,7 @@ public class Adherent extends Person {
         
         switch (count) {
             case 1:
+                System.out.println("Please, go pick your borrow");
                 return "Borrow with successfull";
             case 2:
                 return "this game is not available";
@@ -76,6 +86,11 @@ public class Adherent extends Person {
         
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     public String borrowBoardGame(long id){
         BoardGame boardgame;
         Borrow borrow;
@@ -108,6 +123,7 @@ public class Adherent extends Person {
         
         switch (count) {
             case 1:
+                System.out.println("Please, go pick your borrow");
                 return "Borrow with successfull";
             case 2:
                 return "this game is not available";
@@ -118,6 +134,11 @@ public class Adherent extends Person {
         
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     public String borrowToy(long id){
         Toy toy;
         Borrow borrow;
@@ -150,6 +171,7 @@ public class Adherent extends Person {
         
         switch (count) {
             case 1:
+                System.out.println("Please, go pick your borrow");
                 return "Borrow with successfull";
             case 2:
                 return "this toy is not available";
@@ -169,6 +191,10 @@ public class Adherent extends Person {
         );
     }
     
+    /**
+     *
+     * @return
+     */
     public String getYourBorrowList(){
         String result = "";
         if(!borrowList.isEmpty()){ // if database empty

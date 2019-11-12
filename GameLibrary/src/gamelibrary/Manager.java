@@ -24,6 +24,11 @@ public final class Manager extends Person {
     }
     
     // Only one instanciated ==> Singleton
+
+    /**
+     *
+     * @return
+     */
     public synchronized static Manager getInstance ()
     {
         if ( instance == null )
@@ -33,12 +38,20 @@ public final class Manager extends Person {
         return instance ;
     }
     
+    /**
+     *
+     * @param newName
+     * @param newFirstname
+     */
     public synchronized static void setInstance (String newName, String newFirstname)
     {
         instance.setName(newName);
         instance.setFirstname(newFirstname);
     }
 
+    /**
+     *
+     */
     public void addVideoGame(){
         
         //Object to JSON in file
@@ -68,15 +81,12 @@ public final class Manager extends Person {
 
         System.out.println("Enter the platform");  // Enter username and press Enter
         gamePlatform = platform.nextLine();
-        //newVideoGame.setManufacturer(userPlatform);
-        
-        // create game
-        //game = new Game(userName, userManufacturer);
         
         VideoGame newVideoGame = new VideoGame(gamePlatform, gameName, gameManufacturer);
         
         // Add game
         GameLibrary.getVideoGameList().add(newVideoGame);
+        System.out.println("Add with success");
     }
     public void addBoardGame(){
         
@@ -108,7 +118,12 @@ public final class Manager extends Person {
    
         // Add game
         GameLibrary.getBoardGameList().add(newBoardGame);
+        System.out.println("Add with success");
     }
+
+    /**
+     *
+     */
     public void addToy(){
         
         //set name
@@ -136,9 +151,13 @@ public final class Manager extends Person {
         
         // Add game
         GameLibrary.getToyList().add(newToy);
+        System.out.println("Add with success");
     }
     
-    
+    /**
+     *
+     * @return
+     */
     public String getBorrowList(){
         String result = "";
         if(!GameLibrary.getAllBorrowList().isEmpty()){ // if database empty
@@ -154,7 +173,6 @@ public final class Manager extends Person {
                 result = "Found with successfull";
             }
         }else{
-            System.out.println("No loan in the database");
             result = "No loan in the database";
         }
         return result;

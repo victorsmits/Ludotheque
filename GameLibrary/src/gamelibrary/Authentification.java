@@ -13,6 +13,10 @@ import java.util.Scanner;
  */
 public class Authentification {
     
+    /**
+     *
+     * @return
+     */
     public Adherent adherentLogin(){
         //put  username
         Scanner user = new Scanner(System.in);
@@ -66,6 +70,10 @@ public class Authentification {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public Manager managerLogin(){
         //put  username
         Scanner user = new Scanner(System.in);
@@ -114,11 +122,19 @@ public class Authentification {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public Manager managerLogout(){
         System.out.println("Logout with successfull");
         return null;
     }
     
+    /**
+     *
+     * @return
+     */
     public Adherent adherentLogout(){
         System.out.println("Logout with successfull");
         return null;

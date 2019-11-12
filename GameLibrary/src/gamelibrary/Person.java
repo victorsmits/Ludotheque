@@ -17,7 +17,14 @@ public class Person {
    private String username;
    private String password;
     
-   public Person(String name, String firstname, String username, String password) {
+    /**
+     *
+     * @param name
+     * @param firstname
+     * @param username
+     * @param password
+     */
+    public Person(String name, String firstname, String username, String password) {
         this.id = this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
         this.name = name;
         this.firstname = firstname;
@@ -25,38 +32,74 @@ public class Person {
         this.password = password;
     }
    
+    /**
+     *
+     * @return
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     *
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
    
-   public long getId() {
+    /**
+     *
+     * @return
+     */
+    public long getId() {
         return id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param newName
+     */
     public void setName(String newName) {
         this.name = newName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getfirstname() {
         return firstname;
     }
 
+    /**
+     *
+     * @param newFirstname
+     */
     public void setFirstname(String newFirstname) {
         this.firstname = newFirstname;
     }
@@ -67,6 +110,13 @@ public class Person {
     }
     
     /*--------------- Searching ---------------*/
+
+    /**
+     *
+     * @param name
+     * @return
+     */
+
     public String searchVideoGame(String name){
         int count = 0;
         
@@ -90,6 +140,11 @@ public class Person {
         }
     }
     
+    /**
+     *
+     * @param name
+     * @return
+     */
     public String searchBoardGame(String name){
         int count = 0;
         
@@ -113,6 +168,11 @@ public class Person {
         }
     }
     
+    /**
+     *
+     * @param name
+     * @return
+     */
     public String searchToy(String name){
         int count = 0;
         

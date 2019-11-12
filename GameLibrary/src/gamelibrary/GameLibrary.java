@@ -36,6 +36,11 @@ public final class GameLibrary {
 
 
     //Get the only object available
+
+    /**
+     *
+     * @return
+     */
     public synchronized static GameLibrary getInstanceSingleObjectGameLibrary(){
        if(instanceSingleObjectGameLibrary== null) {
 
@@ -44,38 +49,74 @@ public final class GameLibrary {
         return instanceSingleObjectGameLibrary;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
     
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Borrow> getAllBorrowList() {
         return allBorrowList;
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<VideoGame> getVideoGameList() {
         return videoGameList;
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Toy> getToyList() {
         return toyList;
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<BoardGame> getBoardGameList() {
         return boardGameList;
     }
 
+    /**
+     *
+     * @return
+     */
     public static ArrayList<Adherent> getAdherentList() {
         return adherentList;
     }
         
+    /**
+     *
+     * @return
+     */
     public static Manager getManager() {
         return manager;
     }
 
+    /**
+     *
+     * @param r
+     * @param f
+     */
     public  void setManager(String r, String f) {
         Manager.setInstance(r, f);
     }
         
+    /**
+     *
+     */
     public void createAdherentAccount(){
         
         //set name
@@ -113,25 +154,5 @@ public final class GameLibrary {
         getAdherentList().add(adherent);
         
         System.out.println("Account create with successful");
-    }
-    
-    /*public void init() throws JsonProcessingException{
-        try (FileReader reader = new FileReader("D:\\Ablo_Doss\\Ecole\\4eme_5eme\\Q1\\Architecture_logicielle\\Test driven développement\\Ludotheque\\GameLibrary\\src\\gamelibrary\\Games.json"))
-        {
-            //Read JSON file
-            gamesJson = mapper.readValue(reader, ArrayList.class);
-            //System.out.println(gamesJson.get(0).get("videoGame"));
-            this.videoGameList = gamesJson.get(0).get("videoGame");
-            this.boardGameList = gamesJson.get(1).get("videoGame");
-            this.toyList = gamesJson.get(2).get("videoGame");
-            
-        }catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-   
-    
-   
+    }       
 }

@@ -17,6 +17,11 @@ public class Borrow {
     private LocalDate dateOfborrow;
     private LocalDate dateOfReturn;
 
+    /**
+     *
+     * @param adherent
+     * @param game
+     */
     public Borrow(Adherent adherent, Game game) {
         this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
         dateOfborrow = LocalDate.now();
@@ -26,18 +31,36 @@ public class Borrow {
     }
 
     /*---------------- GETTER ----------------*/
+
+    /**
+     *
+     * @return
+     */
+
     public Adherent getAdherent() {
         return adherent;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getDateOfReturn() {
         return dateOfReturn;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getDateOfborrow() {
         return dateOfborrow;
     }
     
+    /**
+     *
+     * @return
+     */
     public long getId() {
         return id;
     }
@@ -51,10 +74,20 @@ public class Borrow {
     }
 
     /*---------------- SETTER ----------------*/
+
+    /**
+     *
+     * @param adherent
+     */
+
     public void setAdherent(Adherent adherent) {
         this.adherent = adherent;
     }
 
+    /**
+     *
+     * @param dateOfReturn
+     */
     public void setDateOfReturn(LocalDate dateOfReturn) {
         this.dateOfReturn = dateOfReturn;
     }
