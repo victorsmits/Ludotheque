@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: gamelibrary.GameLibraryTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! - in gamelibrary.GameLibraryTest
+testGetToyList(gamelibrary.GameLibraryTest)  Time elapsed: 0.011 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<4>
+	at gamelibrary.GameLibraryTest.testGetToyList(GameLibraryTest.java:98)
+
+testGetBoardGameList(gamelibrary.GameLibraryTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<4>
+	at gamelibrary.GameLibraryTest.testGetBoardGameList(GameLibraryTest.java:122)
+
+testGetVideoGameList(gamelibrary.GameLibraryTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<4>
+	at gamelibrary.GameLibraryTest.testGetVideoGameList(GameLibraryTest.java:74)
+

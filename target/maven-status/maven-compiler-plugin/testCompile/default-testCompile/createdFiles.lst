@@ -1,0 +1,11 @@
+gamelibrary/PersonTest.class
+gamelibrary/BorrowTest.class
+gamelibrary/GameLibraryTest.class
+gamelibrary/AuthentificationTest.class
+Mock/GameLibraryMock.class
+Mock/ManagerMock.class
+gamelibrary/ToyTest.class
+gamelibrary/ManagerTest.class
+gamelibrary/AdherentTest.class
+gamelibrary/BoardGameTest.class
+gamelibrary/VideoGameTest.class
