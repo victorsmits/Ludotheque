@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: gamelibrary.GameLibraryTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! - in gamelibrary.GameLibraryTest
-testGetToyList(gamelibrary.GameLibraryTest)  Time elapsed: 0.011 s  <<< FAILURE!
+Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.01 s <<< FAILURE! - in gamelibrary.GameLibraryTest
+testGetToyList(gamelibrary.GameLibraryTest)  Time elapsed: 0.008 s  <<< FAILURE!
 java.lang.AssertionError: expected:<2> but was:<4>
 	at gamelibrary.GameLibraryTest.testGetToyList(GameLibraryTest.java:98)
 
