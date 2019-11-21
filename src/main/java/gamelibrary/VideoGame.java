@@ -24,7 +24,6 @@ public class VideoGame extends Game {
     }
 
     /**
-     *
      * @return
      */
     public String getPlatform() {
@@ -32,7 +31,6 @@ public class VideoGame extends Game {
     }
 
     /**
-     *
      * @param platform
      */
     public void setPlatform(String platform) {
@@ -40,7 +38,6 @@ public class VideoGame extends Game {
     }
     
     /**
-     *
      * @param videoGame
      */
     public void displayPlateform(VideoGame videoGame){

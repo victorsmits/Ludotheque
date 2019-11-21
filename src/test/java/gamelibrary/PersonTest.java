@@ -49,33 +49,6 @@ public class PersonTest {
     }
 
     /**
-     * Test of getId method, of class Person.
-     */
-    /*@Test
-    public void testGetId() {
-        System.out.println("getId");
-        Person instance = null;
-        long expResult = 0L;
-        long result = instance.getId();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-
-    /**
-     * Test of setId method, of class Person.
-     */
-    /*@Test
-    public void testSetId() {
-        System.out.println("setId");
-        long newId = 0L;
-        Person instance = null;
-        instance.setId(newId);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-
-    /**
      * Test of getName method, of class Person.
      */
     @Test
@@ -128,7 +101,7 @@ public class PersonTest {
         man.addVideoGame();
         
         String expResult = "1 result(s) found";
-        assertEquals(expResult, person.searchVideoGame("FIFA 20"));
+        assertEquals(expResult, person.searchGame("Video Game","FIFA 20"));
     }
 
     /**
@@ -137,9 +110,9 @@ public class PersonTest {
     @Test
     public void testSearchBoardGame() {
         man.addBoardGame();
-        
+
         String expResult = "1 result(s) found";
-        assertEquals(expResult, person.searchBoardGame("Monopoly"));
+        assertEquals(expResult, person.searchGame("Board Game","Monopoly"));
     }
 
     /**
@@ -148,9 +121,9 @@ public class PersonTest {
     @Test
     public void testSearchToy() {
         man.addToy();
-        
+
         String expResult = "1 result(s) found";
-        assertEquals(expResult, person.searchToy("Lego"));
+        assertEquals(expResult, person.searchGame("Toy","Lego"));
     }
     
 }

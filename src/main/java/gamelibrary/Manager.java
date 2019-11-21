@@ -101,7 +101,7 @@ public final class Manager extends Person {
             try{
                 nOfPlayers = Integer.parseInt(specificParam);
             }
-            catch(NumberFormatException){
+            catch(NumberFormatException e){
                 nOfPlayers = -1;
                 //TODO : catch non integer fault in input => redo input ?
             }

@@ -19,7 +19,6 @@ public class Person {
    private String firstname;
    private String username;
    private String password;
-   private int count;
 
   /**
    *
@@ -123,10 +122,11 @@ public class Person {
 
 
   public String searchGame(String type, String name){
-    this.count = 0;
+    int count = 0;
     ArrayList<Game> game;
+
     switch (type){
-      case "Vide Game":
+      case "Video Game":
         game = GameLibrary.getVideoGameList();
         break;
 
@@ -137,6 +137,7 @@ public class Person {
       case "Board Game":
         game = GameLibrary.getBoardGameList();
         break;
+
       default:
         throw new IllegalStateException("Unexpected value: " + type);
     }
@@ -148,7 +149,7 @@ public class Person {
     for (Game selGame : game) {
       if(selGame.getName().equals(name) ){
         selGame.displayInfos();
-        this.count++;
+        count++;
       }
     }
 

@@ -13,16 +13,13 @@ import java.util.Scanner; // import the Scanner class
  */
 public final class GameLibrary {
 
-    //create an object of SingleObject
-    //public ObjectMapper mapper = new ObjectMapper();
     private String name;
     private static Manager manager = Manager.getInstance();;
-    private static ArrayList<Borrow> allBorrowList = new ArrayList();
+    private static ArrayList<Borrow> allBorrowList = new ArrayList<>();
     private static ArrayList<Game> videoGameList;
     private static ArrayList<Game> toyList;
     private static ArrayList<Game> boardGameList;
     private static ArrayList<Adherent> adherentList;
-    //private ArrayList<Map<String, ArrayList<Game>>> gamesJson;
     private static GameLibrary instanceSingleObjectGameLibrary;
 
     //make the constructor private so that this class cannot be instantiated twice
@@ -34,11 +31,7 @@ public final class GameLibrary {
         adherentList = new ArrayList<>();
     }
 
-
-    //Get the only object available
-
     /**
-     *
      * @return
      */
     public synchronized static GameLibrary getInstanceSingleObjectGameLibrary(){
@@ -50,7 +43,6 @@ public final class GameLibrary {
     }
     
     /**
-     *
      * @return
      */
     public String getName() {
@@ -58,7 +50,6 @@ public final class GameLibrary {
     }
     
     /**
-     *
      * @return
      */
     public static ArrayList<Borrow> getAllBorrowList() {
@@ -66,7 +57,6 @@ public final class GameLibrary {
     }
 
     /**
-     *
      * @return
      */
     public static ArrayList<Game> getVideoGameList() {
@@ -74,7 +64,6 @@ public final class GameLibrary {
     }
 
     /**
-     *
      * @return
      */
     public static ArrayList<Game> getToyList() {
@@ -82,7 +71,6 @@ public final class GameLibrary {
     }
 
     /**
-     *
      * @return
      */
     public static ArrayList<Game> getBoardGameList() {
@@ -90,7 +78,6 @@ public final class GameLibrary {
     }
 
     /**
-     *
      * @return
      */
     public static ArrayList<Adherent> getAdherentList() {
@@ -98,7 +85,6 @@ public final class GameLibrary {
     }
         
     /**
-     *
      * @return
      */
     public static Manager getManager() {

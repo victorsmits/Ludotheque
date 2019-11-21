@@ -52,12 +52,12 @@ public class Adherent extends Person {
             return "No video game in database";
         }
 
-        for (int i = 0; i < database.size(); i++) {
+        for (Game value : database) {
             //Check if game exist
-            if(database.get(i).getId() == id ){
+            if (value.getId() == id) {
                 //Check the game status
-                if(database.get(i).getStatut()){
-                    game = database.get(i);
+                if (value.getStatut()) {
+                    game = value;
                     game.setStatut(false);
 
                     borrow = new Borrow(this, game);
@@ -67,23 +67,21 @@ public class Adherent extends Person {
 
                     count = 1;
                     break;
-                }
-                else{
+                } else {
                     count = 2;
                 }
 
             }
-
+        }
         switch (count) {
             case 1:
                 str = "You can pick up your " + gameType + ".";
             case 2:
-                str = "This " + gameType +  " is not available.";
+                str = "This " + gameType + " is not available.";
             default:
-                str = "This " + gameType +  " was not found.";
+                str = "This " + gameType + " was not found.";
         }
         return str;
-    }
     }
 
     

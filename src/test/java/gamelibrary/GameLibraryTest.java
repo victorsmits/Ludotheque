@@ -15,7 +15,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
  * @author ablo1
  */
 public class GameLibraryTest {
@@ -39,7 +38,6 @@ public class GameLibraryTest {
     @AfterClass
     public static void tearDownClass() {
         // Clear all List
-
     }
     
     @Before
@@ -50,89 +48,71 @@ public class GameLibraryTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getName method, of class GameLibrary.
-     */
     @Test
     public void testGetName() {
         assertEquals("ECAM Game Library", gameLibrary.getName());
     }
 
-    /**
-     * Test of getVideoGameList method, of class GameLibrary.
-     */
     @Test
     public void testGetVideoGameList() {
         man.addVideoGame();
         
-        ArrayList<VideoGame> expResult = new ArrayList<>(); //expected list result
+        ArrayList<VideoGame> expResult = new ArrayList<>();
         expResult.add(new VideoGame("PS4", "PES 19", "Sony"));
         expResult.add(new VideoGame("XboxOne", "FIFA 20", "Microsoft"));
         
-        ArrayList<VideoGame> result = GameLibrary.getVideoGameList();
+        ArrayList<Game> result = GameLibrary.getVideoGameList();
         
-        assertEquals(expResult.size(), result.size()); // siwe test
+        assertEquals(expResult.size(), result.size());
         
-        for (int i = 0; i < result.size(); i++) { // attribut test
-            
+        for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
             assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
-            assertEquals(expResult.get(i).getPlatform(), result.get(i).getPlatform());
+//            assertEquals(expResult.get(i).getPlatform(), result.get(i).getPlatform());
         }
     }
 
-    /**
-     * Test of getToyList method, of class GameLibrary.
-     */
     @Test
     public void testGetToyList() {
         man.addToy();
         
-        ArrayList<Toy> expResult = new ArrayList<>(); //expected list result
+        ArrayList<Toy> expResult = new ArrayList<>();
         expResult.add(new Toy("Bois", "Voiture", "Chine"));
         expResult.add(new Toy("Caoutchouc", "Lego", "USA"));
         
-        ArrayList<Toy> result = GameLibrary.getToyList();
+        ArrayList<Game> result = GameLibrary.getToyList();
         
-        assertEquals(expResult.size(), result.size()); // siwe test
+        assertEquals(expResult.size(), result.size());
         
-        for (int i = 0; i < result.size(); i++) { // attribut test
-            
+        for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
             assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
-            assertEquals(expResult.get(i).getMaterial(), result.get(i).getMaterial());
+//            assertEquals(expResult.get(i).getMaterial(), result.get(i).getMaterial());
         }
     }
 
-    /**
-     * Test of getBoardGameList method, of class GameLibrary.
-     */
     @Test
     public void testGetBoardGameList() {
         man.addBoardGame();
         
-        ArrayList<BoardGame> expResult = new ArrayList<>(); //expected list result
+        ArrayList<BoardGame> expResult = new ArrayList<>();
         expResult.add(new BoardGame(2, "échec", "Sony"));
         expResult.add(new BoardGame(2, "Monopoly", "Microsoft"));
         
-        ArrayList<BoardGame> result = GameLibrary.getBoardGameList();
+        ArrayList<Game> result = GameLibrary.getBoardGameList();
         
-        assertEquals(expResult.size(), result.size()); // siwe test
+        assertEquals(expResult.size(), result.size());
         
-        for (int i = 0; i < result.size(); i++) { // attribut test
-            
+        for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
             assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
-            assertEquals(expResult.get(i).getPlayerNumber(), result.get(i).getPlayerNumber());
+//            assertEquals(expResult.get(i).getPlayerNumber(), result.get(i).getPlayerNumber());
         }
     }
 
-    /**
-     * Test of getAdherent method, of class GameLibrary.
-     */
     @Test
     public void testGetAdherent() {
         man.addAdherent();
@@ -152,9 +132,6 @@ public class GameLibraryTest {
         }
     }
 
-    /**
-     * Test of getManager method, of class GameLibrary.
-     */
     @Test
     public void testGetManager() {        
         
@@ -167,9 +144,6 @@ public class GameLibraryTest {
         assertEquals(expNameResult, nameResult);
     }
 
-    /**
-     * Test of setManager method, of class GameLibrary.
-     */
     @Test
     public void testSetManager() {
         
