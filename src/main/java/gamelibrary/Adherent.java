@@ -85,6 +85,7 @@ public class Adherent extends Person {
                     borrowList.add(borrow);
 
                     count = 1;
+                    break;
                 }
                 else{
                     count = 2;
@@ -125,6 +126,7 @@ public class Adherent extends Person {
                     borrowList.add(borrow);
 
                     count = 1;
+                    break;
                 }
                 else{
                     count = 2;
@@ -165,6 +167,7 @@ public class Adherent extends Person {
                     borrowList.add(borrow);
 
                     count = 1;
+                    break;
                 }
                 else{
                     count = 2;
@@ -192,16 +195,17 @@ public class Adherent extends Person {
         String result = "";
         if(!borrowList.isEmpty()){ // if database empty
             
-            for (int i = 0; i < borrowList.size(); i++) {
+            for(int i = 0; i < borrowList.size(); i++) {
 
                 Borrow borrow = borrowList.get(i);
 
                 System.out.println("-----------------------------------------------------------------------------");
                 borrow.getGame().displayInfos();
                 System.out.println("-----------------------------------------------------------------------------");
-                result = "Found with successfull";
             }
-        }else{
+            result = "Found with success";
+        }
+        else{
             result = "You no loan a game";
         }
         return result;
