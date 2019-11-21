@@ -69,21 +69,9 @@ public class AdherentTest {
         
         GameLibrary.getVideoGameList().add(new VideoGame("PS4", "PES 19", "Sony"));
         
-        String expResult2 = "No found";
+        String expResult2 = "This video game was not found.";
         String result2 = adh.borrowVideoGame(id);
         assertEquals(expResult2, result2);
     }
-
-    /**
-     * Test of displayInfos method, of class Adherent.
-     */
-    /*@Test
-    public void testDisplayInfos() {
-        System.out.println("displayInfos");
-        Adherent instance = null;
-        instance.displayInfos();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
     
 }
