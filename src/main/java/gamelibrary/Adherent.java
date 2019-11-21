@@ -20,12 +20,12 @@ public class Adherent extends Person {
     /**
      *
      * @param name
-     * @param firstname
+     * @param firstName
      * @param username
      * @param password
      */
-    public Adherent(String name, String firstname, String username, String password){
-        super(name, firstname, username, password);
+    public Adherent(String name, String firstName, String username, String password){
+        super(name, firstName, username, password);
         borrowList = new ArrayList();
         subscriptionBegin = LocalDate.now();
     }
@@ -40,50 +40,60 @@ public class Adherent extends Person {
 
     /**
      *
+     * @return
+     */
+    private String IsAvailable(int count, String gameType){
+        String str;
+        switch (count) {
+            case 1:
+                str = "You can pick up your " + gameType + ".";
+            case 2:
+                str = "This " + gameType +  " is not available.";
+            default:
+                str = "This " + gameType +  " was not found.";
+        }
+        return str;
+    }
+
+    /**
+     *
      * @param id
      * @return
      */
     public String borrowVideoGame(long id){
-        VideoGame videogame;
+        VideoGame videoGame;
         Borrow borrow;
         
         int count = 0;
-        
-        if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
+
+        //Check Video Game DB
+        if(GameLibrary.getVideoGameList().isEmpty()){
             return "No video game in database";
         }
         
         for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
-            if(GameLibrary.getVideoGameList().get(i).getId() == id ){ // if found
-                
+            //Check if video game exist
+            if(GameLibrary.getVideoGameList().get(i).getId() == id ){
+                //Check the video game status
                 if(GameLibrary.getVideoGameList().get(i).getStatut()){
-                    videogame = GameLibrary.getVideoGameList().get(i);
-                    videogame.setStatut(false);
+                    videoGame = GameLibrary.getVideoGameList().get(i);
+                    videoGame.setStatut(false);
 
-                    borrow = new Borrow(this, videogame);
+                    borrow = new Borrow(this, videoGame);
 
                     GameLibrary.getAllBorrowList().add(borrow);
                     borrowList.add(borrow);
 
                     count = 1;
-                }else{
+                    break;
+                }
+                else{
                     count = 2;
                 }
                 
             }
         }
-        
-        switch (count) {
-            case 1:
-                System.out.println("Please, go pick your borrow");
-                return "Borrow with successfull";
-            case 2:
-                return "this game is not available";
-            default:
-                // if no found
-                return "No found";
-        }
-        
+        return IsAvailable(count, "video game");
     }
     
     /**
@@ -92,46 +102,39 @@ public class Adherent extends Person {
      * @return
      */
     public String borrowBoardGame(long id){
-        BoardGame boardgame;
+        BoardGame boardGame;
         Borrow borrow;
         
         int count = 0;
-        
-        if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
+
+        //Check Board Game DB
+        if(GameLibrary.getBoardGameList().isEmpty()){
             return "No board game in database";
         }
         
         for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
-            if(GameLibrary.getBoardGameList().get(i).getId() == id ){ // if found
-                
-                if(GameLibrary.getBoardGameList().get(i).getStatut() == true){
-                    boardgame = GameLibrary.getBoardGameList().get(i);
-                    boardgame.setStatut(false);
+            //Check if board game exist
+            if(GameLibrary.getBoardGameList().get(i).getId() == id ){
+                //Check the board game status
+                if(GameLibrary.getBoardGameList().get(i).getStatut()){
+                    boardGame = GameLibrary.getBoardGameList().get(i);
+                    boardGame.setStatut(false);
 
-                    borrow = new Borrow(this, boardgame);
+                    borrow = new Borrow(this, boardGame);
 
                     GameLibrary.getAllBorrowList().add(borrow);
                     borrowList.add(borrow);
 
                     count = 1;
-                }else{
+                    break;
+                }
+                else{
                     count = 2;
                 }
                 
             }
         }
-        
-        switch (count) {
-            case 1:
-                System.out.println("Please, go pick your borrow");
-                return "Borrow with successfull";
-            case 2:
-                return "this game is not available";
-            default:
-                // if no found
-                return "No found";
-        }
-        
+        return IsAvailable(count, "board game");
     }
     
     /**
@@ -144,15 +147,17 @@ public class Adherent extends Person {
         Borrow borrow;
         
         int count = 0;
-        
-        if(GameLibrary.getToyList().isEmpty()){ // if database empty
+
+        //Check Toy DB
+        if(GameLibrary.getToyList().isEmpty()){
             return "No toy in database";
         }
         
         for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
-            if(GameLibrary.getToyList().get(i).getId() == id ){ // if found
-                
-                if(GameLibrary.getToyList().get(i).getStatut() == true){
+            //Check if toy exist
+            if(GameLibrary.getToyList().get(i).getId() == id ){
+                //Check the toy status
+                if(GameLibrary.getToyList().get(i).getStatut()){
                     toy = GameLibrary.getToyList().get(i);
                     toy.setStatut(false);
 
@@ -162,29 +167,20 @@ public class Adherent extends Person {
                     borrowList.add(borrow);
 
                     count = 1;
-                }else{
+                    break;
+                }
+                else{
                     count = 2;
                 }
                 
             }
         }
-        
-        switch (count) {
-            case 1:
-                System.out.println("Please, go pick your borrow");
-                return "Borrow with successfull";
-            case 2:
-                return "this toy is not available";
-            default:
-                // if no found
-                return "No found";
-        }
-        
+        return IsAvailable(count, "toy");
     }
     
     @Override
     void displayInfos(){
-        System.out.printf("Name : %s ; Firstname: %s ; Id : %s ; date of Subscription : %s%n",getName(), 
+        System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",getName(),
                         getfirstname(), 
                         getId(),
                         getSubscriptionBegin()
@@ -193,25 +189,22 @@ public class Adherent extends Person {
     
     /**
      *
-     * @return
      */
-    public String getYourBorrowList(){
-        String result = "";
-        if(!borrowList.isEmpty()){ // if database empty
+    public void getYourBorrowList(){
+        if(!borrowList.isEmpty()){ // if database not empty
             
-            for (int i = 0; i < borrowList.size(); i++) {
+            for(int i = 0; i < borrowList.size(); i++) {
 
                 Borrow borrow = borrowList.get(i);
 
                 System.out.println("-----------------------------------------------------------------------------");
                 borrow.getGame().displayInfos();
                 System.out.println("-----------------------------------------------------------------------------");
-                result = "Found with successfull";
             }
-        }else{
-            result = "You no loan a game";
         }
-        return result;
+        else{
+            System.out.println("You have no game in loan");
+        }
     }
     
     
