@@ -16,5 +16,5 @@ public interface GameFactoryIF {
      * @param type
      * @return
      */
-    Game createGame(String type);
+    Game createGame(String type, String specificParam, String name, String manufacturer, int nOfPlayers);
 }

@@ -32,7 +32,7 @@ public class Main {
             Scanner ch = new Scanner(System.in);
             String getCh;
 
-            System.out.println("Enter your choose number"); // Enter username and press Enter
+            System.out.println("Choose an option (enter the number)"); // Enter username and press Enter
             getCh = ch.nextLine();
             
             //Manager menu
