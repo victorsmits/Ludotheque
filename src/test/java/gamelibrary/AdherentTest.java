@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class AdherentTest {
     private static Adherent adh;
     private static GameLibrary gamelibrary;
-    
+
     public AdherentTest() {
     }
     
@@ -28,6 +28,9 @@ public class AdherentTest {
     public static void setUpClass() {
         adh = new Adherent("Nadim", "Julien", "nadim14", "4569");
         gamelibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
+        GameLibrary.getVideoGameList().clear();
+        GameLibrary.getBoardGameList().clear();
+        GameLibrary.getToyList().clear();
     }
     
     @AfterClass
