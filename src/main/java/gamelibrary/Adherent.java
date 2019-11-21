@@ -56,7 +56,7 @@ public class Adherent extends Person {
         for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
             if(GameLibrary.getVideoGameList().get(i).getId() == id ){ // if found
                 
-                if(GameLibrary.getVideoGameList().get(i).getStatut() == true){
+                if(GameLibrary.getVideoGameList().get(i).getStatut()){
                     videogame = GameLibrary.getVideoGameList().get(i);
                     videogame.setStatut(false);
 
