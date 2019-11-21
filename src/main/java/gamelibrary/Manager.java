@@ -56,15 +56,13 @@ public final class Manager extends Person {
         
         //Object to JSON in file
         //mapper.writeValue(this.videoGameList, newVideoGame);
-        
-        
+      
         //set name
         Scanner nameGame = new Scanner(System.in);
         String gameName;
         
         System.out.println("Enter the video game's name");
         gameName = nameGame.nextLine();
-        //newVideoGame.setName(userName);
 
         
         // set manufacturer
@@ -73,7 +71,6 @@ public final class Manager extends Person {
 
         System.out.println("Enter the manufacturer");
         gameManufacturer = manufacturer.nextLine();
-        //newVideoGame.setManufacturer(userManufacturer);
         
         // set Platform
         Scanner platform = new Scanner(System.in);
