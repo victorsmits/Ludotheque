@@ -47,7 +47,7 @@ public class AdherentTest {
      */
     @Test
     public void testGetSubscriptionBegin() {
-        LocalDate expResult = LocalDate.now();;
+        LocalDate expResult = LocalDate.now();
         LocalDate result = adh.getSubscriptionBegin();
         
         assertEquals(expResult, result);
