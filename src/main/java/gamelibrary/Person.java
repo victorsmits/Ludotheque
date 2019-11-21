@@ -5,6 +5,9 @@
  */
 package gamelibrary;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  *
  * @author ablo1
@@ -118,59 +121,42 @@ public class Person {
    * @return String
    */
 
-  public String searchVideoGame(String name){
+
+  public String searchGame(String type, String name){
     this.count = 0;
+    ArrayList<Game> game;
+    switch (type){
+      case "Vide Game":
+        game = GameLibrary.getVideoGameList();
+        break;
 
-    if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
-        return "No video game in database";
+      case "Toy":
+        game = GameLibrary.getToyList();
+        break;
+
+      case "Board Game":
+        game = GameLibrary.getBoardGameList();
+        break;
+      default:
+        throw new IllegalStateException("Unexpected value: " + type);
     }
 
-    for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
-      VideoGame videoGame = GameLibrary.getVideoGameList().get(i);
-      this.displayGameInfo(videoGame, name);
+    if(game.isEmpty()){ // if database empty
+      return "No video game in database";
     }
 
-    return displayGamesFound();
-  }
-
-  /**
-   *
-   * @param name
-   * @return
-   */
-  public String searchBoardGame(String name){
-    this.count = 0;
-
-    if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
-        return "No video game in database";
+    for (Game selGame : game) {
+      if(selGame.getName().equals(name) ){
+        selGame.displayInfos();
+        this.count++;
+      }
     }
 
-    for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
-      BoardGame boardGame = GameLibrary.getBoardGameList().get(i);
-      this.displayGameInfo(boardGame, name);
+    if(count > 0){
+      return Integer.toString(count) + " result(s) found";
+    }else{
+      return "No found";
     }
-
-    return displayGamesFound();
-  }
-
-  /**
-   *
-   * @param name
-   * @return
-   */
-  public String searchToy(String name){
-    this.count = 0;
-
-    if(GameLibrary.getToyList().isEmpty()){ // if database empty
-        return "No video game in database";
-    }
-
-    for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
-      Toy toyGame = GameLibrary.getToyList().get(i);
-      this.displayGameInfo(toyGame,name);
-    }
-
-    return displayGamesFound();
   }
 
   void displayInfos(){
@@ -180,18 +166,4 @@ public class Person {
       );
   }
 
-  private void displayGameInfo(Game game, String gameName){
-    if(game.getName().equals(gameName) ){
-      game.displayInfos();
-      this.count++;
-    }
-  }
-
-  private String displayGamesFound(){
-    if(count > 0){
-      return Integer.toString(count) + " result(s) found";
-    }else{
-      return "No found";
-    }
-  }
 }

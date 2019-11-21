@@ -18,9 +18,9 @@ public final class GameLibrary {
     private String name;
     private static Manager manager = Manager.getInstance();;
     private static ArrayList<Borrow> allBorrowList = new ArrayList();
-    private static ArrayList<VideoGame> videoGameList;
-    private static ArrayList<Toy> toyList;
-    private static ArrayList<BoardGame> boardGameList;
+    private static ArrayList<Game> videoGameList;
+    private static ArrayList<Game> toyList;
+    private static ArrayList<Game> boardGameList;
     private static ArrayList<Adherent> adherentList;
     //private ArrayList<Map<String, ArrayList<Game>>> gamesJson;
     private static GameLibrary instanceSingleObjectGameLibrary;
@@ -28,10 +28,10 @@ public final class GameLibrary {
     //make the constructor private so that this class cannot be instantiated twice
     private GameLibrary(String name) {
         this.name = name;
-        videoGameList = new ArrayList();
-        toyList = new ArrayList();
-        boardGameList = new ArrayList();
-        adherentList = new ArrayList();
+        videoGameList = new ArrayList<>();
+        toyList = new ArrayList<>();
+        boardGameList = new ArrayList<>();
+        adherentList = new ArrayList<>();
     }
 
 
@@ -69,7 +69,7 @@ public final class GameLibrary {
      *
      * @return
      */
-    public static ArrayList<VideoGame> getVideoGameList() {
+    public static ArrayList<Game> getVideoGameList() {
         return videoGameList;
     }
 
@@ -77,7 +77,7 @@ public final class GameLibrary {
      *
      * @return
      */
-    public static ArrayList<Toy> getToyList() {
+    public static ArrayList<Game> getToyList() {
         return toyList;
     }
 
@@ -85,7 +85,7 @@ public final class GameLibrary {
      *
      * @return
      */
-    public static ArrayList<BoardGame> getBoardGameList() {
+    public static ArrayList<Game> getBoardGameList() {
         return boardGameList;
     }
 
