@@ -1,20 +1,20 @@
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\GameFactoryIF.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\GameLibrary.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\ObserverManager.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Game.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\userFacadeImpl.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Borrow.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Main.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Adherent.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\userFacade.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\VideoGame.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\AdherentFacade.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Manager.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\SubjectAdherent.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\FactoryGame.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Person.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Toy.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\BoardGame.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\Authentification.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\CreateGameFactory.java
-D:\Bureau\ECAM\MA1\Architecture et qualite logicielle\Ludotheque\src\main\java\gamelibrary\GameFactory.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Main.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/VideoGame.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Game.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/ObserverManager.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/GameLibrary.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/AdherentFacade.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/userFacade.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/CreateGameFactory.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Toy.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Person.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Manager.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/userFacadeImpl.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Borrow.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Adherent.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/GameFactory.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/BoardGame.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/FactoryGame.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Authentification.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/SubjectAdherent.java
+/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/GameFactoryIF.java

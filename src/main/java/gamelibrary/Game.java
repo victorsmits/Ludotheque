@@ -15,7 +15,7 @@ abstract class Game {
     private long id;
     private String manufacturer;
     private boolean statut;
-    
+
     public Game(String name, String manufacturer) {
       this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
       this.name = name;
@@ -54,15 +54,15 @@ abstract class Game {
     public void setManufacturer(String newManufacturer) {
         this.manufacturer = newManufacturer;
     }
-    
+
     void displayName(){
         System.out.println(getName());
     }
-    
+
     void displayStatus(){
         System.out.println(getStatut());
     }
-    
+
     abstract void displayInfos();
-    
+
 }
