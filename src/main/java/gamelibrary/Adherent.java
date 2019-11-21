@@ -48,14 +48,16 @@ public class Adherent extends Person {
         Borrow borrow;
         
         int count = 0;
-        
-        if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
+
+        //Check Video Game DB
+        if(GameLibrary.getVideoGameList().isEmpty()){
             return "No video game in database";
         }
         
         for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
-            if(GameLibrary.getVideoGameList().get(i).getId() == id ){ // if found
-                
+            //Check if video game exist
+            if(GameLibrary.getVideoGameList().get(i).getId() == id ){
+                //Check the video game status
                 if(GameLibrary.getVideoGameList().get(i).getStatut()){
                     videoGame = GameLibrary.getVideoGameList().get(i);
                     videoGame.setStatut(false);
@@ -76,11 +78,10 @@ public class Adherent extends Person {
         switch (count) {
             case 1:
                 System.out.println("Please, go pick your borrow");
-                return "Borrow with successfull";
+                return "Borrow with success";
             case 2:
                 return "this game is not available";
             default:
-                // if no found
                 return "No found";
         }
         
@@ -96,15 +97,17 @@ public class Adherent extends Person {
         Borrow borrow;
         
         int count = 0;
-        
-        if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
+
+        //Check Board Game DB
+        if(GameLibrary.getBoardGameList().isEmpty()){
             return "No board game in database";
         }
         
         for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
-            if(GameLibrary.getBoardGameList().get(i).getId() == id ){ // if found
-                
-                if(GameLibrary.getBoardGameList().get(i).getStatut() == true){
+            //Check if board game exist
+            if(GameLibrary.getBoardGameList().get(i).getId() == id ){
+                //Check the board game status
+                if(GameLibrary.getBoardGameList().get(i).getStatut()){
                     boardGame = GameLibrary.getBoardGameList().get(i);
                     boardGame.setStatut(false);
 
@@ -144,14 +147,16 @@ public class Adherent extends Person {
         Borrow borrow;
         
         int count = 0;
-        
-        if(GameLibrary.getToyList().isEmpty()){ // if database empty
+
+        //Check Toy DB
+        if(GameLibrary.getToyList().isEmpty()){
             return "No toy in database";
         }
         
         for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
-            if(GameLibrary.getToyList().get(i).getId() == id ){ // if found
-                
+            //Check if toy exist
+            if(GameLibrary.getToyList().get(i).getId() == id ){
+                //Check the toy status
                 if(GameLibrary.getToyList().get(i).getStatut() == true){
                     toy = GameLibrary.getToyList().get(i);
                     toy.setStatut(false);
