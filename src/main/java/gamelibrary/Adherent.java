@@ -157,7 +157,7 @@ public class Adherent extends Person {
             //Check if toy exist
             if(GameLibrary.getToyList().get(i).getId() == id ){
                 //Check the toy status
-                if(GameLibrary.getToyList().get(i).getStatut() == true){
+                if(GameLibrary.getToyList().get(i).getStatut()){
                     toy = GameLibrary.getToyList().get(i);
                     toy.setStatut(false);
 
