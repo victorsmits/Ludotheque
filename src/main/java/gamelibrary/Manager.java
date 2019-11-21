@@ -62,7 +62,7 @@ public final class Manager extends Person {
         Scanner nameGame = new Scanner(System.in);
         String gameName;
         
-        System.out.println("Enter the video game's name"); // Enter username and press Enter
+        System.out.println("Enter the video game's name");
         gameName = nameGame.nextLine();
         //newVideoGame.setName(userName);
 
@@ -71,7 +71,7 @@ public final class Manager extends Person {
         Scanner manufacturer = new Scanner(System.in);
         String gameManufacturer;
 
-        System.out.println("Enter the manufacturer");  // Enter username and press Enter
+        System.out.println("Enter the manufacturer");
         gameManufacturer = manufacturer.nextLine();
         //newVideoGame.setManufacturer(userManufacturer);
         
@@ -79,7 +79,7 @@ public final class Manager extends Person {
         Scanner platform = new Scanner(System.in);
         String gamePlatform;
 
-        System.out.println("Enter the platform");  // Enter username and press Enter
+        System.out.println("Enter the platform");
         gamePlatform = platform.nextLine();
         
         VideoGame newVideoGame = new VideoGame(gamePlatform, gameName, gameManufacturer);
@@ -94,7 +94,7 @@ public final class Manager extends Person {
         Scanner nameGame = new Scanner(System.in);
         String gameName;
         
-        System.out.println("Enter the board game's name"); // Enter username and press Enter
+        System.out.println("Enter the board game's name");
         gameName = nameGame.nextLine();
         //newVideoGame.setName(userName);
 
@@ -103,7 +103,7 @@ public final class Manager extends Person {
         Scanner manufacturer = new Scanner(System.in);
         String gameManufacturer;
 
-        System.out.println("Enter the manufacturer");  // Enter username and press Enter
+        System.out.println("Enter the manufacturer");
         gameManufacturer = manufacturer.nextLine();
         //newVideoGame.setManufacturer(userManufacturer);
         
@@ -111,7 +111,7 @@ public final class Manager extends Person {
         Scanner platform = new Scanner(System.in);
         int playerNumber;
 
-        System.out.println("Enter the player number");  // Enter username and press Enter
+        System.out.println("Enter the player number");
         playerNumber = Integer.parseInt(platform.nextLine());
         
         BoardGame newBoardGame = new BoardGame(playerNumber, gameName, gameManufacturer);
@@ -130,21 +130,21 @@ public final class Manager extends Person {
         Scanner nameGame = new Scanner(System.in);
         String gameName;
         
-        System.out.println("Enter the toy's name"); // Enter username and press Enter
+        System.out.println("Enter the toy's name");
         gameName = nameGame.nextLine();
 
         // set manufacturer
         Scanner manufacturer = new Scanner(System.in);
         String gameManufacturer;
 
-        System.out.println("Enter the manufacturer");  // Enter username and press Enter
+        System.out.println("Enter the manufacturer");
         gameManufacturer = manufacturer.nextLine();
         
         // set material
         Scanner platform = new Scanner(System.in);
         String material;
 
-        System.out.println("Enter the material");  // Enter username and press Enter
+        System.out.println("Enter the material");
         material = platform.nextLine();
         
         Toy newToy = new Toy(material, gameName, gameManufacturer);
@@ -160,7 +160,7 @@ public final class Manager extends Person {
      */
     public String getBorrowList(){
         String result = "";
-        if(!GameLibrary.getAllBorrowList().isEmpty()){ // if database empty
+        if(!GameLibrary.getAllBorrowList().isEmpty()){ // if database not empty
             
             for (int i = 0; i < GameLibrary.getAllBorrowList().size(); i++) {
 
