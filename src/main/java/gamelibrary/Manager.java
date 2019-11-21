@@ -50,6 +50,68 @@ public final class Manager extends Person {
     /**
      *
      */
+    public void addGame(){
+        System.out.println("\t VideoGame \n"
+                            + "\t BoardGame \n"
+                            + "\t Toy");
+        Scanner gameTypeInput = new Scanner(System.in);
+        String type;
+
+        System.out.println("Enter the type of game as written above :");
+        type = gameTypeInput.nextLine();
+        //set name
+
+        Scanner gameNameInput = new Scanner(System.in);
+        String name;
+
+        System.out.println("Enter the game's name");
+        name = gameNameInput.nextLine();
+
+        // set manufacturer
+        Scanner gameManufacturerInput = new Scanner(System.in);
+        String manufacturer;
+
+        System.out.println("Enter the manufacturer");
+        manufacturer = gameManufacturerInput.nextLine();
+
+        // set specific parameter (according to the type of game)
+        String parameter = "";
+        int nOfPlayers = -1;
+        if (type == "VideoGame")
+        {
+            parameter = "platform";
+        }
+        else if (type == "BoardGame")
+        {
+            parameter = "number of players";
+        }
+        else if (type == "Toy")
+        {
+            parameter = "material";
+        }
+        else {
+            //TODO : catch wrong type of game => redo input ?
+        }
+        Scanner specificParamInput = new Scanner(System.in);
+        String specificParam;
+
+        System.out.println(String.format("Enter the %s", parameter));
+        specificParam = specificParamInput.nextLine();
+        if (type == "BoardGame"){
+            try{
+                nOfPlayers = Integer.parseInt(specificParam);
+            }
+            catch(NumberFormatException){
+                nOfPlayers = -1;
+                //TODO : catch non integer fault in input => redo input ?
+            }
+        }
+        Game newGame = GameFactory.createGame(type, specificParam, name, manufacturer, nOfPlayers);
+
+        // Add game
+        GameLibrary.getVideoGameList().add(newGame); //fixed by creating getGameList in GameLibrary
+        System.out.println("Add with success");
+    }
     public void addVideoGame(){
         
         //Object to JSON in file
