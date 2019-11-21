@@ -40,6 +40,23 @@ public class Adherent extends Person {
 
     /**
      *
+     * @return
+     */
+    private String IsAvailable(int count, String gameType){
+        String str;
+        switch (count) {
+            case 1:
+                str = "You can pick up your " + gameType + ".";
+            case 2:
+                str = "This " + gameType +  " is not available.";
+            default:
+                str = "This " + gameType +  " was not found.";
+        }
+        return str;
+    }
+
+    /**
+     *
      * @param id
      * @return
      */
@@ -68,23 +85,14 @@ public class Adherent extends Person {
                     borrowList.add(borrow);
 
                     count = 1;
-                }else{
+                }
+                else{
                     count = 2;
                 }
                 
             }
         }
-        
-        switch (count) {
-            case 1:
-                System.out.println("Please, go pick your borrow");
-                return "Borrow with success";
-            case 2:
-                return "this game is not available";
-            default:
-                return "No found";
-        }
-        
+        return IsAvailable(count, "video game");
     }
     
     /**
@@ -117,24 +125,14 @@ public class Adherent extends Person {
                     borrowList.add(borrow);
 
                     count = 1;
-                }else{
+                }
+                else{
                     count = 2;
                 }
                 
             }
         }
-        
-        switch (count) {
-            case 1:
-                System.out.println("Please, go pick your borrow");
-                return "Borrow with successfull";
-            case 2:
-                return "this game is not available";
-            default:
-                // if no found
-                return "No found";
-        }
-        
+        return IsAvailable(count, "board game");
     }
     
     /**
@@ -167,24 +165,14 @@ public class Adherent extends Person {
                     borrowList.add(borrow);
 
                     count = 1;
-                }else{
+                }
+                else{
                     count = 2;
                 }
                 
             }
         }
-        
-        switch (count) {
-            case 1:
-                System.out.println("Please, go pick your borrow");
-                return "Borrow with successfull";
-            case 2:
-                return "this toy is not available";
-            default:
-                // if no found
-                return "No found";
-        }
-        
+        return IsAvailable(count, "toy");
     }
     
     @Override
