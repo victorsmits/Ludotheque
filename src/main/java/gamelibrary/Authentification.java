@@ -12,24 +12,17 @@ import java.util.Scanner;
  * @author ablo1
  */
 public class Authentification {
+
+    private String username;
+    private String password;
     
     /**
      *
      * @return
      */
     public Adherent adherentLogin(){
-        //put  username
-        Scanner user = new Scanner(System.in);
-        String username;
-        System.out.println("Enter your username"); // Enter username and press Enter
-        username = user.nextLine();
+        showLogIn();
 
-        // put password
-        Scanner pass = new Scanner(System.in);
-        String password;
-        System.out.println("Enter your password");  // Enter username and press Enter
-        password = pass.nextLine();
-        
         int count = 0;
         Adherent adh = null;
         if(GameLibrary.getAdherentList().isEmpty()){ // if database empty
@@ -38,9 +31,9 @@ public class Authentification {
         }
         
         for (int i = 0; i < GameLibrary.getAdherentList().size(); i++) {
-            if(GameLibrary.getAdherentList().get(i).getUsername().equals(username) ){ // if found
+            if(GameLibrary.getAdherentList().get(i).getUsername().equals(this.username) ){ // if found
                 
-                if(GameLibrary.getAdherentList().get(i).getPassword().equals(password) ){ // if found
+                if(GameLibrary.getAdherentList().get(i).getPassword().equals(this.password) ){ // if found
                 
                     count = 1;
                     adh = new Adherent(GameLibrary.getAdherentList().get(i).getName(),
@@ -56,7 +49,7 @@ public class Authentification {
                 count = 0;
             }
         }
-        
+
         switch (count) {
             case 1:
                 System.out.println("Successfull connexion");
@@ -75,17 +68,7 @@ public class Authentification {
      * @return
      */
     public Manager managerLogin(){
-        //put  username
-        Scanner user = new Scanner(System.in);
-        String username;
-        System.out.println("Enter your username"); // Enter username and press Enter
-        username = user.nextLine();
-
-        // put password
-        Scanner pass = new Scanner(System.in);
-        String password;
-        System.out.println("Enter your password");  // Enter username and press Enter
-        password = pass.nextLine();
+       showLogIn();
         
         int count = 0;
         Manager man = null;
@@ -94,9 +77,9 @@ public class Authentification {
             return null;
         }
         
-        if(GameLibrary.getManager().getUsername().equals(username) ){ // if username is correct
+        if(GameLibrary.getManager().getUsername().equals(this.username) ){ // if username is correct
 
-            if(GameLibrary.getManager().getPassword().equals(password) ){ // if password is correct
+            if(GameLibrary.getManager().getPassword().equals(this.password) ){ // if password is correct
 
                 count = 1;
                 man = GameLibrary.getManager();
@@ -139,5 +122,19 @@ public class Authentification {
         System.out.println("Logout with successfull");
         return null;
     }
-    
+
+    private void showLogIn(){
+        //put  username
+        Scanner user = new Scanner(System.in);
+        String username;
+        System.out.println("Enter your username"); // Enter username and press Enter
+        this.username = user.nextLine();
+
+        // put password
+        Scanner pass = new Scanner(System.in);
+        String password;
+        System.out.println("Enter your password");  // Enter username and press Enter
+        this.password = pass.nextLine();
+
+    }
 }
