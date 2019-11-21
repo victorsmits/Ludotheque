@@ -42,44 +42,25 @@ public class Adherent extends Person {
      *
      * @return
      */
-    private String IsAvailable(int count, String gameType){
+    private String BorrowGame(String gameType, ArrayList<Game> database, long id){
         String str;
-        switch (count) {
-            case 1:
-                str = "You can pick up your " + gameType + ".";
-            case 2:
-                str = "This " + gameType +  " is not available.";
-            default:
-                str = "This " + gameType +  " was not found.";
-        }
-        return str;
-    }
-
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public String borrowVideoGame(long id){
-        VideoGame videoGame;
+        Game game;
         Borrow borrow;
-        
         int count = 0;
 
-        //Check Video Game DB
         if(GameLibrary.getVideoGameList().isEmpty()){
             return "No video game in database";
         }
-        
-        for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
-            //Check if video game exist
-            if(GameLibrary.getVideoGameList().get(i).getId() == id ){
-                //Check the video game status
-                if(GameLibrary.getVideoGameList().get(i).getStatut()){
-                    videoGame = GameLibrary.getVideoGameList().get(i);
-                    videoGame.setStatut(false);
 
-                    borrow = new Borrow(this, videoGame);
+        for (int i = 0; i < database.size(); i++) {
+            //Check if game exist
+            if(database.get(i).getId() == id ){
+                //Check the game status
+                if(database.get(i).getStatut()){
+                    game = database.get(i);
+                    game.setStatut(false);
+
+                    borrow = new Borrow(this, game);
 
                     GameLibrary.getAllBorrowList().add(borrow);
                     borrowList.add(borrow);
@@ -90,10 +71,29 @@ public class Adherent extends Person {
                 else{
                     count = 2;
                 }
-                
+
             }
+
+        switch (count) {
+            case 1:
+                str = "You can pick up your " + gameType + ".";
+            case 2:
+                str = "This " + gameType +  " is not available.";
+            default:
+                str = "This " + gameType +  " was not found.";
         }
-        return IsAvailable(count, "video game");
+        return str;
+    }
+    }
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public String borrowVideoGame(long id){
+
+        return BorrowGame( "video game", GameLibrary.getVideoGameList(), id);
     }
     
     /**
@@ -134,7 +134,7 @@ public class Adherent extends Person {
                 
             }
         }
-        return IsAvailable(count, "board game");
+        return BorrowGame(count, "board game");
     }
     
     /**
