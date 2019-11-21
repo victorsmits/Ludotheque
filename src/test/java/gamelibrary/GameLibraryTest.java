@@ -31,15 +31,15 @@ public class GameLibraryTest {
         // init
         gameLibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
         man = ManagerMock.getInstance();//manager simulation
+        GameLibrary.getVideoGameList().clear();
+        GameLibrary.getBoardGameList().clear();
+        GameLibrary.getToyList().clear();
     }
     
     @AfterClass
     public static void tearDownClass() {
         // Clear all List
-        GameLibrary.getVideoGameList().clear();
-        GameLibrary.getBoardGameList().clear();
-        GameLibrary.getToyList().clear();
-        GameLibrary.getVideoGameList().clear();
+
     }
     
     @Before

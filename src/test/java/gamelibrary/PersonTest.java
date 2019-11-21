@@ -31,6 +31,9 @@ public class PersonTest {
         person = new Person("Itunime", "Rudy", "rudy36", "654321");
         man = ManagerMock.getInstance();//manager simulation
         gamelibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
+        GameLibrary.getVideoGameList().clear();
+        GameLibrary.getBoardGameList().clear();
+        GameLibrary.getToyList().clear();
     }
     
     @AfterClass
