@@ -55,23 +55,5 @@ public class AdherentTest {
         
         assertEquals(expResult, result);
     }
-
-    /**
-     * Test of borrowVideoGame method, of class Adherent.
-     */
-    @Test
-    public void testBorrowVideoGame() {
-        long id = 45698;
-        
-        String expResult = "No video game in database";
-        String result = adh.borrowVideoGame(id);
-        assertEquals(expResult, result);
-        
-        GameLibrary.getVideoGameList().add(new VideoGame("PS4", "PES 19", "Sony"));
-        
-        String expResult2 = "This video game was not found.";
-        String result2 = adh.borrowVideoGame(id);
-        assertEquals(expResult2, result2);
-    }
     
 }

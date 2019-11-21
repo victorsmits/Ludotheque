@@ -9,9 +9,9 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public class GameFactory implements GameFactoryIF {
+public class GameFactory  { //implements GameFactoryIF removed because useless
     
-    public Game createGame(String type, String specificParam,
+    public static Game createGame(String type, String specificParam,
                            String name, String manufacturer, int nOfPlayers){
 
         if(type.equals("VideoGame")) {
@@ -23,7 +23,7 @@ public class GameFactory implements GameFactoryIF {
           }
           return new BoardGame(nOfPlayers, name, manufacturer);
         }
-        else if(type.equals("BoardGame")) {
+        else if(type.equals("Toy")) {
           return new Toy(specificParam, name, manufacturer);
         }
         else{
