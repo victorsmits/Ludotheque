@@ -12,9 +12,7 @@ import java.util.Scanner;
  * @author ablo1
  */
 public final class Manager extends Person {
-    
-    //private String login;
-    //private String password;
+  
     private static Manager instance ; // Unique instance
     
     // private constructor for Singleton
@@ -56,7 +54,7 @@ public final class Manager extends Person {
         
         //Object to JSON in file
         //mapper.writeValue(this.videoGameList, newVideoGame);
-      
+
         //set name
         Scanner nameGame = new Scanner(System.in);
         String gameName;
@@ -93,7 +91,6 @@ public final class Manager extends Person {
         
         System.out.println("Enter the board game's name");
         gameName = nameGame.nextLine();
-        //newVideoGame.setName(userName);
 
         
         // set manufacturer
@@ -102,7 +99,6 @@ public final class Manager extends Person {
 
         System.out.println("Enter the manufacturer");
         gameManufacturer = manufacturer.nextLine();
-        //newVideoGame.setManufacturer(userManufacturer);
         
         // set player number
         Scanner platform = new Scanner(System.in);
