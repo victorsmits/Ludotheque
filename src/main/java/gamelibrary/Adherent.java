@@ -20,12 +20,12 @@ public class Adherent extends Person {
     /**
      *
      * @param name
-     * @param firstname
+     * @param firstName
      * @param username
      * @param password
      */
-    public Adherent(String name, String firstname, String username, String password){
-        super(name, firstname, username, password);
+    public Adherent(String name, String firstName, String username, String password){
+        super(name, firstName, username, password);
         borrowList = new ArrayList();
         subscriptionBegin = LocalDate.now();
     }
@@ -44,7 +44,7 @@ public class Adherent extends Person {
      * @return
      */
     public String borrowVideoGame(long id){
-        VideoGame videogame;
+        VideoGame videoGame;
         Borrow borrow;
         
         int count = 0;
@@ -57,10 +57,10 @@ public class Adherent extends Person {
             if(GameLibrary.getVideoGameList().get(i).getId() == id ){ // if found
                 
                 if(GameLibrary.getVideoGameList().get(i).getStatut()){
-                    videogame = GameLibrary.getVideoGameList().get(i);
-                    videogame.setStatut(false);
+                    videoGame = GameLibrary.getVideoGameList().get(i);
+                    videoGame.setStatut(false);
 
-                    borrow = new Borrow(this, videogame);
+                    borrow = new Borrow(this, videoGame);
 
                     GameLibrary.getAllBorrowList().add(borrow);
                     borrowList.add(borrow);
@@ -92,7 +92,7 @@ public class Adherent extends Person {
      * @return
      */
     public String borrowBoardGame(long id){
-        BoardGame boardgame;
+        BoardGame boardGame;
         Borrow borrow;
         
         int count = 0;
@@ -105,10 +105,10 @@ public class Adherent extends Person {
             if(GameLibrary.getBoardGameList().get(i).getId() == id ){ // if found
                 
                 if(GameLibrary.getBoardGameList().get(i).getStatut() == true){
-                    boardgame = GameLibrary.getBoardGameList().get(i);
-                    boardgame.setStatut(false);
+                    boardGame = GameLibrary.getBoardGameList().get(i);
+                    boardGame.setStatut(false);
 
-                    borrow = new Borrow(this, boardgame);
+                    borrow = new Borrow(this, boardGame);
 
                     GameLibrary.getAllBorrowList().add(borrow);
                     borrowList.add(borrow);
@@ -184,7 +184,7 @@ public class Adherent extends Person {
     
     @Override
     void displayInfos(){
-        System.out.printf("Name : %s ; Firstname: %s ; Id : %s ; date of Subscription : %s%n",getName(), 
+        System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",getName(),
                         getfirstname(), 
                         getId(),
                         getSubscriptionBegin()
