@@ -189,11 +189,9 @@ public class Adherent extends Person {
     
     /**
      *
-     * @return
      */
-    public String getYourBorrowList(){
-        String result = "";
-        if(!borrowList.isEmpty()){ // if database empty
+    public void getYourBorrowList(){
+        if(!borrowList.isEmpty()){ // if database not empty
             
             for(int i = 0; i < borrowList.size(); i++) {
 
@@ -203,12 +201,10 @@ public class Adherent extends Person {
                 borrow.getGame().displayInfos();
                 System.out.println("-----------------------------------------------------------------------------");
             }
-            result = "Found with success";
         }
         else{
-            result = "You no loan a game";
+            System.out.println("You have no game in loan");
         }
-        return result;
     }
     
     
