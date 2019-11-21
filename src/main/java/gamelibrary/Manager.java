@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author ablo1
  */
 public final class Manager extends Person {
-  
+
     private static Manager instance ; // Unique instance
     
     // private constructor for Singleton
@@ -21,7 +21,7 @@ public final class Manager extends Person {
 
     }
     
-    // Only one instanciated ==> Singleton
+    // Only one instantiated ==> Singleton
 
     /**
      *
