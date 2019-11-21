@@ -43,6 +43,7 @@ public class ManagerMock extends Person{
     }
     
     public void addVideoGame(){
+
         GameLibrary.getVideoGameList().add(new VideoGame("PS4", "PES 19", "Sony"));
         GameLibrary.getVideoGameList().add(new VideoGame("XboxOne", "FIFA 20", "Microsoft"));
     }
