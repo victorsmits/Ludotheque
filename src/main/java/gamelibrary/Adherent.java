@@ -26,7 +26,7 @@ public class Adherent extends Person {
      */
     public Adherent(String name, String firstName, String username, String password){
         super(name, firstName, username, password);
-        borrowList = new ArrayList();
+        borrowList = new ArrayList<>();
         subscriptionBegin = LocalDate.now();
     }
     
@@ -86,97 +86,6 @@ public class Adherent extends Person {
     }
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public String borrowVideoGame(long id){
-
-        return BorrowGame( "video game", GameLibrary.getVideoGameList(), id);
-    }
-    
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public String borrowBoardGame(long id){
-        BoardGame boardGame;
-        Borrow borrow;
-        
-        int count = 0;
-
-        //Check Board Game DB
-        if(GameLibrary.getBoardGameList().isEmpty()){
-            return "No board game in database";
-        }
-        
-        for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
-            //Check if board game exist
-            if(GameLibrary.getBoardGameList().get(i).getId() == id ){
-                //Check the board game status
-                if(GameLibrary.getBoardGameList().get(i).getStatut()){
-                    boardGame = GameLibrary.getBoardGameList().get(i);
-                    boardGame.setStatut(false);
-
-                    borrow = new Borrow(this, boardGame);
-
-                    GameLibrary.getAllBorrowList().add(borrow);
-                    borrowList.add(borrow);
-
-                    count = 1;
-                    break;
-                }
-                else{
-                    count = 2;
-                }
-                
-            }
-        }
-        return BorrowGame(count, "board game");
-    }
-    
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public String borrowToy(long id){
-        Toy toy;
-        Borrow borrow;
-        
-        int count = 0;
-
-        //Check Toy DB
-        if(GameLibrary.getToyList().isEmpty()){
-            return "No toy in database";
-        }
-        
-        for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
-            //Check if toy exist
-            if(GameLibrary.getToyList().get(i).getId() == id ){
-                //Check the toy status
-                if(GameLibrary.getToyList().get(i).getStatut()){
-                    toy = GameLibrary.getToyList().get(i);
-                    toy.setStatut(false);
-
-                    borrow = new Borrow(this, toy);
-
-                    GameLibrary.getAllBorrowList().add(borrow);
-                    borrowList.add(borrow);
-
-                    count = 1;
-                    break;
-                }
-                else{
-                    count = 2;
-                }
-                
-            }
-        }
-        return IsAvailable(count, "toy");
-    }
     
     @Override
     void displayInfos(){
