@@ -16,8 +16,8 @@ public final class Manager extends Person {
     private static Manager instance ; // Unique instance
     
     // private constructor for Singleton
-    private Manager(String name, String firstname, String username, String password) {
-        super(name, firstname, username, password);
+    private Manager(String name, String firstName, String username, String password) {
+        super(name, firstName, username, password);
 
     }
     
@@ -39,12 +39,12 @@ public final class Manager extends Person {
     /**
      *
      * @param newName
-     * @param newFirstname
+     * @param newFirstName
      */
-    public synchronized static void setInstance (String newName, String newFirstname)
+    public synchronized static void setInstance (String newName, String newFirstName)
     {
         instance.setName(newName);
-        instance.setFirstname(newFirstname);
+        instance.setFirstname(newFirstName);
     }
 
     /**
