@@ -16,7 +16,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Boolean main = true;
+        boolean main = true;
         
         while(main){
             // Create the only one Game library
@@ -32,34 +32,36 @@ public class Main {
             Scanner ch = new Scanner(System.in);
             String getCh;
 
-            System.out.println("Enter your choose number"); // Enter username and press Enter
+            System.out.println("Choose an option (enter the number)"); // Enter username and press Enter
             getCh = ch.nextLine();
             
             //Manager menu
-            if(getCh.equals("1")){
-                userFacadeImpl manMenu= new userFacadeImpl();
-                manMenu.userFacadeImpl();
-                manMenu.managerMenu();
-                
-            }
-            
-            //Adherent menu
-            else if(getCh.equals("2")){
+            switch (getCh) {
+                case "1":
+                    userFacadeImpl manMenu = new userFacadeImpl();
+                    manMenu.userFacadeImpl();
+                    manMenu.managerMenu();
 
-                userFacadeImpl adhMenu= new userFacadeImpl();
-                adhMenu.userFacadeImpl();
-                adhMenu.adherentMenu();
-                
-            }
-            
-            //New account menu
-            else if(getCh.equals("3")){
-                gamelibrary.createAdherentAccount();
-            }
-            
-            //exit
-            else if(getCh.equals("4")){
-                main = false;
+                    break;
+
+                //Adherent menu
+                case "2":
+
+                    userFacadeImpl adhMenu = new userFacadeImpl();
+                    adhMenu.userFacadeImpl();
+                    adhMenu.adherentMenu();
+
+                    break;
+
+                //New account menu
+                case "3":
+                    gamelibrary.createAdherentAccount();
+                    break;
+
+                //exit
+                case "4":
+                    main = false;
+                    break;
             }
         }
     }
