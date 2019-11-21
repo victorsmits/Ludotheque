@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<JDepend>
+    <Packages>
+
+        <Package name="gamelibrary">
+            <Stats>
+                <TotalClasses>19</TotalClasses>
+                <ConcreteClasses>12</ConcreteClasses>
+                <AbstractClasses>7</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>4</Ce>
+                <A>0.37</A>
+                <I>1</I>
+                <D>0.37</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="AdherentFacade.java">
+                    gamelibrary.AdherentFacade
+                </Class>
+                <Class sourceFile="FactoryGame.java">
+                    gamelibrary.FactoryGame
+                </Class>
+                <Class sourceFile="Game.java">
+                    gamelibrary.Game
+                </Class>
+                <Class sourceFile="GameFactoryIF.java">
+                    gamelibrary.GameFactoryIF
+                </Class>
+                <Class sourceFile="ObserverManager.java">
+                    gamelibrary.ObserverManager
+                </Class>
+                <Class sourceFile="SubjectAdherent.java">
+                    gamelibrary.SubjectAdherent
+                </Class>
+                <Class sourceFile="userFacade.java">
+                    gamelibrary.userFacade
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="Adherent.java">
+                    gamelibrary.Adherent
+                </Class>
+                <Class sourceFile="Authentification.java">
+                    gamelibrary.Authentification
+                </Class>
+                <Class sourceFile="BoardGame.java">
+                    gamelibrary.BoardGame
+                </Class>
+                <Class sourceFile="Borrow.java">
+                    gamelibrary.Borrow
+                </Class>
+                <Class sourceFile="CreateGameFactory.java">
+                    gamelibrary.CreateGameFactory
+                </Class>
+                <Class sourceFile="GameLibrary.java">
+                    gamelibrary.GameLibrary
+                </Class>
+                <Class sourceFile="Main.java">
+                    gamelibrary.Main
+                </Class>
+                <Class sourceFile="Manager.java">
+                    gamelibrary.Manager
+                </Class>
+                <Class sourceFile="Person.java">
+                    gamelibrary.Person
+                </Class>
+                <Class sourceFile="Toy.java">
+                    gamelibrary.Toy
+                </Class>
+                <Class sourceFile="VideoGame.java">
+                    gamelibrary.VideoGame
+                </Class>
+                <Class sourceFile="userFacadeImpl.java">
+                    gamelibrary.userFacadeImpl
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>java.io</Package>
+                <Package>java.lang</Package>
+                <Package>java.time</Package>
+                <Package>java.util</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="java.io">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.lang">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.time">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.util">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+    </Packages>
+
+    <Cycles>
+    </Cycles>
+</JDepend>
