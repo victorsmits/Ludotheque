@@ -170,8 +170,8 @@ public final class Manager extends Person {
                 borrow.getGame().displayInfos();
                 borrow.getAdherent().displayInfos();
                 System.out.println("-----------------------------------------------------------------------------");
-                result = "Found with successfull";
             }
+            result = "Found with success";
         }else{
             result = "No loan in the database";
         }
