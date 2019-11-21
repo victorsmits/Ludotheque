@@ -16,8 +16,9 @@ public class Person {
    private String firstname;
    private String username;
    private String password;
-    
-    /**
+   private int count;
+
+  /**
      *
      * @param name
      * @param firstname
@@ -112,32 +113,23 @@ public class Person {
     /*--------------- Searching ---------------*/
 
     /**
-     *
      * @param name
-     * @return
+     * @return String
      */
 
     public String searchVideoGame(String name){
-        int count = 0;
-        
-        if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
-            return "No video game in database";
-        }
-        
-        for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
-            if(GameLibrary.getVideoGameList().get(i).getName().equals(name) ){ // if found
-                
-                GameLibrary.getVideoGameList().get(i).displayInfos();
-                count++;
-                
-            }
-        }
-        
-        if(count > 0){
-            return Integer.toString(count) + " result(s) found";
-        }else{ // if no found
-            return "No found";
-        }
+      count = 0;
+
+      if(GameLibrary.getVideoGameList().isEmpty()){ // if database empty
+          return "No video game in database";
+      }
+
+      for (int i = 0; i < GameLibrary.getVideoGameList().size(); i++) {
+        VideoGame videoGame = GameLibrary.getVideoGameList().get(i);
+        this.displayGameInfo(videoGame);
+      }
+
+      return displayGamesFound();
     }
     
     /**
@@ -146,26 +138,18 @@ public class Person {
      * @return
      */
     public String searchBoardGame(String name){
-        int count = 0;
+      count = 0;
         
-        if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
-            return "No video game in database";
-        }
-        
-        for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
-            if(GameLibrary.getBoardGameList().get(i).getName().equals(name) ){ // if found
-                
-                GameLibrary.getBoardGameList().get(i).displayInfos();
-                count++;
-                
-            }
-        }
-        
-        if(count > 0){
-            return Integer.toString(count) + " result(s) found";
-        }else{ // if no found
-            return "No found";
-        }
+      if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
+          return "No video game in database";
+      }
+
+      for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
+        BoardGame boardGame = GameLibrary.getBoardGameList().get(i);
+        this.displayGameInfo(boardGame);
+      }
+
+      return displayGamesFound();
     }
     
     /**
@@ -174,26 +158,18 @@ public class Person {
      * @return
      */
     public String searchToy(String name){
-        int count = 0;
-        
-        if(GameLibrary.getToyList().isEmpty()){ // if database empty
-            return "No video game in database";
-        }
-        
-        for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
-            if(GameLibrary.getToyList().get(i).getName().equals(name) ){ // if found
+      count = 0;
 
-                GameLibrary.getToyList().get(i).displayInfos();
-                count++;
+      if(GameLibrary.getToyList().isEmpty()){ // if database empty
+          return "No video game in database";
+      }
 
-            }
-        }
+      for (int i = 0; i < GameLibrary.getToyList().size(); i++) {
+        Toy toyGame = GameLibrary.getToyList().get(i);
+        this.displayGameInfo(toyGame);
+      }
 
-        if(count > 0){
-            return Integer.toString(count) + " result(s) found";
-        }else{ // if no found
-            return "No found";
-        }
+      return displayGamesFound();
     }
     
     void displayInfos(){
@@ -203,4 +179,18 @@ public class Person {
         );
     }
 
+    private void displayGameInfo(Game game){
+      if(game.getName().equals(name) ){
+        game.displayInfos();
+        count++;
+      }
+    }
+
+    private String displayGamesFound(){
+      if(count > 0){
+        return Integer.toString(count) + " result(s) found";
+      }else{
+        return "No found";
+      }
+    }
 }
