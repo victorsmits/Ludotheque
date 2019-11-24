@@ -51,14 +51,42 @@ public final class Manager extends Person {
      *
      */
     public void addGame(){
-        System.out.println("\t VideoGame \n"
-                            + "\t BoardGame \n"
-                            + "\t Toy");
-        Scanner gameTypeInput = new Scanner(System.in);
-        String type;
+        String parameter = "";
+        int nOfPlayers = 0;
+        String type = "";
+        boolean typeExist = false;
+        while (! typeExist){
+            System.out.println("\t VideoGame \n"
+                    + "\t BoardGame \n"
+                    + "\t Toy");
+            Scanner gameTypeInput = new Scanner(System.in);
 
-        System.out.println("Enter the type of game as written above :");
-        type = gameTypeInput.nextLine();
+            System.out.println("Enter the type of game as written above :");
+            type = gameTypeInput.nextLine();
+            if (type == "VideoGame")
+            {
+                parameter = "platform";
+                typeExist = true;
+            }
+            else if (type == "BoardGame")
+            {
+                parameter = "number of players";
+                typeExist = true;
+            }
+            else if (type == "Toy")
+            {
+                parameter = "material";
+                typeExist = true;
+            }
+            else {
+                //TODO : catch wrong type of game => redo input ?
+                System.out.println("Please type in a game type in the following list : " +
+                        "\n\t * VideoGame" +
+                        "\n\t * BoardGame" +
+                        "\n\t * Toy");
+            }
+        }
+
         //set name
 
         Scanner gameNameInput = new Scanner(System.in);
@@ -75,23 +103,6 @@ public final class Manager extends Person {
         manufacturer = gameManufacturerInput.nextLine();
 
         // set specific parameter (according to the type of game)
-        String parameter = "";
-        int nOfPlayers = -1;
-        if (type == "VideoGame")
-        {
-            parameter = "platform";
-        }
-        else if (type == "BoardGame")
-        {
-            parameter = "number of players";
-        }
-        else if (type == "Toy")
-        {
-            parameter = "material";
-        }
-        else {
-            //TODO : catch wrong type of game => redo input ?
-        }
         Scanner specificParamInput = new Scanner(System.in);
         String specificParam;
 
@@ -109,103 +120,7 @@ public final class Manager extends Person {
         Game newGame = GameFactory.createGame(type, specificParam, name, manufacturer, nOfPlayers);
 
         // Add game
-        GameLibrary.getVideoGameList().add(newGame); //fixed by creating getGameList in GameLibrary
-        System.out.println("Add with success");
-    }
-    public void addVideoGame(){
-        
-        //Object to JSON in file
-        //mapper.writeValue(this.videoGameList, newVideoGame);
-
-        //set name
-        Scanner nameGame = new Scanner(System.in);
-        String gameName;
-        
-        System.out.println("Enter the video game's name");
-        gameName = nameGame.nextLine();
-
-        
-        // set manufacturer
-        Scanner manufacturer = new Scanner(System.in);
-        String gameManufacturer;
-
-        System.out.println("Enter the manufacturer");
-        gameManufacturer = manufacturer.nextLine();
-        
-        // set Platform
-        Scanner platform = new Scanner(System.in);
-        String gamePlatform;
-
-        System.out.println("Enter the platform");
-        gamePlatform = platform.nextLine();
-        
-        VideoGame newVideoGame = new VideoGame(gamePlatform, gameName, gameManufacturer);
-        
-        // Add game
-        GameLibrary.getVideoGameList().add(newVideoGame);
-        System.out.println("Add with success");
-    }
-    public void addBoardGame(){
-        
-        //set name
-        Scanner nameGame = new Scanner(System.in);
-        String gameName;
-        
-        System.out.println("Enter the board game's name");
-        gameName = nameGame.nextLine();
-
-        
-        // set manufacturer
-        Scanner manufacturer = new Scanner(System.in);
-        String gameManufacturer;
-
-        System.out.println("Enter the manufacturer");
-        gameManufacturer = manufacturer.nextLine();
-        
-        // set player number
-        Scanner platform = new Scanner(System.in);
-        int playerNumber;
-
-        System.out.println("Enter the player number");
-        playerNumber = Integer.parseInt(platform.nextLine());
-        
-        BoardGame newBoardGame = new BoardGame(playerNumber, gameName, gameManufacturer);
-   
-        // Add game
-        GameLibrary.getBoardGameList().add(newBoardGame);
-        System.out.println("Add with success");
-    }
-
-    /**
-     *
-     */
-    public void addToy(){
-        
-        //set name
-        Scanner nameGame = new Scanner(System.in);
-        String gameName;
-        
-        System.out.println("Enter the toy's name");
-        gameName = nameGame.nextLine();
-
-        // set manufacturer
-        Scanner manufacturer = new Scanner(System.in);
-        String gameManufacturer;
-
-        System.out.println("Enter the manufacturer");
-        gameManufacturer = manufacturer.nextLine();
-        
-        // set material
-        Scanner platform = new Scanner(System.in);
-        String material;
-
-        System.out.println("Enter the material");
-        material = platform.nextLine();
-        
-        Toy newToy = new Toy(material, gameName, gameManufacturer);
-        
-        // Add game
-        GameLibrary.getToyList().add(newToy);
+        GameLibrary.getGameList().add(newGame); //fixed by creating getGameList in GameLibrary
         System.out.println("Add with success");
     }
     
