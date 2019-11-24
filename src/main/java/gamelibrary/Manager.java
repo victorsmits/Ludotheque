@@ -120,7 +120,7 @@ public final class Manager extends Person {
         Game newGame = GameFactory.createGame(type, specificParam, name, manufacturer, nOfPlayers);
 
         // Add game
-        GameLibrary.getGameList().add(newGame); //fixed by creating getGameList in GameLibrary
+        GameLibrary.addGame(newGame); //fixed by creating getGameList in GameLibrary
         System.out.println("Add with success");
     }
     

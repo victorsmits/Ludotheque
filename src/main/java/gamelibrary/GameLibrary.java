@@ -16,6 +16,7 @@ public final class GameLibrary {
     private String name;
     private static Manager manager = Manager.getInstance();;
     private static ArrayList<Borrow> allBorrowList = new ArrayList<>();
+    private static ArrayList<Game> gameList;
     private static ArrayList<Game> videoGameList;
     private static ArrayList<Game> toyList;
     private static ArrayList<Game> boardGameList;
@@ -59,6 +60,10 @@ public final class GameLibrary {
     /**
      * @return
      */
+    public static ArrayList<Game> getGameList(){ return gameList; }
+    /**
+     * @return
+     */
     public static ArrayList<Game> getVideoGameList() {
         return videoGameList;
     }
@@ -91,6 +96,14 @@ public final class GameLibrary {
         return manager;
     }
 
+    /**
+     * Setter for gameList
+     * @param game
+     * @return
+     */
+    public static void addGame (Game game){
+        gameList.add(game);
+    }
     /**
      *
      * @param r
