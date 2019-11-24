@@ -103,19 +103,25 @@ public final class Manager extends Person {
         manufacturer = gameManufacturerInput.nextLine();
 
         // set specific parameter (according to the type of game)
+        boolean isInteger = false;
         Scanner specificParamInput = new Scanner(System.in);
         String specificParam;
 
         System.out.println(String.format("Enter the %s", parameter));
         specificParam = specificParamInput.nextLine();
         if (type == "BoardGame"){
-            try{
-                nOfPlayers = Integer.parseInt(specificParam);
-            }
-            catch(NumberFormatException e){
-                nOfPlayers = -1;
-                //TODO : catch non integer fault in input => redo input ?
-            }
+            do {
+                try {
+                    nOfPlayers = Integer.parseInt(specificParam);
+                    isInteger = true;
+                }
+                catch (NumberFormatException e) {
+                    nOfPlayers = -1;
+                    specificParamInput = new Scanner(System.in);
+                    System.out.println("Please enter an integer");
+                    specificParam = specificParamInput.nextLine();
+                }
+            }while(!isInteger);
         }
         Game newGame = GameFactory.createGame(type, specificParam, name, manufacturer, nOfPlayers);
 
