@@ -55,5 +55,6 @@ public class Toy extends Game{
                         getStatut(),
                         getMaterial());
     }
-    
+
+    public String getSpecificInfo(){ return this.material;}
 }

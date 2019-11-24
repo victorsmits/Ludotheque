@@ -58,4 +58,5 @@ public class BoardGame extends Game{
                         getPlayerNumber());
     }
     
+    public String getSpecificInfo(){ return Integer.toString(this.playerNumber);}
 }

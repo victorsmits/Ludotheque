@@ -51,6 +51,8 @@ abstract class Game {
         return manufacturer;
     }
 
+    public abstract String getSpecificInfo ();
+
     public void setManufacturer(String newManufacturer) {
         this.manufacturer = newManufacturer;
     }
