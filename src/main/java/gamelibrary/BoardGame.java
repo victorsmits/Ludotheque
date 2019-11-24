@@ -57,6 +57,6 @@ public class BoardGame extends Game{
                         getStatut(),
                         getPlayerNumber());
     }
-    
+
     public String getSpecificInfo(){ return Integer.toString(this.playerNumber);}
 }

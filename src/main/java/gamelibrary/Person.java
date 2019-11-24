@@ -158,7 +158,7 @@ public class Person {
     if(count > 0){
       return Integer.toString(count) + " result(s) found";
     }else{
-      return "No found";
+      return "Nothing found";
     }
   }
 

@@ -52,4 +52,6 @@ public class VideoGame extends Game {
                         getStatut(),
                         getPlatform());
     }
+
+    public String getSpecificInfo(){ return this.platform;}
 }

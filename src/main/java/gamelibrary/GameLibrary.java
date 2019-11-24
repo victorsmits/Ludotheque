@@ -99,7 +99,6 @@ public final class GameLibrary {
     /**
      * Setter for gameList
      * @param game
-     * @return
      */
     public static void addGame (Game game){
         gameList.add(game);
