@@ -69,7 +69,7 @@ public class GameLibraryTest {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
             assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
-            assertEquals(expResult.get(i).getPlatform(), result.get(i).getPlatform());
+            assertEquals(expResult.get(i).getSpecificInfo(), result.get(i).getSpecificInfo());
         }
     }
 
@@ -89,7 +89,7 @@ public class GameLibraryTest {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
             assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
-            assertEquals(expResult.get(i).getMaterial(), result.get(i).getMaterial());
+            assertEquals(expResult.get(i).getSpecificInfo(), result.get(i).getSpecificInfo());
         }
     }
 
@@ -109,7 +109,7 @@ public class GameLibraryTest {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
             assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
-            assertEquals(expResult.get(i).getPlayerNumber(), result.get(i).getPlayerNumber());
+            assertEquals(expResult.get(i).getSpecificInfo(), result.get(i).getSpecificInfo());
         }
     }
 
