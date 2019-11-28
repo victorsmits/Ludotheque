@@ -27,10 +27,8 @@ public final class Manager extends Person {
      *
      * @return
      */
-    public synchronized static Manager getInstance ()
-    {
-        if (instance == null)
-        {
+    public synchronized static Manager getInstance () {
+        if (instance == null) {
             instance = new Manager("Bill", "Jean", "moi", "1234");
         }
         return instance;
@@ -41,8 +39,7 @@ public final class Manager extends Person {
      * @param newName
      * @param newFirstName
      */
-    public synchronized static void setInstance (String newName, String newFirstName)
-    {
+    public synchronized static void setInstance (String newName, String newFirstName) {
         instance.setName(newName);
         instance.setFirstname(newFirstName);
     }
@@ -63,16 +60,13 @@ public final class Manager extends Person {
 
             System.out.println("Enter the type of game as written above :");
             type = gameTypeInput.nextLine();
-            if (type == "VideoGame")
-            {
+            if (type == "VideoGame") {
                 parameter = "platform";
                 typeExist = true;
-            } else if (type == "BoardGame")
-            {
+            } else if (type == "BoardGame") {
                 parameter = "number of players";
                 typeExist = true;
-            } else if (type == "Toy")
-            {
+            } else if (type == "Toy") {
                 parameter = "material";
                 typeExist = true;
             } else {
