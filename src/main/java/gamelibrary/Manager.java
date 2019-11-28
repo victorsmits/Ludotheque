@@ -67,18 +67,15 @@ public final class Manager extends Person {
             {
                 parameter = "platform";
                 typeExist = true;
-            }
-            else if (type == "BoardGame")
+            } else if (type == "BoardGame")
             {
                 parameter = "number of players";
                 typeExist = true;
-            }
-            else if (type == "Toy")
+            } else if (type == "Toy")
             {
                 parameter = "material";
                 typeExist = true;
-            }
-            else {
+            } else {
                 //TODO : catch wrong type of game => redo input ?
                 System.out.println("Please type in a game type in the following list : " +
                         "\n\t * VideoGame" +
@@ -114,8 +111,7 @@ public final class Manager extends Person {
                 try {
                     nOfPlayers = Integer.parseInt(specificParam);
                     isInteger = true;
-                }
-                catch (NumberFormatException e) {
+                } catch (NumberFormatException e) {
                     nOfPlayers = -1;
                     specificParamInput = new Scanner(System.in);
                     System.out.println("Please enter an integer");
