@@ -38,7 +38,7 @@ public class Main {
             //Manager menu
             switch (getCh) {
                 case "1":
-                    userFacadeImpl manMenu = new userFacadeImpl();
+                    UserFacadeImpl manMenu = new UserFacadeImpl();
                     manMenu.userFacadeImpl();
                     manMenu.managerMenu();
 
@@ -47,7 +47,7 @@ public class Main {
                 //Adherent menu
                 case "2":
 
-                    userFacadeImpl adhMenu = new userFacadeImpl();
+                    UserFacadeImpl adhMenu = new UserFacadeImpl();
                     adhMenu.userFacadeImpl();
                     adhMenu.adherentMenu();
 
