@@ -43,11 +43,11 @@ public class Authentification {
                                        adherent.getUsername(),
                                        adherent.getPassword());
                 
-                }else{
+                } else {
                     count = 2;
                 }
                 
-            }else{
+            } else {
                 count = 0;
             }
         }
@@ -86,11 +86,11 @@ public class Authentification {
                 count = 1;
                 man = GameLibrary.getManager();
 
-            }else{
+            } else {
                 count = 2;
             }
 
-        }else{
+        } else {
             count = 0;
         }
         
