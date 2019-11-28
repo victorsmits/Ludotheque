@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public final class Manager extends Person {
 
-    private static Manager instance ; // Unique instance
+    private static Manager instance; // Unique instance
     
     // private constructor for Singleton
     private Manager(String name, String firstName, String username, String password) {
@@ -33,7 +33,7 @@ public final class Manager extends Person {
         {
             instance = new Manager("Bill", "Jean", "moi", "1234");
         }
-        return instance ;
+        return instance;
     }
     
     /**
