@@ -12,7 +12,8 @@ import java.util.ArrayList;
  *
  * @author ablo1
  */
-public class Adherent extends Person {
+public class Adherent extends Person
+{
     
     private ArrayList<Borrow> borrowList;
     private LocalDate subscriptionBegin;
@@ -24,7 +25,8 @@ public class Adherent extends Person {
      * @param username
      * @param password
      */
-    public Adherent(String name, String firstName, String username, String password) {
+    public Adherent(String name, String firstName, String username, String password)
+    {
         super(name, firstName, username, password);
         borrowList = new ArrayList<>();
         subscriptionBegin = LocalDate.now();
@@ -34,7 +36,8 @@ public class Adherent extends Person {
      *
      * @return
      */
-    public LocalDate getSubscriptionBegin() {
+    public LocalDate getSubscriptionBegin()
+    {
         return subscriptionBegin;
     }
 
@@ -42,21 +45,26 @@ public class Adherent extends Person {
      *
      * @return
      */
-    private String BorrowGame(String gameType, ArrayList<Game> database, long id) {
+    private String borrowGame(String gameType, ArrayList<Game> database, long id)
+    {
         String str;
         Game game;
         Borrow borrow;
         int count = 0;
 
-        if (GameLibrary.getVideoGameList().isEmpty()) {
+        if (GameLibrary.getVideoGameList().isEmpty())
+        {
             return "No video game in database";
         }
 
-        for (Game value : database) {
+        for (Game value : database)
+        {
             //Check if game exist
-            if (value.getId() == id) {
+            if (value.getId() == id)
+            {
                 //Check the game status
-                if (value.getStatut()) {
+                if (value.getStatut())
+                {
                     game = value;
                     game.setStatut(false);
 
@@ -73,7 +81,8 @@ public class Adherent extends Person {
 
             }
         }
-        switch (count) {
+        switch (count)
+        {
             case 1:
                 str = "You can pick up your " + gameType + ".";
             case 2:
@@ -86,7 +95,8 @@ public class Adherent extends Person {
 
     
     @Override
-    void displayInfos() {
+    void displayInfos()
+    {
         System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",getName(),
                         getfirstname(), 
                         getId(),
@@ -97,10 +107,13 @@ public class Adherent extends Person {
     /**
      *
      */
-    public void getYourBorrowList() {
-        if (!borrowList.isEmpty()) { // if database not empty
+    public void getYourBorrowList()
+    {
+        if (!borrowList.isEmpty())
+        { // if database not empty
             
-            for (int i = 0; i < borrowList.size(); i++) {
+            for (int i = 0; i < borrowList.size(); i++)
+            {
 
                 Borrow borrow = borrowList.get(i);
 
