@@ -87,7 +87,8 @@ public class Adherent extends Person {
     
     @Override
     void displayInfos() {
-        System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",getName(),
+        System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",
+                        getName(),
                         getfirstname(), 
                         getId(),
                         getSubscriptionBegin()
@@ -104,9 +105,11 @@ public class Adherent extends Person {
 
                 Borrow borrow = borrowList.get(i);
 
-                System.out.println("-----------------------------------------------------------------------------");
+                System.out.println("-----------------------------------------------" +
+                        "------------------------------");
                 borrow.getGame().displayInfos();
-                System.out.println("-----------------------------------------------------------------------------");
+                System.out.println("-------------------------------------" +
+                        "----------------------------------------");
             }
         } else {
             System.out.println("You have no game in loan");
