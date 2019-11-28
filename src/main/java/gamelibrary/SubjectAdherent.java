@@ -1,5 +1,8 @@
 package gamelibrary;
 
+/**
+ *
+ */
 public  abstract interface SubjectAdherent {
 
     //methods to register and unregister observers
