@@ -123,7 +123,7 @@ public class Person {
    */
 
 
-  public String searchGame(String type, String name){
+  public String searchGame(String type, String name) {
     int count = 0;
     ArrayList<Game> game;
 
@@ -144,28 +144,27 @@ public class Person {
         throw new IllegalStateException("Unexpected value: " + type);
     }
 
-    if(game.isEmpty()){ // if database empty
+    if (game.isEmpty()) { // if database empty
       return "No video game in database";
     }
 
     for (Game selGame : game) {
-      if(selGame.getName().equals(name) ){
+      if (selGame.getName().equals(name) ) {
         selGame.displayInfos();
         count++;
       }
     }
 
-    if(count > 0){
+    if (count > 0) {
       return Integer.toString(count) + " result(s) found";
-    }else{
+    } else {
       return "Nothing found";
     }
   }
 
-  void displayInfos(){
+  void displayInfos() {
       System.out.printf("Name : %s ; Firstname: %s ; Id : %s%n",getName(),
-                      getfirstname(),
-                      getId()
+                      getfirstname(), getId()
       );
   }
 

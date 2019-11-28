@@ -12,8 +12,7 @@ import java.util.Scanner;
  *
  * @author ablo1
  */
-public class Authentification
-{
+public class Authentification {
 
     private String username;
     private String password;
@@ -22,33 +21,33 @@ public class Authentification
      *
      * @return
      */
-    public Adherent adherentLogin()
-    {
+    public Adherent adherentLogin() {
         showLogIn();
 
         int count = 0;
         Adherent adh = null;
-        if(GameLibrary.getAdherentList().isEmpty()){ // if database empty
+        if (GameLibrary.getAdherentList().isEmpty()) {
             System.out.println("No found in database");
             return null;
         }
         
         for (int i = 0; i < GameLibrary.getAdherentList().size(); i++) {
-            if(GameLibrary.getAdherentList().get(i).getUsername().equals(this.username) ){ // if found
-                
-                if(GameLibrary.getAdherentList().get(i).getPassword().equals(this.password) ){ // if found
-                
+            Adherent adherent = GameLibrary.getAdherentList().get(i);
+            if (adherent.getUsername()
+                .equals(this.username)) {
+
+                if (adherent.getPassword().equals(this.password)) {
                     count = 1;
-                    adh = new Adherent(GameLibrary.getAdherentList().get(i).getName(),
-                                        GameLibrary.getAdherentList().get(i).getfirstname(),
-                                        GameLibrary.getAdherentList().get(i).getUsername(),
-                                        GameLibrary.getAdherentList().get(i).getPassword());
+                    adh = new Adherent(adherent.getName(),
+                                       adherent.getfirstname(),
+                                       adherent.getUsername(),
+                                       adherent.getPassword());
                 
-                }else{
+                } else {
                     count = 2;
                 }
                 
-            }else{
+            } else {
                 count = 0;
             }
         }
@@ -75,23 +74,23 @@ public class Authentification
         
         int count = 0;
         Manager man = null;
-        if(GameLibrary.getAdherentList() == null){ // if database empty
+        if (GameLibrary.getAdherentList() == null){
             System.out.println("No manager fot this game library");
             return null;
         }
         
-        if(GameLibrary.getManager().getUsername().equals(this.username) ){ // if username is correct
+        if (GameLibrary.getManager().getUsername().equals(this.username)) {
 
-            if(GameLibrary.getManager().getPassword().equals(this.password) ){ // if password is correct
+            if (GameLibrary.getManager().getPassword().equals(this.password)) {
 
                 count = 1;
                 man = GameLibrary.getManager();
 
-            }else{
+            } else {
                 count = 2;
             }
 
-        }else{
+        } else {
             count = 0;
         }
         
@@ -130,13 +129,13 @@ public class Authentification
         //put  username
         Scanner user = new Scanner(System.in);
         String username;
-        System.out.println("Enter your username"); // Enter username and press Enter
+        System.out.println("Enter your username");
         this.username = user.nextLine();
 
         // put password
         Scanner pass = new Scanner(System.in);
         String password;
-        System.out.println("Enter your password");  // Enter username and press Enter
+        System.out.println("Enter your password");
         this.password = pass.nextLine();
 
     }

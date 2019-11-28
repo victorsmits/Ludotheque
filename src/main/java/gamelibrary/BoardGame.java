@@ -44,19 +44,20 @@ public class BoardGame extends Game{
      * @param boardGame
      */
     public void displayPlayerNumber(BoardGame boardGame){
-
-        System.out.println( boardGame.getPlayerNumber());
-
+        System.out.println(boardGame.getPlayerNumber());
     }
     
     @Override
     void displayInfos(){
-        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Player Number : %s%n", getName(), 
-                        getManufacturer(), 
-                        getId(), 
-                        getStatut(),
-                        getPlayerNumber());
+        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ;"
+                + " Statut : %s ; Player Number : %s%n", getName(),
+            getManufacturer(),
+            getId(),
+            getStatut(),
+            getPlayerNumber());
     }
 
-    public String getSpecificInfo(){ return Integer.toString(this.playerNumber);}
+    public String getSpecificInfo() {
+        return Integer.toString(this.playerNumber);
+    }
 }

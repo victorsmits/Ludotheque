@@ -1,5 +1,8 @@
 package gamelibrary;
 
+/**
+ *
+ */
 public interface ObserverManager {
 
 
