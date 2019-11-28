@@ -28,7 +28,7 @@ public final class Manager extends Person {
      *
      * @return
      */
-    public synchronized static Manager getInstance () {
+    public static synchronized Manager getInstance () {
         if (instance == null) {
             instance = new Manager("Bill", "Jean", "moi", "1234");
         }
@@ -40,7 +40,7 @@ public final class Manager extends Person {
      * @param newName
      * @param newFirstName
      */
-    public synchronized static void setInstance (String newName,
+    public static synchronized void setInstance (String newName,
                                                  String newFirstName) {
         instance.setName(newName);
         instance.setFirstname(newFirstName);
