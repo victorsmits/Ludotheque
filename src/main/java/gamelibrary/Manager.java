@@ -136,7 +136,7 @@ public final class Manager extends Person {
      */
     public String getBorrowList(){
         String result = "";
-        if(!GameLibrary.getAllBorrowList().isEmpty()){ // if database not empty
+        if (!GameLibrary.getAllBorrowList().isEmpty()){ // if database not empty
             
             for (int i = 0; i < GameLibrary.getAllBorrowList().size(); i++) {
 
@@ -148,7 +148,7 @@ public final class Manager extends Person {
                 System.out.println("-----------------------------------------------------------------------------");
             }
             result = "Found with success";
-        }else{
+        } else {
             result = "No loan in the database";
         }
         return result;
