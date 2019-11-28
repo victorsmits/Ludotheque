@@ -118,5 +118,6 @@
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: classworlds:classworlds:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.cloud.samples:checkstyle-configuration:1.0.11" level="project" />
   </component>
 </module>

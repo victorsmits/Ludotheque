@@ -105,6 +105,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.cloud.samples/checkstyle-configuration -->
+        <dependency>
+            <groupId>com.google.cloud.samples</groupId>
+            <artifactId>checkstyle-configuration</artifactId>
+            <version>1.0.11</version>
+        </dependency>
 
     </dependencies>
 </project>
