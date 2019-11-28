@@ -9,7 +9,7 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public interface userFacade {
+public interface UserFacade {
 
     /**
      *

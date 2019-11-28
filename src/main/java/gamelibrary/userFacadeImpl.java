@@ -11,8 +11,8 @@ import java.util.Scanner;
  *
  * @author ablo1
  */
-public class userFacadeImpl implements userFacade{
-    private Authentification auth = null ;
+public class UserFacadeImpl implements UserFacade{
+    private Authentification auth = null;
     private Manager man = null;
     private Adherent adh = null;
     
@@ -24,10 +24,11 @@ public class userFacadeImpl implements userFacade{
     public void managerMenu(){
         man = auth.managerLogin();
         
-        while(man != null){
-            System.out.println("------------------------------Manager menu-------------------------------------------\n" );
-            System.out.println("Welcome Mr " + man.toString() + "\n" );
-            System.out.println("\t1. Add new video game \n"
+        while (man != null){
+            System.out.println ("------------------------------Manager menu----" +
+                    "---------------------------------------\n" );
+            System.out.println ("Welcome Mr " + man.toString() + "\n" );
+            System.out.println ("\t1. Add new video game \n"
                     + "\t2. Add new board game \n"
                     + "\t3. Add new toy \n"
                     + "\t4. Get all borrow list \n"
@@ -37,9 +38,9 @@ public class userFacadeImpl implements userFacade{
             Scanner ch1 = new Scanner(System.in);
             String getManCh;
 
-            System.out.println("Enter your choose number"); // Enter username and press Enter
+            System.out.println("Enter your choice's number"); // Enter username and press Enter
             getManCh = ch1.nextLine();
-            this.switchBorrow(getManCh);
+            this.applyAction(getManCh);
         }
     }
     
@@ -79,7 +80,7 @@ public class userFacadeImpl implements userFacade{
 
                         System.out.println("Enter your choose number");
                         getsearchCh = searchCh.nextLine();
-                        search = this.switchBorrow(getsearchCh);
+                        search = this.applyAction(getsearchCh);
                     }
                     break;
                 case "2":
@@ -97,7 +98,7 @@ public class userFacadeImpl implements userFacade{
 
                         System.out.println("Enter your choose number");
                         getborrowChCh = borrowCh.nextLine();
-                        search = this.switchBorrow(getborrowChCh);
+                        search = this.applyAction(getborrowChCh);
                     }
                     break;
                 case "3":
@@ -114,7 +115,7 @@ public class userFacadeImpl implements userFacade{
         }
     }
 
-    private boolean switchBorrow(String borrow){
+    private boolean applyAction(String borrow){
         switch (borrow) {
             case "1":
                 //get choose
@@ -139,12 +140,12 @@ public class userFacadeImpl implements userFacade{
             case "3":
                 //get choose
                 Scanner searchTName = new Scanner(System.in);
-                String gettname;
+                String getName;
 
                 System.out.println("Enter the toy's name"); // Enter username and press Enter
 
-                gettname = searchTName.nextLine();
-                System.out.println(adh.searchGame("Toy",gettname));
+                getName = searchTName.nextLine();
+                System.out.println(adh.searchGame("Toy",getName));
                 break;
             case "4":
                 return false;
