@@ -24,7 +24,8 @@ public class Adherent extends Person {
      * @param username
      * @param password
      */
-    public Adherent(String name, String firstName, String username, String password) {
+    public Adherent(String name, String firstName,
+                    String username, String password) {
         super(name, firstName, username, password);
         borrowList = new ArrayList<>();
         subscriptionBegin = LocalDate.now();
@@ -42,8 +43,9 @@ public class Adherent extends Person {
      *
      * @return
      */
-    private String BorrowGame(String gameType, ArrayList<Game> database, long id) {
-        String str;
+    private String BorrowGame(String gameType,
+                              ArrayList<Game> database,
+                              long id) {
         Game game;
         Borrow borrow;
         int count = 0;
@@ -75,19 +77,19 @@ public class Adherent extends Person {
         }
         switch (count) {
             case 1:
-                str = "You can pick up your " + gameType + ".";
+                return "You can pick up your " + gameType + ".";
             case 2:
-                str = "This " + gameType + " is not available.";
+                return "This " + gameType + " is not available.";
             default:
-                str = "This " + gameType + " was not found.";
+                return "This " + gameType + " was not found.";
         }
-        return str;
     }
 
     
     @Override
     void displayInfos() {
-        System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",
+        System.out.printf("Name : %s ; First Name: %s ; " +
+                        "Id : %s ; date of Subscription : %s%n",
                         getName(),
                         getfirstname(), 
                         getId(),
@@ -105,8 +107,8 @@ public class Adherent extends Person {
 
                 Borrow borrow = borrowList.get(i);
 
-                System.out.println("-----------------------------------------------" +
-                        "------------------------------");
+                System.out.println("-------------------------------------" +
+                        "----------------------------------------");
                 borrow.getGame().displayInfos();
                 System.out.println("-------------------------------------" +
                         "----------------------------------------");
