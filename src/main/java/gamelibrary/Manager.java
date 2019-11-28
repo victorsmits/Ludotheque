@@ -29,7 +29,7 @@ public final class Manager extends Person {
      */
     public synchronized static Manager getInstance ()
     {
-        if ( instance == null )
+        if (instance == null)
         {
             instance = new Manager("Bill", "Jean", "moi", "1234");
         }
