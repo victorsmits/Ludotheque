@@ -49,12 +49,10 @@ public class Toy extends Game{
     
     @Override
     void displayInfos(){
-        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Material : %s%n", getName(), 
-                        getManufacturer(), 
-                        getId(), 
-                        getStatut(),
-                        getMaterial());
+        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut :" +
+                " %s ; Material : %s%n", getName(), getManufacturer(),getId(), getStatut(),
+                getMaterial());
     }
 
-    public String getSpecificInfo(){ return this.material;}
+    public String getSpecificInfo() { return this.material;}
 }
