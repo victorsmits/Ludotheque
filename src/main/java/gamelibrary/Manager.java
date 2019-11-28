@@ -55,7 +55,7 @@ public final class Manager extends Person {
         int nOfPlayers = 0;
         String type = "";
         boolean typeExist = false;
-        while (! typeExist){
+        while (!typeExist){
             System.out.println("\t VideoGame \n"
                     + "\t BoardGame \n"
                     + "\t Toy");
