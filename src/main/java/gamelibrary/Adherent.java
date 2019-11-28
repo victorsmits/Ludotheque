@@ -24,7 +24,7 @@ public class Adherent extends Person {
      * @param username
      * @param password
      */
-    public Adherent(String name, String firstName, String username, String password){
+    public Adherent(String name, String firstName, String username, String password) {
         super(name, firstName, username, password);
         borrowList = new ArrayList<>();
         subscriptionBegin = LocalDate.now();
@@ -42,13 +42,13 @@ public class Adherent extends Person {
      *
      * @return
      */
-    private String BorrowGame(String gameType, ArrayList<Game> database, long id){
+    private String BorrowGame(String gameType, ArrayList<Game> database, long id) {
         String str;
         Game game;
         Borrow borrow;
         int count = 0;
 
-        if(GameLibrary.getVideoGameList().isEmpty()){
+        if (GameLibrary.getVideoGameList().isEmpty()) {
             return "No video game in database";
         }
 
@@ -86,7 +86,7 @@ public class Adherent extends Person {
 
     
     @Override
-    void displayInfos(){
+    void displayInfos() {
         System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",getName(),
                         getfirstname(), 
                         getId(),
@@ -97,10 +97,10 @@ public class Adherent extends Person {
     /**
      *
      */
-    public void getYourBorrowList(){
-        if(!borrowList.isEmpty()){ // if database not empty
+    public void getYourBorrowList() {
+        if (!borrowList.isEmpty()) { // if database not empty
             
-            for(int i = 0; i < borrowList.size(); i++) {
+            for (int i = 0; i < borrowList.size(); i++) {
 
                 Borrow borrow = borrowList.get(i);
 
@@ -108,8 +108,7 @@ public class Adherent extends Person {
                 borrow.getGame().displayInfos();
                 System.out.println("-----------------------------------------------------------------------------");
             }
-        }
-        else{
+        } else {
             System.out.println("You have no game in loan");
         }
     }
