@@ -12,8 +12,7 @@ import java.util.Scanner;
  *
  * @author ablo1
  */
-public class Authentification
-{
+public class Authentification {
 
     private String username;
     private String password;
@@ -22,21 +21,20 @@ public class Authentification
      *
      * @return
      */
-    public Adherent adherentLogin()
-    {
+    public Adherent adherentLogin() {
         showLogIn();
 
         int count = 0;
         Adherent adh = null;
-        if(GameLibrary.getAdherentList().isEmpty()){ // if database empty
+        if(GameLibrary.getAdherentList().isEmpty()) { // if database empty
             System.out.println("No found in database");
             return null;
         }
         
         for (int i = 0; i < GameLibrary.getAdherentList().size(); i++) {
-            if(GameLibrary.getAdherentList().get(i).getUsername().equals(this.username) ){ // if found
-                
-                if(GameLibrary.getAdherentList().get(i).getPassword().equals(this.password) ){ // if found
+            if(GameLibrary.getAdherentList().get(i).getUsername().equals(this.username) ) {
+
+                if(GameLibrary.getAdherentList().get(i).getPassword().equals(this.password) ) {
                 
                     count = 1;
                     adh = new Adherent(GameLibrary.getAdherentList().get(i).getName(),
@@ -80,9 +78,9 @@ public class Authentification
             return null;
         }
         
-        if(GameLibrary.getManager().getUsername().equals(this.username) ){ // if username is correct
+        if(GameLibrary.getManager().getUsername().equals(this.username)) {
 
-            if(GameLibrary.getManager().getPassword().equals(this.password) ){ // if password is correct
+            if(GameLibrary.getManager().getPassword().equals(this.password)) {
 
                 count = 1;
                 man = GameLibrary.getManager();
