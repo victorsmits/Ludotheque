@@ -9,6 +9,4 @@ package gamelibrary;
  *
  * @author ablo1
  */
-public interface AdherentFacade {
-    
-}
+public interface AdherentFacade { }
