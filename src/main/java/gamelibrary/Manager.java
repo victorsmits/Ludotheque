@@ -16,7 +16,8 @@ public final class Manager extends Person {
     private static Manager instance; // Unique instance
     
     // private constructor for Singleton
-    private Manager(String name, String firstName, String username, String password) {
+    private Manager(String name, String firstName,
+                    String username, String password) {
         super(name, firstName, username, password);
 
     }
@@ -39,7 +40,8 @@ public final class Manager extends Person {
      * @param newName
      * @param newFirstName
      */
-    public synchronized static void setInstance (String newName, String newFirstName) {
+    public synchronized static void setInstance (String newName,
+                                                 String newFirstName) {
         instance.setName(newName);
         instance.setFirstname(newFirstName);
     }
@@ -71,7 +73,8 @@ public final class Manager extends Person {
                 typeExist = true;
             } else {
                 //TODO(someone): catch wrong type of game => redo input ?
-                System.out.println("Please type in a game type in the following list : " +
+                System.out.println("Please type in a game type " +
+                        "in the following list : " +
                         "\n\t * VideoGame" +
                         "\n\t * BoardGame" +
                         "\n\t * Toy");
@@ -113,10 +116,12 @@ public final class Manager extends Person {
                 }
             }while(!isInteger);
         }
-        Game newGame = GameFactory.createGame(type, specificParam, name, manufacturer, nOfPlayers);
+        Game newGame = GameFactory.createGame(type, specificParam,
+                name, manufacturer, nOfPlayers);
 
         // Add game
-        GameLibrary.addGame(newGame); //fixed by creating getGameList in GameLibrary
+        GameLibrary.addGame(newGame);
+        //fixed by creating getGameList in GameLibrary
         System.out.println("Add with success");
     }
     
@@ -132,10 +137,12 @@ public final class Manager extends Person {
 
                 Borrow borrow = GameLibrary.getAllBorrowList().get(i);
 
-                System.out.println("-----------------------------------------------------------------------------");
+                System.out.println("-----------------------------------------" +
+                        "------------------------------------");
                 borrow.getGame().displayInfos();
                 borrow.getAdherent().displayInfos();
-                System.out.println("-----------------------------------------------------------------------------");
+                System.out.println("-----------------------------------------" +
+                        "------------------------------------");
             }
             result = "Found with success";
         } else {
