@@ -26,21 +26,22 @@ public class Authentification {
 
         int count = 0;
         Adherent adh = null;
-        if(GameLibrary.getAdherentList().isEmpty()) { // if database empty
+        if(GameLibrary.getAdherentList().isEmpty()) {
             System.out.println("No found in database");
             return null;
         }
         
         for (int i = 0; i < GameLibrary.getAdherentList().size(); i++) {
-            if(GameLibrary.getAdherentList().get(i).getUsername().equals(this.username) ) {
+            Adherent adherent = GameLibrary.getAdherentList().get(i);
+            if(adherent.getUsername()
+                .equals(this.username)) {
 
-                if(GameLibrary.getAdherentList().get(i).getPassword().equals(this.password) ) {
-                
+                if(adherent.getPassword().equals(this.password)) {
                     count = 1;
-                    adh = new Adherent(GameLibrary.getAdherentList().get(i).getName(),
-                                        GameLibrary.getAdherentList().get(i).getfirstname(),
-                                        GameLibrary.getAdherentList().get(i).getUsername(),
-                                        GameLibrary.getAdherentList().get(i).getPassword());
+                    adh = new Adherent(adherent.getName(),
+                                       adherent.getfirstname(),
+                                       adherent.getUsername(),
+                                       adherent.getPassword());
                 
                 }else{
                     count = 2;
@@ -128,13 +129,13 @@ public class Authentification {
         //put  username
         Scanner user = new Scanner(System.in);
         String username;
-        System.out.println("Enter your username"); // Enter username and press Enter
+        System.out.println("Enter your username");
         this.username = user.nextLine();
 
         // put password
         Scanner pass = new Scanner(System.in);
         String password;
-        System.out.println("Enter your password");  // Enter username and press Enter
+        System.out.println("Enter your password");
         this.password = pass.nextLine();
 
     }
