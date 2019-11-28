@@ -24,7 +24,8 @@ public class Adherent extends Person {
      * @param username
      * @param password
      */
-    public Adherent(String name, String firstName, String username, String password) {
+    public Adherent(String name, String firstName,
+                    String username, String password) {
         super(name, firstName, username, password);
         borrowList = new ArrayList<>();
         subscriptionBegin = LocalDate.now();
@@ -42,7 +43,9 @@ public class Adherent extends Person {
      *
      * @return
      */
-    private String BorrowGame(String gameType, ArrayList<Game> database, long id) {
+    private String BorrowGame(String gameType,
+                              ArrayList<Game> database,
+                              long id) {
         String str;
         Game game;
         Borrow borrow;
@@ -87,7 +90,8 @@ public class Adherent extends Person {
     
     @Override
     void displayInfos() {
-        System.out.printf("Name : %s ; First Name: %s ; Id : %s ; date of Subscription : %s%n",
+        System.out.printf("Name : %s ; First Name: %s ; " +
+                        "Id : %s ; date of Subscription : %s%n",
                         getName(),
                         getfirstname(), 
                         getId(),
@@ -105,8 +109,8 @@ public class Adherent extends Person {
 
                 Borrow borrow = borrowList.get(i);
 
-                System.out.println("-----------------------------------------------" +
-                        "------------------------------");
+                System.out.println("-------------------------------------" +
+                        "----------------------------------------");
                 borrow.getGame().displayInfos();
                 System.out.println("-------------------------------------" +
                         "----------------------------------------");
