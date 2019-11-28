@@ -76,7 +76,7 @@ public final class Manager extends Person {
                 parameter = "material";
                 typeExist = true;
             } else {
-                //TODO : catch wrong type of game => redo input ?
+                //TODO(someone): catch wrong type of game => redo input ?
                 System.out.println("Please type in a game type in the following list : " +
                         "\n\t * VideoGame" +
                         "\n\t * BoardGame" +
