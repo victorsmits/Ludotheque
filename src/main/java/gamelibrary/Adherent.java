@@ -46,7 +46,6 @@ public class Adherent extends Person {
     private String BorrowGame(String gameType,
                               ArrayList<Game> database,
                               long id) {
-        String str;
         Game game;
         Borrow borrow;
         int count = 0;
@@ -78,13 +77,12 @@ public class Adherent extends Person {
         }
         switch (count) {
             case 1:
-                str = "You can pick up your " + gameType + ".";
+                return "You can pick up your " + gameType + ".";
             case 2:
-                str = "This " + gameType + " is not available.";
+                return "This " + gameType + " is not available.";
             default:
-                str = "This " + gameType + " was not found.";
+                return "This " + gameType + " was not found.";
         }
-        return str;
     }
 
     
