@@ -30,7 +30,7 @@ public class Person {
   public Person(String name, String firstname, String username, String password) {
       //ID is a random number between 1001 and 9000 (always 4 digit number)
       //WHY RANDOM ?? ID SHOULD GARANTEE ATOMICITY !!
-      this.id =  (long) ((Math.random()*(9999-1000)+1)+1000);
+      this.id =  (long) ((Math.random() * (9999 - 1000) + 1) + 1000);
       this.name = name;
       this.firstname = firstname;
       this.username = username;
