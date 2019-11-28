@@ -5,7 +5,6 @@
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/GameLibrary.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/AdherentFacade.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/userFacade.java
-/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/CreateGameFactory.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Toy.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Person.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Manager.java
@@ -14,7 +13,5 @@
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Adherent.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/GameFactory.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/BoardGame.java
-/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/FactoryGame.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/Authentification.java
 /Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/SubjectAdherent.java
-/Users/victorsmits/Dropbox/ECAM/MIN 4/Architecture and software quality/Ludotheque/src/main/java/gamelibrary/GameFactoryIF.java
