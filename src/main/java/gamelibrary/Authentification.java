@@ -26,17 +26,17 @@ public class Authentification {
 
         int count = 0;
         Adherent adh = null;
-        if(GameLibrary.getAdherentList().isEmpty()) {
+        if (GameLibrary.getAdherentList().isEmpty()) {
             System.out.println("No found in database");
             return null;
         }
         
         for (int i = 0; i < GameLibrary.getAdherentList().size(); i++) {
             Adherent adherent = GameLibrary.getAdherentList().get(i);
-            if(adherent.getUsername()
+            if (adherent.getUsername()
                 .equals(this.username)) {
 
-                if(adherent.getPassword().equals(this.password)) {
+                if (adherent.getPassword().equals(this.password)) {
                     count = 1;
                     adh = new Adherent(adherent.getName(),
                                        adherent.getfirstname(),
@@ -74,14 +74,14 @@ public class Authentification {
         
         int count = 0;
         Manager man = null;
-        if(GameLibrary.getAdherentList() == null){ // if database empty
+        if (GameLibrary.getAdherentList() == null){
             System.out.println("No manager fot this game library");
             return null;
         }
         
-        if(GameLibrary.getManager().getUsername().equals(this.username)) {
+        if (GameLibrary.getManager().getUsername().equals(this.username)) {
 
-            if(GameLibrary.getManager().getPassword().equals(this.password)) {
+            if (GameLibrary.getManager().getPassword().equals(this.password)) {
 
                 count = 1;
                 man = GameLibrary.getManager();
