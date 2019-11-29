@@ -62,7 +62,9 @@ public final class GameLibrary {
     /**
      * @return
      */
-    public static ArrayList<Game> getGameList(){ return gameList; }
+    public static ArrayList<Game> getGameList() {
+        return gameList;
+    }
     /**
      * @return
      */
@@ -148,7 +150,8 @@ public final class GameLibrary {
         getPassword = password.nextLine();
 
         
-        Adherent adherent = new Adherent(getName, getFirstname, getUsername, getPassword);
+        Adherent adherent = new Adherent(getName, getFirstname, getUsername,
+            getPassword);
         
         // Add adherent
         getAdherentList().add(adherent);
