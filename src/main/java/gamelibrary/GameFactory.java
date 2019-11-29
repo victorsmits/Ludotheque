@@ -14,20 +14,18 @@ public class GameFactory  { //implements GameFactoryIF removed because useless
     public static Game createGame(String type, String specificParam,
                            String name, String manufacturer, int nOfPlayers){
 
-        if(type.equals("VideoGame")) {
+      switch (type) {
+        case "VideoGame":
           return new VideoGame(specificParam, name, manufacturer);
-        } 
-        else if(type.equals("BoardGame")) {
-          if (nOfPlayers<=0){
+        case "BoardGame":
+          if (nOfPlayers <= 0) {
             return null;
           }
           return new BoardGame(nOfPlayers, name, manufacturer);
-        }
-        else if(type.equals("Toy")) {
+        case "Toy":
           return new Toy(specificParam, name, manufacturer);
-        }
-        else{
+        default:
           return null;
-        }
+      }
     }
 }
