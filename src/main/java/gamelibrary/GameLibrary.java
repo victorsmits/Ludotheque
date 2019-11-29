@@ -36,7 +36,7 @@ public final class GameLibrary {
     /**
      * @return
      */
-    public synchronized GameLibrary getInstanceSingleObjectGameLibrary(){
+    public static GameLibrary getInstanceSingleObjectGameLibrary(){
        if (instanceSingleObjectGameLibrary == null) {
 
           instanceSingleObjectGameLibrary = new GameLibrary("ECAM Game"
