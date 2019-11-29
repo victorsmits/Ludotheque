@@ -17,7 +17,7 @@ public class UserFacadeImpl implements UserFacade{
     private Adherent adh = null;
     
     void userFacadeImpl(){
-        auth= new Authentification();
+        auth = new Authentification();
     }
     
     @Override
@@ -25,9 +25,9 @@ public class UserFacadeImpl implements UserFacade{
         man = auth.managerLogin();
         
         while (man != null){
-            System.out.println ("------------------------------Manager menu----" +
-                    "---------------------------------------\n" );
-            System.out.println ("Welcome Mr " + man.toString() + "\n" );
+            System.out.println ("--------------------------Manager menu----" +
+                    "-----------------------------------\n");
+            System.out.println ("Welcome Mr " + man.toString() + "\n");
             System.out.println ("\t1. Add new video game \n"
                     + "\t2. Add new board game \n"
                     + "\t3. Add new toy \n"
@@ -38,7 +38,8 @@ public class UserFacadeImpl implements UserFacade{
             Scanner ch1 = new Scanner(System.in);
             String getManCh;
 
-            System.out.println("Enter your choice's number"); // Enter username and press Enter
+            System.out.println("Enter your choice's number");
+
             getManCh = ch1.nextLine();
             this.applyAction(getManCh);
         }
@@ -51,9 +52,10 @@ public class UserFacadeImpl implements UserFacade{
     public void adherentMenu(){
         adh = auth.adherentLogin();
         
-        while(adh != null){
-            System.out.println("------------------------------Adherent menu-------------------------------------------\n" );
-            System.out.println("Welcome Mr " + adh.getName() + "\n" );
+        while (adh != null){
+            System.out.println("------------------------------Adherent menu----"
+                + "---------------------------------------\n");
+            System.out.println("Welcome Mr " + adh.getName() + "\n");
             System.out.println("\t1. Search a game \n"
                     + "\t2. Borrow game \n"
                     + "\t3. Get my borrow list \n"
@@ -69,7 +71,8 @@ public class UserFacadeImpl implements UserFacade{
                 case "1":
                     boolean search = true;
                     while (search) {
-                        System.out.println("------------------------------Searching menu-------------------------------------------\n");
+                        System.out.println("--------------------------Searching"
+                            + " menu--------------------------\n");
                         System.out.println("\t1. Search a video game \n"
                                 + "\t2. Search a board game \n"
                                 + "\t3. Search a toy \n"
@@ -86,8 +89,10 @@ public class UserFacadeImpl implements UserFacade{
                 case "2":
                     boolean borrow = true;
                     while (borrow) {
-                        System.out.println("------------------------------Borrowing menu-------------------------------------------\n");
-                        System.out.println("Before borrow a game, please search it to take his id");
+                        System.out.println("--------------------------Borrowing"
+                            + " menu--------------------------\n");
+                        System.out.println("Before borrow a game, "
+                            + "please search it to take his id");
                         System.out.println("\t1. Borrow a video game \n"
                                 + "\t2. Borrow a board game \n"
                                 + "\t3. Borrow a toy \n"
@@ -122,30 +127,30 @@ public class UserFacadeImpl implements UserFacade{
                 Scanner searchVName = new Scanner(System.in);
                 String getvname;
 
-                System.out.println("Enter the video game's name"); // Enter username and press Enter
+                System.out.println("Enter the video game's name");
 
                 getvname = searchVName.nextLine();
-                System.out.println(adh.searchGame("Video Game",getvname));
+                System.out.println(adh.searchGame("Video Game", getvname));
                 break;
             case "2":
                 //get choose
                 Scanner searchBName = new Scanner(System.in);
                 String getbname;
 
-                System.out.println("Enter the board game's name"); // Enter username and press Enter
+                System.out.println("Enter the board game's name");
 
                 getbname = searchBName.nextLine();
-                System.out.println(adh.searchGame("Board Game",getbname));
+                System.out.println(adh.searchGame("Board Game", getbname));
                 break;
             case "3":
                 //get choose
                 Scanner searchTName = new Scanner(System.in);
                 String getName;
 
-                System.out.println("Enter the toy's name"); // Enter username and press Enter
+                System.out.println("Enter the toy's name");
 
                 getName = searchTName.nextLine();
-                System.out.println(adh.searchGame("Toy",getName));
+                System.out.println(adh.searchGame("Toy", getName));
                 break;
             case "4":
                 return false;
