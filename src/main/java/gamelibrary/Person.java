@@ -164,7 +164,7 @@ public class Person {
 
   void displayInfos() {
       System.out.printf("Name : %s ; Firstname: %s ; Id : %s%n",getName(),
-                      getfirstname(), getId()
+          getfirstname(), getId()
       );
   }
 
