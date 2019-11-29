@@ -23,7 +23,8 @@ public final class GameLibrary {
     private static ArrayList<Adherent> adherentList;
     private static GameLibrary instanceSingleObjectGameLibrary;
 
-    //make the constructor private so that this class cannot be instantiated twice
+    //make the constructor private so that this class
+    // cannot be instantiated twice
     private GameLibrary(String name) {
         this.name = name;
         videoGameList = new ArrayList<>();
@@ -35,10 +36,11 @@ public final class GameLibrary {
     /**
      * @return
      */
-    public synchronized static GameLibrary getInstanceSingleObjectGameLibrary(){
-       if(instanceSingleObjectGameLibrary== null) {
+    public synchronized GameLibrary getInstanceSingleObjectGameLibrary(){
+       if (instanceSingleObjectGameLibrary == null) {
 
-          instanceSingleObjectGameLibrary = new GameLibrary("ECAM Game Library");
+          instanceSingleObjectGameLibrary = new GameLibrary("ECAM Game"
+              + " Library");
        }
         return instanceSingleObjectGameLibrary;
     }
@@ -121,28 +123,28 @@ public final class GameLibrary {
         Scanner yourname = new Scanner(System.in);
         String getName;
         
-        System.out.println("Enter your name"); // Enter username and press Enter
+        System.out.println("Enter your name");
         getName = yourname.nextLine();
 
         // set firstname
         Scanner firstname = new Scanner(System.in);
         String getFirstname;
 
-        System.out.println("Enter your firstname");  // Enter username and press Enter
+        System.out.println("Enter your firstname");
         getFirstname = firstname.nextLine();
         
         //set username
         Scanner username = new Scanner(System.in);
         String getUsername;
         
-        System.out.println("Choose your username"); // Enter username and press Enter
+        System.out.println("Choose your username");
         getUsername = username.nextLine();
 
         // set password
         Scanner password = new Scanner(System.in);
         String getPassword;
 
-        System.out.println("Choose your password");  // Enter username and press Enter
+        System.out.println("Choose your password");
         getPassword = password.nextLine();
 
         
