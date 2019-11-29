@@ -23,7 +23,7 @@ public class Borrow {
      * @param game
      */
     public Borrow(Adherent adherent, Game game) {
-        this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
+        this.id = (long) ((Math.random() * ((9999 - 1000) + 1)) + 1000);
         dateOfborrow = LocalDate.now();
         dateOfReturn = dateOfborrow.plusMonths(1);;
         this.adherent = adherent;
