@@ -18,11 +18,12 @@ public class Main {
     public static void main(String[] args) {
         boolean main = true;
         
-        while(main){
+        while (main){
             // Create the only one Game library
-            GameLibrary gamelibrary = GameLibrary.getInstanceSingleObjectGameLibrary();
+            GameLibrary gamelibrary =
+                GameLibrary.getInstanceSingleObjectGameLibrary();
 
-            System.out.println("Welcome to " + gamelibrary.getName() + "\n" );
+            System.out.println("Welcome to " + gamelibrary.getName() + "\n");
             System.out.println("\t1. Manager \n"
                     + "\t2. Adherent \n"
                     + "\t3. Create an account \n"
@@ -32,7 +33,7 @@ public class Main {
             Scanner ch = new Scanner(System.in);
             String getCh;
 
-            System.out.println("Choose an option (enter the number)"); // Enter username and press Enter
+            System.out.println("Choose an option (enter the number)");
             getCh = ch.nextLine();
             
             //Manager menu
