@@ -43,7 +43,7 @@ public final class Manager extends Person {
     public static synchronized void setInstance (String newName,
                                                  String newFirstName) {
         instance.setName(newName);
-        instance.setFirstname(newFirstName);
+        instance.setFirstName(newFirstName);
     }
 
     /**
@@ -110,7 +110,7 @@ public final class Manager extends Person {
 
         System.out.println(String.format("Enter the %s", parameter));
         specificParam = specificParamInput.nextLine();
-        if (type == "BoardGame"){
+        if (type.equals("BoardGame")){
             do {
                 try {
                     nOfPlayers = Integer.parseInt(specificParam);

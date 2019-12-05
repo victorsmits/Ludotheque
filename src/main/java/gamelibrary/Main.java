@@ -35,9 +35,9 @@ public class Main {
 
             System.out.println("Choose an option (enter the number)");
             getCh = ch.nextLine();
-            
-            //Manager menu
+
             switch (getCh) {
+                //Manager menu
                 case "1":
                     UserFacadeImpl manMenu = new UserFacadeImpl();
                     manMenu.userFacadeImpl();

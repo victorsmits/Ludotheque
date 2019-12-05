@@ -47,13 +47,13 @@ public class ManagerTest {
     @Test
     public void testGetInstance() {
         String expName = "Juan";
-        String expFirstanme = "Oscar";
+        String expFirstName = "Oscar";
         
         String name = man.getName();
-        String firstsname = man.getfirstname();
+        String firstName = man.getFirstName();
         
         assertEquals(expName, name);
-        assertEquals(expFirstanme, firstsname);
+        assertEquals(expFirstName, firstName);
 
     }
 
@@ -64,14 +64,14 @@ public class ManagerTest {
     public void testSetInstance() {
         System.out.println("setInstance");
         String newName = "Juan";
-        String newFirstname = "Oscar";
-        Manager.setInstance(newName, newFirstname);
+        String newFirstName = "Oscar";
+        Manager.setInstance(newName, newFirstName);
         
         String name = man.getName();
-        String firstsname = man.getfirstname();
+        String firstName = man.getFirstName();
         
         assertEquals(newName, name);
-        assertEquals(newFirstname, firstsname);
+        assertEquals(newFirstName, firstName);
     }
 
     /**
@@ -123,7 +123,7 @@ public class ManagerTest {
         
         assertEquals(expectedSize, result.size()); // size test
         
-	result.add(new Toy("Caoutchouc", "barbie", "USA"));
+	result.add(new Toy("Rubber", "barbie", "USA"));
 	assertEquals(expectedSize+1, result.size());
         
 	/*for(int i = 0; i < result.size(); i++) {

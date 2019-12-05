@@ -58,9 +58,9 @@ public class Adherent extends Person {
             //Check if game exist
             if (value.getId() == id) {
                 //Check the game status
-                if (value.getStatut()) {
+                if (value.getStatus()) {
                     game = value;
-                    game.setStatut(false);
+                    game.setStatus(false);
 
                     borrow = new Borrow(this, game);
 
@@ -91,7 +91,7 @@ public class Adherent extends Person {
         System.out.printf("Name : %s ; First Name: %s ; " +
                         "Id : %s ; date of Subscription : %s%n",
                         getName(),
-                        getfirstname(), 
+                        getFirstName(),
                         getId(),
                         getSubscriptionBegin()
         );

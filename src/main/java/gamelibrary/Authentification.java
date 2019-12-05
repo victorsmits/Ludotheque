@@ -27,7 +27,7 @@ public class Authentification {
         int count = 0;
         Adherent adh = null;
         if (GameLibrary.getAdherentList().isEmpty()) {
-            System.out.println("No found in database");
+            System.out.println("No found in database...");
             return null;
         }
         
@@ -39,7 +39,7 @@ public class Authentification {
                 if (adherent.getPassword().equals(this.password)) {
                     count = 1;
                     adh = new Adherent(adherent.getName(),
-                                       adherent.getfirstname(),
+                                       adherent.getFirstName(),
                                        adherent.getUsername(),
                                        adherent.getPassword());
                 
@@ -54,7 +54,7 @@ public class Authentification {
 
         switch (count) {
             case 1:
-                System.out.println("Successfull connexion");
+                System.out.println("Connexion succeeded");
                 return adh;
             case 2:
                 System.out.println("wrong password");
@@ -75,7 +75,7 @@ public class Authentification {
         int count = 0;
         Manager man = null;
         if (GameLibrary.getAdherentList() == null){
-            System.out.println("No manager fot this game library");
+            System.out.println("No manager fot this game library!");
             return null;
         }
         
@@ -96,7 +96,7 @@ public class Authentification {
         
         switch (count) {
             case 1:
-                System.out.println("Successfull connexion");
+                System.out.println("Connexion succeeded");
                 return man;
             case 2:
                 System.out.println("wrong password");
@@ -112,7 +112,7 @@ public class Authentification {
      * @return
      */
     public Manager managerLogout(){
-        System.out.println("Logout with successfull");
+        System.out.println("Logout with success!");
         return null;
     }
     
@@ -121,7 +121,7 @@ public class Authentification {
      * @return
      */
     public Adherent adherentLogout(){
-        System.out.println("Logout with successfull");
+        System.out.println("Logout with success!");
         return null;
     }
 
@@ -129,13 +129,13 @@ public class Authentification {
         //put  username
         Scanner user = new Scanner(System.in);
         String username;
-        System.out.println("Enter your username");
+        System.out.println("Enter your username:");
         this.username = user.nextLine();
 
         // put password
         Scanner pass = new Scanner(System.in);
         String password;
-        System.out.println("Enter your password");
+        System.out.println("Enter your password:");
         this.password = pass.nextLine();
 
     }

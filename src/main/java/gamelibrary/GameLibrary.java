@@ -14,7 +14,7 @@ import java.util.Scanner; // import the Scanner class
 public final class GameLibrary {
 
     private String name;
-    private static Manager manager = Manager.getInstance();;
+    private static Manager manager = Manager.getInstance();
     private static ArrayList<Borrow> allBorrowList = new ArrayList<>();
     private static ArrayList<Game> gameList;
     private static ArrayList<Game> videoGameList;
@@ -24,7 +24,7 @@ public final class GameLibrary {
     private static GameLibrary instanceSingleObjectGameLibrary;
 
     //make the constructor private so that this class
-    // cannot be instantiated twice
+    //cannot be instantiated twice
     private GameLibrary(String name) {
         this.name = name;
         videoGameList = new ArrayList<>();
@@ -122,18 +122,18 @@ public final class GameLibrary {
     public void createAdherentAccount(){
         
         //set name
-        Scanner yourname = new Scanner(System.in);
+        Scanner yourName = new Scanner(System.in);
         String getName;
         
         System.out.println("Enter your name");
-        getName = yourname.nextLine();
+        getName = yourName.nextLine();
 
-        // set firstname
-        Scanner firstname = new Scanner(System.in);
-        String getFirstname;
+        // set first name
+        Scanner firstName = new Scanner(System.in);
+        String getFirstName;
 
-        System.out.println("Enter your firstname");
-        getFirstname = firstname.nextLine();
+        System.out.println("Enter your first name");
+        getFirstName = firstName.nextLine();
         
         //set username
         Scanner username = new Scanner(System.in);
@@ -150,7 +150,7 @@ public final class GameLibrary {
         getPassword = password.nextLine();
 
         
-        Adherent adherent = new Adherent(getName, getFirstname, getUsername,
+        Adherent adherent = new Adherent(getName, getFirstName, getUsername,
             getPassword);
         
         // Add adherent
