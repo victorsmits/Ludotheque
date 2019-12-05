@@ -17,7 +17,7 @@ abstract class Game {
     private boolean statut;
 
     public Game(String name, String manufacturer) {
-      this.id = (long) ((Math.random()*((9999-1000)+1))+1000);
+      this.id = (long) ((Math.random() * ((9999 - 1000) + 1)) + 1000);
       this.name = name;
       this.statut = true;
       this.manufacturer = manufacturer;

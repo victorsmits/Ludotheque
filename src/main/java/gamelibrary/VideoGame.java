@@ -46,12 +46,15 @@ public class VideoGame extends Game {
     
     @Override
     void displayInfos(){
-        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ; Statut : %s ; Platform : %s%n",getName(), 
+        System.out.printf("Name : %s ; Manufacturer: %s ; Id : %s ;"
+                + " Statut : %s ; Platform : %s%n", getName(),
                         getManufacturer(), 
                         getId(), 
                         getStatut(),
                         getPlatform());
     }
 
-    public String getSpecificInfo(){ return this.platform;}
+    public String getSpecificInfo(){
+        return this.platform;
+    }
 }

@@ -5,7 +5,6 @@
  */
 package gamelibrary;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -50,7 +49,7 @@ public final class Manager extends Person {
     /**
      *
      */
-    public void addGame(){//String type, String gameName, String specificParam, String manufacturer, int nOfPlayers ){
+    public void addGame(){
         String parameter = "";
         String[] possibleTypes = {"VideoGame", "BoardGame", "Toy"};
         int nOfPlayers = 0;
@@ -62,7 +61,8 @@ public final class Manager extends Person {
                     + "\t Toy");
             Scanner gameTypeInput = new Scanner(System.in);
 
-            System.out.println("Please enter the type of game as written below : \n");
+            System.out.println("Please enter the type of "
+                + "game as written below : \n");
             System.out.println(String.format("\t %1$%s \n"
                             + "\t %2$%s \n"
                             + "\t %3$%s \n", possibleTypes[0],
