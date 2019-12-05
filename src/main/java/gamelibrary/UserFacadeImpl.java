@@ -135,12 +135,12 @@ public class UserFacadeImpl implements UserFacade{
             case "2":
                 //get choose
                 Scanner searchBName = new Scanner(System.in);
-                String getbname;
+                String getBName;
 
                 System.out.println("Enter the board game's name");
 
-                getbname = searchBName.nextLine();
-                System.out.println(adh.searchGame("Board Game", getbname));
+                getBName = searchBName.nextLine();
+                System.out.println(adh.searchGame("Board Game", getBName));
                 break;
             case "3":
                 //get choose

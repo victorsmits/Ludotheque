@@ -22,11 +22,12 @@ public class ManagerMock extends Person{
     
     private static ManagerMock instance ; // Unique instance
 
-    public ManagerMock(String name, String firstname, String username, String password) {
-        super(name, firstname, username, password);
+    public ManagerMock(String name, String firstName, String username,
+                       String password) {
+        super(name, firstName, username, password);
     }
     
-    // Only one instanciated ==> Singleton
+    // Only one instantiated ==> Singleton
     public synchronized static ManagerMock getInstance ()
     {
         if ( instance == null )
@@ -36,10 +37,11 @@ public class ManagerMock extends Person{
         return instance ;
     }
     
-    public synchronized static void setInstance (String newName, String newFirstname)
+    public synchronized static void setInstance (String newName,
+                                                 String newFirstName)
     {
         instance.setName(newName);
-        instance.setFirstname(newFirstname);
+        instance.setFirstName(newFirstName);
     }
     
     public void addVideoGame(){
@@ -49,7 +51,7 @@ public class ManagerMock extends Person{
     }
     
     public void addBoardGame(){
-        GameLibrary.getBoardGameList().add(new BoardGame(2, "échec", "Sony"));
+        GameLibrary.getBoardGameList().add(new BoardGame(2, "Echec", "Sony"));
         GameLibrary.getBoardGameList().add(new BoardGame(2, "Monopoly", "Microsoft"));
     }
     

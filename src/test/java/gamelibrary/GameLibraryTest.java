@@ -68,7 +68,8 @@ public class GameLibraryTest {
         for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
-            assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
+            assertEquals(expResult.get(i).getStatus(),
+                    result.get(i).getStatus());
             assertEquals(expResult.get(i).getSpecificInfo(), result.get(i).getSpecificInfo());
         }
     }
@@ -88,7 +89,8 @@ public class GameLibraryTest {
         for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
-            assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
+            assertEquals(expResult.get(i).getStatus(),
+                    result.get(i).getStatus());
             assertEquals(expResult.get(i).getSpecificInfo(), result.get(i).getSpecificInfo());
         }
     }
@@ -108,7 +110,8 @@ public class GameLibraryTest {
         for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
             assertEquals(expResult.get(i).getManufacturer(), result.get(i).getManufacturer());
-            assertEquals(expResult.get(i).getStatut(), result.get(i).getStatut());
+            assertEquals(expResult.get(i).getStatus(),
+                    result.get(i).getStatus());
             assertEquals(expResult.get(i).getSpecificInfo(), result.get(i).getSpecificInfo());
         }
     }
@@ -128,7 +131,8 @@ public class GameLibraryTest {
         for (int i = 0; i < result.size(); i++) { // attribut test
             
             assertEquals(expResult.get(i).getName(), result.get(i).getName());
-            assertEquals(expResult.get(i).getfirstname(), result.get(i).getfirstname());
+            assertEquals(expResult.get(i).getFirstName(),
+                    result.get(i).getFirstName());
         }
     }
 
@@ -136,10 +140,10 @@ public class GameLibraryTest {
     public void testGetManager() {        
         
         String expNameResult = "Chris";
-        String expFirstnameResult = "Jean";
+        String expFirstNameResult = "Jean";
         
         String nameResult = GameLibrary.getManager().getName();
-        String firstnameResult = GameLibrary.getManager().getfirstname();
+        String firstNameResult = GameLibrary.getManager().getFirstName();
         
         assertEquals(expNameResult, nameResult);
     }
@@ -148,9 +152,9 @@ public class GameLibraryTest {
     public void testSetManager() {
         
         String expNameResult = "Chris";
-        String expFirstnameResult = "Jean";
+        String expFirstNameResult = "Jean";
         
-        gameLibrary.setManager(expNameResult, expFirstnameResult);
+        gameLibrary.setManager(expNameResult, expFirstNameResult);
         
         String nameResult = GameLibrary.getManager().getName();
         

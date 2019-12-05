@@ -77,7 +77,7 @@ public class PersonTest {
     @Test
     public void testGetfirstname() {
         String expFirstname = "Oscar";
-        String result = person.getfirstname();
+        String result = person.getFirstName();
         assertEquals(expFirstname, result);
     }
 
@@ -86,10 +86,10 @@ public class PersonTest {
      */
     @Test
     public void testSetFirstname() {
-        String expFistname = "Oscar";
-        person.setFirstname("Oscar");
+        String expFirstName = "Oscar";
+        person.setFirstName("Oscar");
         // TODO review the generated test code and remove the default call to fail.
-        assertEquals(expFistname, person.getfirstname());
+        assertEquals(expFirstName, person.getFirstName());
     }
 
     /**
