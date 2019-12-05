@@ -35,13 +35,13 @@ public class UserFacadeImpl implements UserFacade{
                     + "\t5. Search a game \n"
                     + "\t6. back \n");
             //get choose
-            Scanner ch1 = new Scanner(System.in);
-            String getManCh;
+            Scanner choice = new Scanner(System.in);
+            String getManChoice;
 
             System.out.println("Enter your choice's number");
 
-            getManCh = ch1.nextLine();
-            this.applyAction(getManCh);
+            getManChoice = choice.nextLine();
+            this.applyAction(getManChoice);
         }
     }
     
@@ -120,27 +120,28 @@ public class UserFacadeImpl implements UserFacade{
         }
     }
 
-    private boolean applyAction(String borrow){
-        switch (borrow) {
+    private boolean applyAction(String choice){
+        switch (choice) {
             case "1":
-                //get choose
                 Scanner searchVName = new Scanner(System.in);
-                String getvname;
+                String getVideoGameName;
 
                 System.out.println("Enter the video game's name");
 
-                getvname = searchVName.nextLine();
-                System.out.println(adh.searchGame("Video Game", getvname));
+                getVideoGameName = searchVName.nextLine();
+                System.out.println(adh.searchGame("Video Game",
+                        getVideoGameName));
                 break;
             case "2":
                 //get choose
                 Scanner searchBName = new Scanner(System.in);
-                String getbname;
+                String getBoardGameName;
 
                 System.out.println("Enter the board game's name");
 
-                getbname = searchBName.nextLine();
-                System.out.println(adh.searchGame("Board Game", getbname));
+                getBoardGameName = searchBName.nextLine();
+                System.out.println(adh.searchGame("Board Game",
+                        getBoardGameName));
                 break;
             case "3":
                 //get choose
