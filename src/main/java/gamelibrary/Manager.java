@@ -49,7 +49,7 @@ public final class Manager extends Person {
     /**
      *
      */
-    public void addGame(){
+    public static void addGame(){
         String parameter = "";
         String[] possibleTypes = {"VideoGame", "BoardGame", "Toy"};
         int nOfPlayers = 0;
