@@ -14,7 +14,7 @@ import java.util.Scanner; // import the Scanner class
 public final class GameLibrary {
 
     private String name;
-    private static Manager manager = Manager.getInstance();;
+    private static Manager manager = Manager.getInstance();
     private static ArrayList<Borrow> allBorrowList = new ArrayList<>();
     private static ArrayList<Game> gameList;
     private static ArrayList<Game> videoGameList;
@@ -24,7 +24,7 @@ public final class GameLibrary {
     private static GameLibrary instanceSingleObjectGameLibrary;
 
     //make the constructor private so that this class
-    // cannot be instantiated twice
+    //cannot be instantiated twice
     private GameLibrary(String name) {
         this.name = name;
         videoGameList = new ArrayList<>();

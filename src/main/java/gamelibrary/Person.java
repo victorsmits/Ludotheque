@@ -15,24 +15,24 @@ public class Person {
     
    private long id;
    private String name;
-   private String firstname;
+   private String firstName;
    private String username;
    private String password;
 
   /**
    *
    * @param name
-   * @param firstname
+   * @param firstName
    * @param username
    * @param password
    */
-  public Person(String name, String firstname,
+  public Person(String name, String firstName,
                 String username, String password) {
       //ID is a random number between 1001 and 9000 (always 4 digit number)
       //WHY RANDOM ?? ID SHOULD GARANTEE ATOMICITY !!
       this.id =  (long) ((Math.random() * (9999 - 1000) + 1) + 1000);
       this.name = name;
-      this.firstname = firstname;
+      this.firstName = firstName;
       this.username = username;
       this.password = password;
   }
@@ -97,21 +97,21 @@ public class Person {
    *
    * @return
    */
-  public String getfirstname() {
-      return firstname;
+  public String getFirstName() {
+      return firstName;
   }
 
   /**
    *
-   * @param newFirstname
+   * @param newFirstName
    */
-  public void setFirstname(String newFirstname) {
-      this.firstname = newFirstname;
+  public void setFirstName(String newFirstName) {
+      this.firstName = newFirstName;
   }
 
  @Override
   public String toString(){
-      return getName() + " " + getfirstname();
+      return getName() + " " + getFirstName();
   }
 
 
@@ -163,8 +163,8 @@ public class Person {
   }
 
   void displayInfos() {
-      System.out.printf("Name : %s ; Firstname: %s ; Id : %s%n", getName(),
-          getfirstname(), getId()
+      System.out.printf("Name : %s ; First name: %s ; Id : %s%n", getName(),
+          getFirstName(), getId()
       );
   }
 

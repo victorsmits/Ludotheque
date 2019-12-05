@@ -14,7 +14,7 @@ public class Borrow {
     private Adherent adherent;
     private Game game;
     private long id;
-    private LocalDate dateOfborrow;
+    private LocalDate dateOfBorrow;
     private LocalDate dateOfReturn;
 
     /**
@@ -24,8 +24,8 @@ public class Borrow {
      */
     public Borrow(Adherent adherent, Game game) {
         this.id = (long) ((Math.random() * ((9999 - 1000) + 1)) + 1000);
-        dateOfborrow = LocalDate.now();
-        dateOfReturn = dateOfborrow.plusMonths(1);;
+        dateOfBorrow = LocalDate.now();
+        dateOfReturn = dateOfBorrow.plusMonths(1);;
         this.adherent = adherent;
         this.game = game;
     }
@@ -53,8 +53,8 @@ public class Borrow {
      *
      * @return
      */
-    public LocalDate getDateOfborrow() {
-        return dateOfborrow;
+    public LocalDate getDateOfBorrow() {
+        return dateOfBorrow;
     }
     
     /**
