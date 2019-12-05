@@ -128,11 +128,11 @@ public final class GameLibrary {
         System.out.println("Enter your name");
         getName = yourname.nextLine();
 
-        // set firstname
+        // set first name
         Scanner firstname = new Scanner(System.in);
         String getFirstname;
 
-        System.out.println("Enter your firstname");
+        System.out.println("Enter your first name");
         getFirstname = firstname.nextLine();
         
         //set username
