@@ -51,7 +51,7 @@ public class ManagerMock extends Person{
     }
     
     public void addBoardGame(){
-        GameLibrary.getBoardGameList().add(new BoardGame(2, "Echec", "Sony"));
+        GameLibrary.getBoardGameList().add(new BoardGame(2, "échec", "Sony"));
         GameLibrary.getBoardGameList().add(new BoardGame(2, "Monopoly", "Microsoft"));
     }
     
