@@ -25,8 +25,8 @@ public class UserFacadeImpl implements UserFacade{
         man = auth.managerLogin();
         
         while (man != null){
-            System.out.println ("------------------------------Manager menu----" +
-                    "---------------------------------------\n" );
+            System.out.println ("-----------------------------Manager menu----" +
+                    "--------------------------------------\n" );
             System.out.println ("Welcome Mr " + man.toString() + "\n" );
             System.out.println ("\t1. Add new video game \n"
                     + "\t2. Add new board game \n"
