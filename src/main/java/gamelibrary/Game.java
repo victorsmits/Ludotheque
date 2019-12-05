@@ -14,12 +14,12 @@ abstract class Game {
     private String name;
     private long id;
     private String manufacturer;
-    private boolean statut;
+    private boolean status;
 
     public Game(String name, String manufacturer) {
       this.id = (long) ((Math.random() * ((9999 - 1000) + 1)) + 1000);
       this.name = name;
-      this.statut = true;
+      this.status = true;
       this.manufacturer = manufacturer;
     }
 
@@ -39,12 +39,12 @@ abstract class Game {
         this.name = newName;
     }
 
-    public boolean getStatut() {
-        return statut;
+    public boolean getStatus() {
+        return status;
     }
 
-    public void setStatut(boolean newstatut) {
-        this.statut = newstatut;
+    public void setStatus(boolean newStatus) {
+        this.status = newStatus;
     }
 
     public String getManufacturer() {
@@ -62,7 +62,7 @@ abstract class Game {
     }
 
     void displayStatus(){
-        System.out.println(getStatut());
+        System.out.println(getStatus());
     }
 
     abstract void displayInfos();

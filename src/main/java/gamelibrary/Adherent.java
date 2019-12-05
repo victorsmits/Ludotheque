@@ -91,7 +91,7 @@ public class Adherent extends Person {
         System.out.printf("Name : %s ; First Name: %s ; " +
                         "Id : %s ; date of Subscription : %s%n",
                         getName(),
-                        getfirstname(), 
+                        getFirstName(),
                         getId(),
                         getSubscriptionBegin()
         );

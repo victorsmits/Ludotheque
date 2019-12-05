@@ -66,9 +66,9 @@ public class BorrowTest {
      * Test of getDateOfborrow method, of class Borrow.
      */
     @Test
-    public void testGetDateOfborrow() {
+    public void testGetDateOfBorrow() {
         LocalDate expResult = LocalDate.now();
-        LocalDate result = borrow.getDateOfborrow();
+        LocalDate result = borrow.getDateOfBorrow();
         assertEquals(expResult, result);
    }
 
