@@ -1,8 +1,14 @@
-[
-    {"videoGame":[
-                    {"name":"fifa 14","id":9033,"manufacturer":"Sony","statut":true,"platform":"PS3"}
-                ]
-    },
-    {"boardGame":[]},
-    {"toy":[]}
-]
+ {
+   "videoGame":
+    [
+      {
+        "name": "fifa 14",
+        "id": 9033,
+        "manufacturer": "Sony",
+        "status": true,
+        "platform": "PS3"
+      }
+    ],
+   "boardGame":[],
+   "toy":[]
+ }
