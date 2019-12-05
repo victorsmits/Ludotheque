@@ -122,18 +122,18 @@ public final class GameLibrary {
     public void createAdherentAccount(){
         
         //set name
-        Scanner yourname = new Scanner(System.in);
+        Scanner yourName = new Scanner(System.in);
         String getName;
         
         System.out.println("Enter your name");
-        getName = yourname.nextLine();
+        getName = yourName.nextLine();
 
         // set first name
-        Scanner firstname = new Scanner(System.in);
-        String getFirstname;
+        Scanner firstName = new Scanner(System.in);
+        String getFirstName;
 
         System.out.println("Enter your first name");
-        getFirstname = firstname.nextLine();
+        getFirstName = firstName.nextLine();
         
         //set username
         Scanner username = new Scanner(System.in);
@@ -150,7 +150,7 @@ public final class GameLibrary {
         getPassword = password.nextLine();
 
         
-        Adherent adherent = new Adherent(getName, getFirstname, getUsername,
+        Adherent adherent = new Adherent(getName, getFirstName, getUsername,
             getPassword);
         
         // Add adherent
