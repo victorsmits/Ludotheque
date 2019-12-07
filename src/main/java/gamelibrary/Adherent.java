@@ -43,7 +43,7 @@ public class Adherent extends Person {
      *
      * @return
      */
-    private String BorrowGame(String gameType,
+    private String borrowGame(String gameType,
                               ArrayList<Game> database,
                               long id) {
         Game game;
