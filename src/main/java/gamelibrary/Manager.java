@@ -68,6 +68,7 @@ public final class Manager extends Person {
                             + "\t %3$%s \n", possibleTypes[0],
                                           possibleTypes[1],
                                           possibleTypes[2]));
+
             type = gameTypeInput.nextLine();
             if (type == "VideoGame") {
                 parameter = "platform";
