@@ -1,0 +1,14 @@
+\subsection{Simplicité}
+    \paragraph{}
+        L'utilisation du design pattern singleton est un choix intelligent en ce qui concerne les performances du programme.
+        En effet l'utilisation d'un singleton améliore l'occupation en mémoire et la vitesse d'exécution en ne générant qu'une seul instance de l'objet \textit{Manager}.
+        
+\vspace{\baselineskip}       
+\subsection{Test unitaire}
+    \paragraph{}
+        L'intégrité de l'entièreté du projet est assurée par les tests unitaires. Ils nous permettent de vérifier que chaque modifications ou améliorations apportées n'amène pas le programme à un dysfonctionnement.
+
+\vspace{\baselineskip}       
+\subsection{Rôle des utilisateurs}
+    \paragraph{}
+        Chaque utilisateur a des droits précis quant aux actions qu'il peut réaliser dans le programme. La distinction entre un client et un manager est assurée par la présence de 2 classe ( \textit{Adherent , Manager} ) ayant chacune des actions différentes sur le programme. Toutefois, certaines actions restent communes aux deux types d'utilisateurs. Pour rendre cela possible, l'équipe a appliqué l'héritage sur ces 2 classes en créant une classe commune, la classe \textit{Person}. Ainsi nous pouvons partager certaines méthodes entre le manger et l'adhérent tout en évitant la duplication de code.

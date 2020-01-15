@@ -1,0 +1,126 @@
+\documentclass[12pt,oneside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{titlepic}
+\usepackage{graphicx}
+\usepackage[11pt]{moresize}
+\usepackage{eso-pic}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{titlesec}
+\usepackage{textpos}
+\usepackage{minted}
+\usepackage{float}
+\usepackage[breaklinks=true,hidelinks]{hyperref}
+\usemintedstyle{manni}
+\usepackage{xurl}
+\usepackage{subfig}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{subsection}.\arabic{figure}}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%%%% Footer and Header %%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\footnotesize{\rightmark}}
+\fancyfoot[R]{Page -- \thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{0pt}
+
+
+% Redefine the plain page style
+\fancypagestyle{plain}{
+\fancyhf{}
+\fancyfoot[C]{\footnotesize{\rightmark}}
+\fancyfoot[R]{Page -- \thepage}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	MARGINS
+%----------------------------------------------------------------------------------------
+\setmarginsrb{ 1.2in}   % left margin
+             { 0.6in}   % top margin
+             { 1.2in}   % right margin
+             { 0.8in}   % bottom margin
+             {  20pt}   % head height
+             {0.25in}   % head sep
+             { 9pt}     % foot height
+             { 0.75in}  % foot sep
+
+%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%
+
+%---title format---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\chapter}[display]
+{\normalfont\Large\bfseries}
+{} % label
+{0.5ex} % sep
+{
+	\rule{\textwidth}{1pt}
+	\vspace{1ex}
+	\centering
+} % before-code
+[
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+
+\titlespacing*{\chapter} {0pt}{0mm}{2mm}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{FrontPage.tex}
+
+%%%%% table of content %%%%%%
+\tableofcontents
+
+%%%%% Documents %%%%%%
+\newpage
+\section{Introduction}
+    \input{Introduction.tex}
+    \newpage
+    
+\section{Analyse de l'existant}
+    \input{Analyse.tex}
+    \newpage
+
+\newpage
+\section{Objectifs non atteints}
+    \input{FailObjectif.tex}
+    \newpage
+    
+\newpage
+\section{Objectifs atteints}
+    \input{GoodObjectif.tex}
+    \newpage
+
+\newpage
+\section{Modifications apportées}
+    \input{Modification.tex}
+    \newpage
+    
+\section{Qualité du projet}
+    \input{Quality.tex}
+    \newpage
+    
+\section{Conclusion}
+    \input{Conclusion.tex}
+    \newpage
+    
+\section{Glossaire}
+    \input{Glossaire.tex}
+    \newpage
+    
+\section{Annexes}
+    \input{Annexes.tex}
+    \newpage
+    
+\end{document}

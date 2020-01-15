@@ -1,0 +1,52 @@
+\begin{minted}[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos
+]
+{csharp}
+
+public String borrowBoardGame(long id){
+    BoardGame boardgame;
+    Borrow borrow;
+    
+    int count = 0;
+    
+    if(GameLibrary.getBoardGameList().isEmpty()){ // if database empty
+        return "No board game in database";
+    }
+    
+    for (int i = 0; i < GameLibrary.getBoardGameList().size(); i++) {
+        if(GameLibrary.getBoardGameList().get(i).getId() == id ){ // if found
+            
+            if(GameLibrary.getBoardGameList().get(i).getStatut() == true){
+                boardgame = GameLibrary.getBoardGameList().get(i);
+                boardgame.setStatut(false);
+
+                borrow = new Borrow(this, boardgame);
+
+                GameLibrary.getAllBorrowList().add(borrow);
+                borrowList.add(borrow);
+
+                count = 1;
+            }else{
+                count = 2;
+            }
+            
+        }
+    }
+    
+    switch (count) {
+        case 1:
+            System.out.println("Please, go pick your borrow");
+            return "Borrow with successfull";
+        case 2:
+            return "this game is not available";
+        default:
+            // if no found
+            return "No found";
+    }
+    
+}
+\end{minted}

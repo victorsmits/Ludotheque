@@ -1,0 +1,29 @@
+    \paragraph{}
+    Une fois l'analyse du projet et des objectifs terminée, nous avons commencé le \textit{refactoring} du code.
+    
+\subsection{Anglais et commentaires}
+    \paragraph{}
+    Pour commencer nous avons, tout en parcourant le code, corrigé les erreurs d'anglais telles que "\textit{with success}" à la place de "\textit{with successfull}" ou "\textit{first name}" pour "\textit{firstname}". Dans un premier temps nous nous sommes arrêtés aux commentaires et noms de variables globales et locales afin de ne pas créer d'erreurs par la modification d'une méthode.
+    \paragraph{}
+    Toujours en parcourant le code, nous avons jugé la pertinence des différents commentaires. Dès lors nous avons supprimé ceux qui semblaient inutiles. En effet, \textit{un bon code ne nécessite pas de commentaire}, il est donc inutile de placer un commentaire comme en figure \ref{fig:uselessComment}. 
+    
+    \paragraph{}
+    De plus, tout au long du code on retrouve des commentaires copiés-collés. Ceux-ci ne sont donc pas pertinents comme on peut le voir sur la figure \ref{fig:CopyPasteComment}. Le second commentaire "\textit{// Enter username and press Enter}" vient du fait qu'il y a une duplication de code, ou au moins deux codes très similaires, probablement qu'un copié-collé a été fait sans modifier le commentaire. D'autre part, comme dis dans le paragraphe précédent, un commentaire de ce type n'est pas nécessaire à cet endroit. Une équipe de développement pourrait aisément comprendre ces quelques lignes de code.
+    
+\subsection{Noms des méthodes, classes et variables}
+    
+    \paragraph{}
+    Comme précisé ci-dessus, la première équipe de développement a mis en place certaines conventions par rapport aux noms des classes et des variables. Pour vérifier ces conventions nous avons appliqué la même méthode qu'au point précédent, c'est à dire que tout en parcourant le code nous avons corrigé les différentes erreurs remarquées. Contrairement au point précédent, ces conventions étaient généralement respectées. Il a toutefois fallu corriger certains noms de variables, méthodes et classes, par exemple en figure \ref{fig:CodeBorrowGame} à la ligne 2 pour "\textit{boardGame}". Pour finir, il n'y avait rien de préciser quant aux méthodes, nous avons donc appliqués la même règle que pour les classes.
+    
+\subsection{Duplication de code}
+
+    \paragraph{}
+    A de nombreuses reprises nous avons observé des duplications de code. Ceux-ci sont dûs au fait que les relations d'héritage n'ont pas été utilisées comme elles l'auraient dû. Comme on peut le voir dans les figures \ref{fig:CodeBorrowGame} et \ref{fig:CodeborrowToy}, ces deux méthodes sont quasiment identiques. Les seules choses qui peuvent différencier ces deux méthodes sont la variable "\textit{boardGame}" ou "\textit{Toy}" et les chaînes de caractères dans les "\textit{switch}". Dans le code d'origine il existait une troisième méthode, identique aux deux premières mais pour "\textit{VideoGame}".
+    
+    \paragraph{}
+    Pour palier à ce problème, nous avons réécrit une nouvelle méthode qui remplace les trois précédentes. Pour ce faire, nous avons utilisé les relations d'héritage entre "\textit{Game}" et "\textit{boardGame}", "\textit{toy}" et "\textit{VideoGame}". Cette méthode prend en paramètre le type du jeu en \textit{string}, une liste de \textit{Game} qui correspond à la base de données et un id de type \textit{long} caractérisant le jeu emprunté. Cela nous permet de faire une méthode générale qui sera valable pour les trois types de \textit{Game}. Elle renvoie un string qui nous informe sur le résultat de la tentative d'emprunt. Cette méthode peut être observée en figure \ref{fig:Codeborrow}.
+    
+\subsection{Erreurs de \textit{checkstyle}}
+
+    \paragraph{}
+    Lorsque nous avons pris en main le projet nous avions un nombre élevé d'erreurs de \textit{checkstyle}. La plupart étaient des erreurs de longueur de ligne ou de d'espacement entre les différentes boucles, méthodes, variables et classes. Pour corriger celles-ci nous avons utilisé \textit{Jenkins} qui permet de repérer ces différentes erreurs sur base d'un template. Une fois les erreurs définies, il a suffit d'appliquer les bonnes règles aux différents endroit renseignés sur \textit{Jenkins.}

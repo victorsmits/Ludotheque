@@ -1,0 +1,51 @@
+\begin{minted}[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos
+]
+{csharp}
+
+private String borrowGame(String gameType,
+                              ArrayList<Game> database,
+                              long id) {
+    Game game;
+    Borrow borrow;
+    int count = 0;
+
+    if (GameLibrary.getVideoGameList().isEmpty()) {
+        return "No video game in database";
+    }
+
+    for (Game value : database) {
+        //Check if game exist
+        if (value.getId() == id) {
+            //Check the game status
+            if (value.getStatus()) {
+                game = value;
+                game.setStatus(false);
+
+                borrow = new Borrow(this, game);
+
+                GameLibrary.getAllBorrowList().add(borrow);
+                borrowList.add(borrow);
+
+                count = 1;
+                break;
+            } else {
+                count = 2;
+            }
+
+        }
+    }
+    switch (count) {
+        case 1:
+            return "You can pick up your " + gameType + ".";
+        case 2:
+            return "This " + gameType + " is not available.";
+        default:
+            return "This " + gameType + " was not found.";
+    }
+}
+\end{minted}

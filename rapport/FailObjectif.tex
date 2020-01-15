@@ -1,0 +1,41 @@
+\subsection{Encapsulation}
+    \paragraph{}
+        Comme expliqué ci-dessus, le programme utilise la programmation orientée objet. Cependant la règle "\textit{Liskov substitution principle}" qui permet de regrouper différents objets sous un même type et ainsi pouvoir éviter la duplication de code et assurer l'extensibilité du programme n'est pas respectée.
+        
+    \paragraph{}
+        Les interfaces sont existantes mais ne sont pas utilisées correctement. Par exemple, les 3 types de jeux sont tous regroupés dans un type global, \textit{l'interface "Game"}. Mais un client a pour attributs 3 listes de jeux contenant chacune un type de jeux, au lieu de les regrouper dans une liste de \textit{Game}. 
+        
+        Cela a donc créé de nombreuses duplications de codes et erreurs d'exécution. L'encapsulation est donc présente mais pas utilisée correctement.
+        
+\vspace{\baselineskip}
+\subsection{Intégrité}
+    \paragraph{}
+        L'intégrité du programme n'est pas atteinte. En effet lors de l'ajout d'un jeux dans le système, le programme lui octroie un id qui se veut unique. Cependant, l'id est généré sur base de la fonction "\textit{Math.random}" de la manière suivante: \textit{this.id =  (long) ((Math.random() * (9999 - 1000) + 1) + 1000);}. Ce qui peut techniquement ne pas donner des id uniques. En effet, il y a une probabilité non nulle que plusieurs id générés par le code soient identiques.
+        
+        Ceci peut entraîner des erreurs lors d'une recherche dans le système en fonction de l'id et ainsi donc affecter l'intégrité du système.
+        
+\vspace{\baselineskip}
+\subsection{Simplicité}
+    \paragraph{}
+        Certaine partie du projet ne sont pas très compréhensible. Ces dernières nous ont rendus la tâche plus compliquée. Par exemple, l'utilisation du design pattern observer dans le projet. Son utilité n'est jamais expliquée et les classes observer sont intégrée au projet et implémentées mais jamais utilisées. 
+
+\vspace{\baselineskip}
+\subsection{Utilisation des façades}
+    \paragraph{}
+        Le projet utilise le design pattern façade pour créer l'interface dans le terminal. Cependant, dans certaines classes, par exemple dans la classe \textit{Manager}, nous pouvons retrouver la présence d'interface utilisateur. Ceci va à l'encontre du design pattern.
+
+\vspace{\baselineskip}       
+\subsection{Maintenabilité}
+    \paragraph{}
+        Le projet contient de nombreuses duplications de code, ce qui va à l'encontre de la maintenabilité du programme. Certaines de ces duplications n'étaient pas correctes et ont du être corriger pour pouvoir être refactorisées par la suite.
+        
+\vspace{\baselineskip}
+\subsection{L'extensibilité}
+    \paragraph{}
+        L'utilisation des designs patterns Factory et Façades ainsi que de la programmation orienté objet permette de favoriser l'extensibilité du projet tout en ne devant pas intervenir dans l'interface utilisateur via l'utilisation de façade ou dans la création de jeux via GameFactory.
+        
+    \paragraph{}
+        La classe GameFactory permet de créer une instance de jeu, quel que soit son sous-type. La méthode principale (et unique) de cette classe est createGame, qui reçoiten paramètre les informations nécessaires à l’instanciation du jeu. Cette méthodene respecte pas l’extensibilité, puisque si un développeur souhaite ajouter un autretype de jeu, il devra obligatoirement modifier la méthode createGame également.
+        
+    \paragraph{}
+        En conclusion on peut dire que l'extensibilité est atteints et respecter dans certain cas mais que d'autre ne le sont pas du tout.
